@@ -17,18 +17,21 @@ public class SituationController : MonoBehaviour
 	  //private string fb1;
 	  //private string fb2;
 	  //private string fb3;
+    public float audioDuration;
 
     public SituationData( string context,
                           string question, 
                           string op1, 
                           string op2, 
-                          string op3) 
+                          string op3,
+                          float audioDuration) 
     {
       this.context = context;
       this.question = question;
       this.op1 = op1;
       this.op2 = op2;
       this.op3 = op3;
+      this.audioDuration = audioDuration;
     }
   }
 
@@ -46,10 +49,11 @@ public class SituationController : MonoBehaviour
 
   public SituationData situation1 = new SituationData(
     "Garçom: Bem-vindo ao OutBack! Tudo bem?",
-    "Como responder?",
+    "Como você responderia a este garçom?",
     "Olá! Onde eu poderia me sentar?",
     "Oi! Gostaria de fazer um pedido!",
-    "Olá! Gosto desse restaurante!");
+    "Olá! Gosto desse restaurante!",
+    4.16F);
 
   //public SituationData situation1 = new SituationData(
 
@@ -75,11 +79,11 @@ public class SituationController : MonoBehaviour
       startRecordingButton.enabled = false;
     }
 
+    StartCoroutine(EnableRecording());
     EnableOptions(false);
 
     maxAttempts = 3;
     countAttempts = 1;
-    instructionText.text = "Toque aqui para gravar sua resposta";
     contextText.text = situation1.context;
     questionText.text = situation1.question;
     //op1Text = "Olá! Onde eu poderia me sentar?";
@@ -271,7 +275,15 @@ public class SituationController : MonoBehaviour
 
   IEnumerator GoToFeedbackScene()
   {
-    yield return new WaitForSeconds(2);
+    yield return new WaitForSeconds(1.5F);
     SceneManager.LoadScene (sceneName:"FeedbackScene");
+  }
+
+  IEnumerator EnableRecording()
+  {
+    startRecordingButton.enabled = false;
+    yield return new WaitForSeconds(situation1.audioDuration + 1.5F);
+    startRecordingButton.enabled = true;
+    instructionText.text = "Toque aqui para gravar sua resposta";
   }
 }

@@ -1,2 +1,2 @@
 # TCC
-JOGO DIGITAL COM BASE EM COGNIÇÃO SOCIAL PARA O USO CLÍNICO COM ADOLESCENTES NO ESPECTRO AUTISTA.
+Jogo digital com base em cognição social para o uso clínico com adolescentes no espectro autista.
