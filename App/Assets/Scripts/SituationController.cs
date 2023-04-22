@@ -7,6 +7,8 @@ using KKSpeech;
 
 public class SituationController : MonoBehaviour
 {
+  public GameObject situationReader;
+
   public class SituationData
   {
     public string context;
@@ -39,25 +41,12 @@ public class SituationController : MonoBehaviour
   public Button op1Button;
   public Button op2Button;
   public Button op3Button;
-  public Text contextText;
-  public Text questionText;
   public Text instructionText;
   public Text resultText;
+  
   private double similarityPercent;
   private int countAttempts;
   private int maxAttempts;
-
-  public SituationData situation1 = new SituationData(
-    "Garçom: Bem-vindo ao OutBack! Tudo bem?",
-    "Como você responderia a este garçom?",
-    "Olá! Onde eu poderia me sentar?",
-    "Oi! Gostaria de fazer um pedido!",
-    "Olá! Gosto desse restaurante!",
-    4.16F);
-
-  //public SituationData situation1 = new SituationData(
-
-  //);
 
   void Start()
   {
@@ -84,15 +73,9 @@ public class SituationController : MonoBehaviour
 
     maxAttempts = 3;
     countAttempts = 1;
-    contextText.text = situation1.context;
-    questionText.text = situation1.question;
-    //op1Text = "Olá! Onde eu poderia me sentar?";
-    op1Button.GetComponentInChildren<Text>().text = situation1.op1;
-    //op2Text = "Oi! Gostaria de fazer um pedido!";
-    op2Button.GetComponentInChildren<Text>().text = situation1.op2;
-    //op3Text = "Olá! Gosto desse restaurante!";
-    op3Button.GetComponentInChildren<Text>().text = situation1.op3;
 
+    // PARA ZERAR O SITUATIONID
+    // PlayerPrefs.SetInt("situationID", 0);
   }
 
   public void OnFinalResult(string result)
@@ -220,15 +203,19 @@ public class SituationController : MonoBehaviour
   public void MatchOption(string result) {
     similarityPercent = 0.7;
 
-    if(findSimilarity(result.ToUpper(), situation1.op1.ToUpper()) > similarityPercent){
+    string op1text = op1Button.GetComponentInChildren<Text>().text;
+    string op2text = op2Button.GetComponentInChildren<Text>().text;
+    string op3text = op3Button.GetComponentInChildren<Text>().text;
+
+    if(findSimilarity(result.ToUpper(), op1text.ToUpper()) > similarityPercent){
       op1Button.GetComponent<Image>().color = Color.green;
       StartCoroutine(GoToFeedbackScene());
     }
-    else if(findSimilarity(result.ToUpper(), situation1.op2.ToUpper()) > similarityPercent){
+    else if(findSimilarity(result.ToUpper(), op2text.ToUpper()) > similarityPercent){
       op2Button.GetComponent<Image>().color = Color.green;
       StartCoroutine(GoToFeedbackScene());
     }
-    else if(findSimilarity(result.ToUpper(), situation1.op3.ToUpper()) > similarityPercent){
+    else if(findSimilarity(result.ToUpper(), op3text.ToUpper()) > similarityPercent){
       op3Button.GetComponent<Image>().color = Color.green;
       StartCoroutine(GoToFeedbackScene());
     }
@@ -282,7 +269,7 @@ public class SituationController : MonoBehaviour
   IEnumerator EnableRecording()
   {
     startRecordingButton.enabled = false;
-    yield return new WaitForSeconds(situation1.audioDuration + 1.5F);
+    yield return new WaitForSeconds(4.16F + 1.5F); // Audio Duration 4.16
     startRecordingButton.enabled = true;
     instructionText.text = "Toque aqui para gravar sua resposta";
   }

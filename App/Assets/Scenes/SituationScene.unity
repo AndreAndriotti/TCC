@@ -564,6 +564,7 @@ GameObject:
   - component: {fileID: 686776715}
   - component: {fileID: 686776714}
   - component: {fileID: 686776717}
+  - component: {fileID: 686776719}
   m_Layer: 0
   m_Name: Canvas
   m_TagString: Untagged
@@ -672,14 +673,33 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d804727ed52a55149bb1362a503a557d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  situationReader: {fileID: 0}
   startRecordingButton: {fileID: 343901487}
   op1Button: {fileID: 1786337030}
   op2Button: {fileID: 1273151840}
   op3Button: {fileID: 32946646}
-  contextText: {fileID: 1163605963}
-  questionText: {fileID: 1737817443}
   instructionText: {fileID: 456255072}
   resultText: {fileID: 2077337297}
+--- !u!114 &686776719
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 686776712}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 769e858b8b213a14791eaf2a942d7a54, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  textJSON: {fileID: 4900000, guid: 279175682c56d524cb11df0b1fbec58b, type: 3}
+  contextText: {fileID: 1163605963}
+  questionText: {fileID: 1737817443}
+  op1Button: {fileID: 1786337030}
+  op2Button: {fileID: 1273151840}
+  op3Button: {fileID: 32946646}
+  mySituationList:
+    situation: []
 --- !u!1 &1077589778
 GameObject:
   m_ObjectHideFlags: 0
