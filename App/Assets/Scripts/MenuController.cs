@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.SceneManagement;
 
-public class FeedbackController : MonoBehaviour
+public class MenuController : MonoBehaviour
 {
     // Start is called before the first frame update
     void Start()
@@ -17,8 +17,8 @@ public class FeedbackController : MonoBehaviour
         
     }
 
-    public void OnClickContinueButton()
+    public void OnClickPlayButton()
     {
-        SceneManager.LoadScene (sceneName:"RestaurantScene");
+        SceneManager.LoadScene (sceneName:"ScenarioScene");
     }
 }
