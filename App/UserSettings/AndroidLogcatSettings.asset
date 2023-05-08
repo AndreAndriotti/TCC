@@ -1,9 +1,9 @@
 {
     "m_SelectedDeviceId": "RX2T4001R3W",
     "m_SelectedPackage": {
-        "deviceId": "",
-        "name": "",
-        "processId": 0,
+        "deviceId": "RX2T4001R3W",
+        "name": "com.TEACOGS.TCC",
+        "processId": 28957,
         "exited": false
     },
     "m_SelectedPriority": 0,
@@ -31,6 +31,12 @@
             "name": "com.TEACOGS.TCC",
             "processId": 6378,
             "exited": true
+        },
+        {
+            "deviceId": "RX2T4001R3W",
+            "name": "com.TEACOGS.TCC",
+            "processId": 28957,
+            "exited": false
         }
     ],
     "m_Tags": {
