@@ -7,6 +7,9 @@ public class SQLiteExample : MonoBehaviour
     // Resources:
     // https://www.mono-project.com/docs/database-access/providers/sqlite/
 
+     int situationNumber;
+     string userName;
+
     void Start() // 13
     {
         
@@ -65,6 +68,60 @@ public class SQLiteExample : MonoBehaviour
         dbCommandCreateTable.ExecuteReader(); // 8
 
         dbConnection.Close();
+    }
+
+    public void UpdateSituation(string situationName){
+        string dbUri = "URI=file:MyDatabase.sqlite"; // 4
+        IDbConnection dbConnection = new SqliteConnection(dbUri); // 5
+        dbConnection.Open(); // 6
+
+        // Create a table for the hit count in the database if it does not exist yet.
+        IDbCommand dbCommandCreateTable = dbConnection.CreateCommand(); // 6
+        dbCommandCreateTable.CommandText = $"UPDATE SituationsTracker SET {situationName}_situation = {situationName}_situation + 1"; // 7
+        dbCommandCreateTable.ExecuteReader(); // 8
+
+        dbConnection.Close();
+    }
+
+    public int GetSituationNumber(string situationName){
+
+        string dbUri = "URI=file:MyDatabase.sqlite"; // 4
+        IDbConnection dbConnection = new SqliteConnection(dbUri); // 5
+        dbConnection.Open(); // 6
+
+        IDbCommand dbCommandReadValues = dbConnection.CreateCommand(); // 6
+        dbCommandReadValues.CommandText = $"SELECT {situationName}_situation FROM SituationsTracker WHERE (id_email = 'teste1@email.com');"; // 7
+        IDataReader dataReader = dbCommandReadValues.ExecuteReader();
+
+         while (dataReader.Read()) // 18
+        {
+            // The `id` has index 0, our `hits` have the index 1.
+            situationNumber = dataReader.GetInt32(2); // 19
+        }
+
+        dbConnection.Close();
+
+        return situationNumber;
+    }
+
+    public string GetUserName(){
+        string dbUri = "URI=file:MyDatabase.sqlite"; // 4
+        IDbConnection dbConnection = new SqliteConnection(dbUri); // 5
+        dbConnection.Open(); // 6
+
+        IDbCommand dbCommandReadValues = dbConnection.CreateCommand(); // 6
+        dbCommandReadValues.CommandText = $"SELECT name FROM SituationsTracker WHERE (id_email = 'teste1@email.com');"; // 7
+        IDataReader dataReader = dbCommandReadValues.ExecuteReader();
+
+         while (dataReader.Read()) // 18
+        {
+            // The `id` has index 0, our `hits` have the index 1.
+            userName = dataReader.GetString(1); // 19
+        }
+
+        dbConnection.Close();
+
+        return userName;
     }
 
     void Update(){
