@@ -7,7 +7,7 @@ using KKSpeech;
 
 public class SituationController : MonoBehaviour
 {
-  public GameObject situationReader;
+  private SQLiteExample database;
 
   public class SituationData
   {
@@ -47,6 +47,7 @@ public class SituationController : MonoBehaviour
   private double similarityPercent;
   private int countAttempts;
   private int maxAttempts;
+  private int situationID;
 
   void Start()
   {
@@ -67,6 +68,12 @@ public class SituationController : MonoBehaviour
       resultText.text = "Sorry, but this device doesn't support speech recognition";
       startRecordingButton.enabled = false;
     }
+
+    database = this.gameObject.AddComponent<SQLiteExample>();
+    database.createUserDatabase();
+
+    PlayerPrefs.SetInt("situationID", database.GetSituationNumber("restaurante"));
+    situationID = PlayerPrefs.GetInt("situationID");
 
     StartCoroutine(EnableRecording());
     EnableOptions(false);

@@ -96,7 +96,7 @@ public class SQLiteExample : MonoBehaviour
          while (dataReader.Read()) // 18
         {
             // The `id` has index 0, our `hits` have the index 1.
-            situationNumber = dataReader.GetInt32(2); // 19
+            situationNumber = dataReader.GetInt32(0); // 19
         }
 
         dbConnection.Close();
@@ -116,7 +116,7 @@ public class SQLiteExample : MonoBehaviour
          while (dataReader.Read()) // 18
         {
             // The `id` has index 0, our `hits` have the index 1.
-            userName = dataReader.GetString(1); // 19
+            userName = dataReader.GetString(0); // 19
         }
 
         dbConnection.Close();

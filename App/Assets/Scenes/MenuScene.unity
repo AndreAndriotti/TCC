@@ -403,6 +403,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: bb3526c95d66b424f90de5784f6bc2c9, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  introText: {fileID: 1929374365}
 --- !u!1 &415453762
 GameObject:
   m_ObjectHideFlags: 0
@@ -1187,7 +1188,7 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: "Ol\xE1, <nome>!"
+  m_Text: 
 --- !u!222 &1929374366
 CanvasRenderer:
   m_ObjectHideFlags: 0

@@ -1,20 +1,25 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
 using UnityEngine.SceneManagement;
 
 public class MenuController : MonoBehaviour
 {
     private SQLiteExample database;
-    // Start is called before the first frame update
+    private string username;
+    public Text introText;
+
     void Start()
     {
         database = this.gameObject.AddComponent<SQLiteExample>();
         database.createUserDatabase();
         //database.testInsertValues();
+
+        username = database.GetUserName();
+        introText.text = "Olá, " + username + "!";
     }
 
-    // Update is called once per frame
     void Update()
     {
         

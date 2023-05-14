@@ -5,10 +5,12 @@ using UnityEngine.SceneManagement;
 
 public class FeedbackController : MonoBehaviour
 {
-    // Start is called before the first frame update
+    private SQLiteExample database;
+    
     void Start()
     {
-        
+        database = this.gameObject.AddComponent<SQLiteExample>();
+        database.createUserDatabase();
     }
 
     // Update is called once per frame
@@ -19,6 +21,7 @@ public class FeedbackController : MonoBehaviour
 
     public void OnClickContinueButton()
     {
+        database.UpdateSituation("restaurante");
         SceneManager.LoadScene (sceneName:"RestaurantScene");
     }
 }

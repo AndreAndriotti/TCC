@@ -5,6 +5,8 @@ using UnityEngine.UI;
 
 public class JSONReader : MonoBehaviour
 {
+    private SQLiteExample database;
+
     public TextAsset textJSON;
     public Text contextText;
     public Text questionText;
@@ -37,7 +39,11 @@ public class JSONReader : MonoBehaviour
 
     void Start()
     {
-        //situationID = 1;
+        database = this.gameObject.AddComponent<SQLiteExample>();
+        database.createUserDatabase();
+
+        PlayerPrefs.SetInt("situationID", database.GetSituationNumber("restaurante"));
+
         situationID = PlayerPrefs.GetInt("situationID");
         mySituationList = JsonUtility.FromJson<SituationList>(textJSON.text);
 
