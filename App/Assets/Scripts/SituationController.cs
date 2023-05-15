@@ -7,7 +7,7 @@ using KKSpeech;
 
 public class SituationController : MonoBehaviour
 {
-  private SQLiteExample database;
+  private Database database;
 
   public class SituationData
   {
@@ -69,7 +69,7 @@ public class SituationController : MonoBehaviour
       startRecordingButton.enabled = false;
     }
 
-    database = this.gameObject.AddComponent<SQLiteExample>();
+    database = this.gameObject.AddComponent<Database>();
     database.createUserDatabase();
 
     PlayerPrefs.SetInt("situationID", database.GetSituationNumber("restaurante"));

@@ -5,11 +5,11 @@ using UnityEngine.SceneManagement;
 
 public class FeedbackController : MonoBehaviour
 {
-    private SQLiteExample database;
+    private Database database;
     
     void Start()
     {
-        database = this.gameObject.AddComponent<SQLiteExample>();
+        database = this.gameObject.AddComponent<Database>();
         database.createUserDatabase();
     }
 

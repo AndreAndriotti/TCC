@@ -2,7 +2,7 @@ using Mono.Data.Sqlite; // 1
 using System.Data; // 1
 using UnityEngine;
 
-public class SQLiteExample : MonoBehaviour
+public class Database : MonoBehaviour
 {
     // Resources:
     // https://www.mono-project.com/docs/database-access/providers/sqlite/
@@ -51,7 +51,7 @@ public class SQLiteExample : MonoBehaviour
 
         // Create a table for the hit count in the database if it does not exist yet.
         IDbCommand dbCommandCreateTable = dbConnection.CreateCommand(); // 6
-        dbCommandCreateTable.CommandText = "DROP TABLE SituationTracker"; // 7
+        dbCommandCreateTable.CommandText = "DROP TABLE SituationsTracker"; // 7
         dbCommandCreateTable.ExecuteReader(); // 8
 
         dbConnection.Close();
@@ -64,7 +64,7 @@ public class SQLiteExample : MonoBehaviour
 
         // Create a table for the hit count in the database if it does not exist yet.
         IDbCommand dbCommandCreateTable = dbConnection.CreateCommand(); // 6
-        dbCommandCreateTable.CommandText = "INSERT INTO SituationsTracker (id_email, name, restaurante_situation) VALUES ('teste1@email.com', 'carlos', 1)"; // 7
+        dbCommandCreateTable.CommandText = "INSERT INTO SituationsTracker (id_email, name, restaurante_situation) VALUES ('teste1@email.com', 'carlos', 0)"; // 7
         dbCommandCreateTable.ExecuteReader(); // 8
 
         dbConnection.Close();
@@ -78,6 +78,19 @@ public class SQLiteExample : MonoBehaviour
         // Create a table for the hit count in the database if it does not exist yet.
         IDbCommand dbCommandCreateTable = dbConnection.CreateCommand(); // 6
         dbCommandCreateTable.CommandText = $"UPDATE SituationsTracker SET {situationName}_situation = {situationName}_situation + 1"; // 7
+        dbCommandCreateTable.ExecuteReader(); // 8
+
+        dbConnection.Close();
+    }
+
+    public void SetSituationNumber(string situationName, int situationNumber){
+        string dbUri = "URI=file:MyDatabase.sqlite"; // 4
+        IDbConnection dbConnection = new SqliteConnection(dbUri); // 5
+        dbConnection.Open(); // 6
+
+        // Create a table for the hit count in the database if it does not exist yet.
+        IDbCommand dbCommandCreateTable = dbConnection.CreateCommand(); // 6
+        dbCommandCreateTable.CommandText = $"UPDATE SituationsTracker SET {situationName}_situation = {situationNumber}"; // 7
         dbCommandCreateTable.ExecuteReader(); // 8
 
         dbConnection.Close();

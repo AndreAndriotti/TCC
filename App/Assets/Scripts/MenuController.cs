@@ -6,13 +6,13 @@ using UnityEngine.SceneManagement;
 
 public class MenuController : MonoBehaviour
 {
-    private SQLiteExample database;
+    private Database database;
     private string username;
     public Text introText;
 
     void Start()
     {
-        database = this.gameObject.AddComponent<SQLiteExample>();
+        database = this.gameObject.AddComponent<Database>();
         database.createUserDatabase();
         //database.testInsertValues();
 
