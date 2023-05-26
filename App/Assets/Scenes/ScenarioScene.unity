@@ -1287,9 +1287,9 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 0}
-        m_TargetAssemblyTypeName: MenuController, Assembly-CSharp
-        m_MethodName: OnClickPlayButton
+      - m_Target: {fileID: 151497236}
+        m_TargetAssemblyTypeName: ScenarioController, Assembly-CSharp
+        m_MethodName: OnClickHelpButton
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}

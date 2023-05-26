@@ -5,17 +5,7 @@ using UnityEngine.SceneManagement;
 
 public class ScenarioController : MonoBehaviour
 {
-    // Start is called before the first frame update
-    void Start()
-    {
-        
-    }
-
-    // Update is called once per frame
-    void Update()
-    {
-        
-    }
+    private Database database;
 
     public void OnClickBackButton()
     {
@@ -25,5 +15,15 @@ public class ScenarioController : MonoBehaviour
     public void OnClickRestaurantButton()
     {
         SceneManager.LoadScene(sceneName:"RestaurantScene");
+    }
+
+    public void OnClickHelpButton()
+    {
+        database = this.gameObject.AddComponent<Database>();
+        database.createUserDatabase();
+        
+        // PARA ZERAR O SITUATIONID:
+        database.SetSituationNumber("restaurante", 0);
+        //
     }
 }

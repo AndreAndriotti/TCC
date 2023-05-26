@@ -13,7 +13,7 @@ public class JSONReader : MonoBehaviour
     public Button op1Button;
     public Button op2Button;
     public Button op3Button;
-    private int situationID;
+    public int situationID;
 
     [System.Serializable]
     public class Situation
@@ -47,7 +47,7 @@ public class JSONReader : MonoBehaviour
         situationID = PlayerPrefs.GetInt("situationID");
         mySituationList = JsonUtility.FromJson<SituationList>(textJSON.text);
 
-        contextText.text = mySituationList.situation[situationID].context + situationID.ToString();
+        contextText.text = mySituationList.situation[situationID].context;
         questionText.text = mySituationList.situation[situationID].question;
         op1Button.GetComponentInChildren<Text>().text = mySituationList.situation[situationID].op1;
         op2Button.GetComponentInChildren<Text>().text = mySituationList.situation[situationID].op2;

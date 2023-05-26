@@ -13,8 +13,11 @@ public class MenuController : MonoBehaviour
     void Start()
     {
         database = this.gameObject.AddComponent<Database>();
+        //database.deleteTableSituation();
         database.createUserDatabase();
-        //database.testInsertValues();
+        
+        // CRIAR INFOS DO USER NA PRIMEIRA VEZ
+        database.testInsertValues();
 
         username = database.GetUserName();
         introText.text = "Olá, " + username + "!";

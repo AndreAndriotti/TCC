@@ -43,11 +43,11 @@ public class SituationController : MonoBehaviour
   public Button op3Button;
   public Text instructionText;
   public Text resultText;
+  public int situationID;
   
   private double similarityPercent;
   private int countAttempts;
   private int maxAttempts;
-  private int situationID;
 
   void Start()
   {
@@ -69,6 +69,9 @@ public class SituationController : MonoBehaviour
       startRecordingButton.enabled = false;
     }
 
+    // APAGAR DEPOIS -> texto de reconhecimento de voz para testes
+    resultText.enabled = false;
+
     database = this.gameObject.AddComponent<Database>();
     database.createUserDatabase();
 
@@ -80,9 +83,6 @@ public class SituationController : MonoBehaviour
 
     maxAttempts = 3;
     countAttempts = 1;
-
-    // PARA ZERAR O SITUATIONID
-    // PlayerPrefs.SetInt("situationID", 0);
   }
 
   public void OnFinalResult(string result)
@@ -252,6 +252,11 @@ public class SituationController : MonoBehaviour
       op3Button.GetComponent<Image>().color = Color.green;
     }
     StartCoroutine(GoToFeedbackScene());
+  }
+
+  public void OnClickBackButton()
+  {
+    SceneManager.LoadScene(sceneName:"MenuScene");
   }
 
   private void EnableOptions(bool state)

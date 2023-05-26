@@ -3,23 +3,11 @@
     "m_SelectedPackage": {
         "deviceId": "RX2T4001R3W",
         "name": "com.TEACOGS.TCC",
-        "processId": 28957,
+        "processId": 7824,
         "exited": false
     },
     "m_SelectedPriority": 0,
     "m_KnownPackagesForSerialization": [
-        {
-            "deviceId": "RX2T4001R3W",
-            "name": "com.TEACOGS.TCC",
-            "processId": 8961,
-            "exited": true
-        },
-        {
-            "deviceId": "RX2T4001R3W",
-            "name": "com.TEACOGS.TCC",
-            "processId": 9396,
-            "exited": true
-        },
         {
             "deviceId": "RX2T4001R3W",
             "name": "com.TEACOGS.TCC",
@@ -36,6 +24,72 @@
             "deviceId": "RX2T4001R3W",
             "name": "com.TEACOGS.TCC",
             "processId": 28957,
+            "exited": true
+        },
+        {
+            "deviceId": "RX2T4001R3W",
+            "name": "com.TEACOGS.TCC",
+            "processId": 23894,
+            "exited": true
+        },
+        {
+            "deviceId": "RX2T4001R3W",
+            "name": "com.sec.android.app.launcher",
+            "processId": 6094,
+            "exited": false
+        },
+        {
+            "deviceId": "RX2T4001R3W",
+            "name": "com.TEACOGS.TCC",
+            "processId": 26277,
+            "exited": false
+        },
+        {
+            "deviceId": "RX2T4001R3W",
+            "name": "com.TEACOGS.TCC",
+            "processId": 28088,
+            "exited": false
+        },
+        {
+            "deviceId": "RX2T4001R3W",
+            "name": "com.TEACOGS.TCC",
+            "processId": 28633,
+            "exited": false
+        },
+        {
+            "deviceId": "RX2T4001R3W",
+            "name": "com.TEACOGS.TCC",
+            "processId": 31394,
+            "exited": false
+        },
+        {
+            "deviceId": "RX2T4001R3W",
+            "name": "com.TEACOGS.TCC",
+            "processId": 3213,
+            "exited": false
+        },
+        {
+            "deviceId": "RX2T4001R3W",
+            "name": "com.TEACOGS.TCC",
+            "processId": 6225,
+            "exited": false
+        },
+        {
+            "deviceId": "RX2T4001R3W",
+            "name": "com.TEACOGS.TCC",
+            "processId": 6840,
+            "exited": false
+        },
+        {
+            "deviceId": "RX2T4001R3W",
+            "name": "com.TEACOGS.TCC",
+            "processId": 7438,
+            "exited": false
+        },
+        {
+            "deviceId": "RX2T4001R3W",
+            "name": "com.TEACOGS.TCC",
+            "processId": 7824,
             "exited": false
         }
     ],
