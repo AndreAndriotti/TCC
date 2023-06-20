@@ -17,7 +17,7 @@ public class MenuController : MonoBehaviour
         database.createUserDatabase();
         
         // CRIAR INFOS DO USER NA PRIMEIRA VEZ
-        database.testInsertValues();
+        //database.testInsertValues();
 
         username = database.GetUserName();
         introText.text = "Olá, " + username + "!";
