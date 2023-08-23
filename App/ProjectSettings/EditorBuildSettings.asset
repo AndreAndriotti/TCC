@@ -21,4 +21,5 @@ EditorBuildSettings:
     path: Assets/Scenes/FeedbackScene.unity
     guid: c09750b24a3823447a4a4786ada0ddd8
   m_configObjects:
+    com.unity.adaptiveperformance.loader_settings: {fileID: 11400000, guid: 244246b231bc7da4db4c07c4c0bc745f, type: 2}
     com.unity.adaptiveperformance.simulator.provider_settings: {fileID: 11400000, guid: 45b6e5cfc39760a458031a624083714d, type: 2}
