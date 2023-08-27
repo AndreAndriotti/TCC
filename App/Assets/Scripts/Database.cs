@@ -17,8 +17,16 @@ public class Database : MonoBehaviour
 
     private IDbConnection CreateAndOpenDatabase() // 3
     {
+        // check if file exists in Application.persistentDataPath
+ 
+        //string filepath = Application.persistentDataPath + "/MyDatabase.sqlite"; // 4
+ 
+       
+ 
         // Open a connection to the database.
-        string dbUri = "URI=file:MyDatabase.sqlite"; // 4
+        //string dbUri = "URI=file:MyDatabase.sqlite"; // 4
+        string dbUri = StreamingAssetPathForReal() + "MyDatabase.sqlite";
+        //string dbUri = "URI=file:" + filepath; // 4
         IDbConnection dbConnection = new SqliteConnection(dbUri); // 5
         dbConnection.Open(); // 6
 
@@ -139,5 +147,16 @@ public class Database : MonoBehaviour
 
     void Update(){
         
+    } 
+
+    static string StreamingAssetPathForReal()
+    {
+        #if UNITY_EDITOR
+        return "file://" + Application.dataPath + "/StreamingAssets/";
+        #elif UNITY_ANDROID
+        return "jar:file://" + Application.dataPath + "!/assets/";
+        #elif UNITY_IOS
+        return "file://" + Application.dataPath + "/Raw/";
+        #endif
     }
 }
