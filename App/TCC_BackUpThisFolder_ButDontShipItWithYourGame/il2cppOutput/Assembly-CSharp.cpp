@@ -296,10 +296,14 @@ struct Texture2D_tE6505BC111DD8A424A9DBE8E05D7D09E11FFFCF4;
 struct UnityAction_t11A1F3B953B365C072A5DCC32677EE1796A962A7;
 // UnityEngine.Events.UnityEvent
 struct UnityEvent_tDC2C3548799DBC91D1E3F3DE60083A66F4751977;
+// UnityEngine.Networking.UnityWebRequest
+struct UnityWebRequest_t6233B8E22992FC2364A831C1ACB033EF3260C39F;
 // UnityEngine.UI.VertexHelper
 struct VertexHelper_tB905FCB02AE67CBEE5F265FE37A5938FC5D136FE;
 // System.Void
 struct Void_t4861ACF8F4594C3437BB48B6E56783494B843915;
+// UnityEngine.WWW
+struct WWW_tEADA9A43B98FC277E498F8E3206A3B8C4E5AF3FB;
 // UnityEngine.WaitForSeconds
 struct WaitForSeconds_tF179DF251655B8DF044952E70A60DF4B358A3DD3;
 // UnityEngine.UI.Button/ButtonClickedEvent
@@ -374,6 +378,7 @@ IL2CPP_EXTERN_C RuntimeClass* UnityAction_1_t8EC357AF4FBD2A0C4A575C4BBD0B3A81029
 IL2CPP_EXTERN_C RuntimeClass* UnityAction_1_tA5B7125BEF9EB3092B91D1E2AA64249C44903A60_il2cpp_TypeInfo_var;
 IL2CPP_EXTERN_C RuntimeClass* UnityAction_t11A1F3B953B365C072A5DCC32677EE1796A962A7_il2cpp_TypeInfo_var;
 IL2CPP_EXTERN_C RuntimeClass* UnityEvent_tDC2C3548799DBC91D1E3F3DE60083A66F4751977_il2cpp_TypeInfo_var;
+IL2CPP_EXTERN_C RuntimeClass* WWW_tEADA9A43B98FC277E498F8E3206A3B8C4E5AF3FB_il2cpp_TypeInfo_var;
 IL2CPP_EXTERN_C RuntimeClass* WaitForSeconds_tF179DF251655B8DF044952E70A60DF4B358A3DD3_il2cpp_TypeInfo_var;
 IL2CPP_EXTERN_C String_t* _stringLiteral0874AE5A92AF8E9149A648029D99264A13DCE65D;
 IL2CPP_EXTERN_C String_t* _stringLiteral092D70D9FC2DA1B4B68C49B29DE6BB9BB8A2162C;
@@ -397,14 +402,17 @@ IL2CPP_EXTERN_C String_t* _stringLiteral501FCCD0435DDDF0A889236D53C8004D2EDF11ED
 IL2CPP_EXTERN_C String_t* _stringLiteral51E4A3EB5A3CD60D47E429583D47E1E75896E5F1;
 IL2CPP_EXTERN_C String_t* _stringLiteral5521F119A9546AC293A71CE4DC89A30740FA9FC7;
 IL2CPP_EXTERN_C String_t* _stringLiteral58CEB64A8DE6E236D6D69CBA611DC856341ED9F3;
+IL2CPP_EXTERN_C String_t* _stringLiteral60A22A92E080D2FCFAC7182CE45AA3F4D634776D;
 IL2CPP_EXTERN_C String_t* _stringLiteral630F6F7FA61B718106F9E447DFEDA6586D9792E7;
 IL2CPP_EXTERN_C String_t* _stringLiteral6431A0A987CA911D49A4E7739212871E101B6F65;
 IL2CPP_EXTERN_C String_t* _stringLiteral65D77BD384DD5E320EED334686A392FFF16B37D8;
+IL2CPP_EXTERN_C String_t* _stringLiteral69DC163231A2E6267989B33F5481663598E4C2F9;
 IL2CPP_EXTERN_C String_t* _stringLiteral6B10BC65EE260D72960CD3D18983868FC9D9B8AE;
 IL2CPP_EXTERN_C String_t* _stringLiteral6D2C56060B3F7353031AD314517C27945CC39748;
 IL2CPP_EXTERN_C String_t* _stringLiteral70811CBEDAE749C0A8EF4B29BD5C011D86738038;
 IL2CPP_EXTERN_C String_t* _stringLiteral72D6F117EE829092D9701FC5E394868D2C9F09E9;
 IL2CPP_EXTERN_C String_t* _stringLiteral77AEB3062DB52401E75AFFEC60742B0E6B3D6D60;
+IL2CPP_EXTERN_C String_t* _stringLiteral7B82EC8A7422ACC8303A9FF668634405244DADA5;
 IL2CPP_EXTERN_C String_t* _stringLiteral7B856708E464FABB4156F8C5B4A2A4AFAAA18328;
 IL2CPP_EXTERN_C String_t* _stringLiteral7D4AB220FD3D051418B8FBFA55B5535416A70529;
 IL2CPP_EXTERN_C String_t* _stringLiteral884342C25BF46AA9ECE48F4A25BAEC8AF313CBBE;
@@ -444,7 +452,6 @@ IL2CPP_EXTERN_C String_t* _stringLiteralEBE223339188A2795507D94D2AB8F69FE2F29AE8
 IL2CPP_EXTERN_C String_t* _stringLiteralED3669BB749FB37E1BC4B950EC76349184828CD2;
 IL2CPP_EXTERN_C String_t* _stringLiteralFA385B67619E3DB03702032DC6EE1DD96F4E1616;
 IL2CPP_EXTERN_C String_t* _stringLiteralFB2EEC0457FAA0911416BDC31EC38F88FBC34CF7;
-IL2CPP_EXTERN_C String_t* _stringLiteralFB37B1502B77CD954AB74EEA47360366881E5956;
 IL2CPP_EXTERN_C const RuntimeMethod* AndroidJavaObject_CallStatic_TisBoolean_t09A6377A54BE2F9E6985A8149F19234FD7DDFE22_mE956BC9A30BEC746DE593C53C1B8DB6A685185A6_RuntimeMethod_var;
 IL2CPP_EXTERN_C const RuntimeMethod* AndroidJavaObject_CallStatic_TisInt32_t680FF22E76F6EFAD4375103CBBFFA0421349384C_m6619B03C8DA4F5A66785845A2E5B39DAEF36642A_RuntimeMethod_var;
 IL2CPP_EXTERN_C const RuntimeMethod* AndroidJavaObject_Set_TisBoolean_t09A6377A54BE2F9E6985A8149F19234FD7DDFE22_m1C70D480560CA0D0C171727EB7B1FF4C1F267F15_RuntimeMethod_var;
@@ -503,6 +510,7 @@ struct Exception_t_marshaled_com;
 struct Exception_t_marshaled_pinvoke;
 
 struct Int32U5BU5DU5BU5D_t179D865D5B30EFCBC50F82C9774329C15943466E;
+struct ByteU5BU5D_tA6237BF417AE52AD70CFB4EF24A7A82613DF9031;
 struct Int32U5BU5D_t19C97395396A72ECAF310612F0760F165060314C;
 struct LanguageOptionU5BU5D_tA6FF009A2B408E642658A2FEEFA931A986C02CF5;
 struct ObjectU5BU5D_t8061030B0A12A55D5AD8652A20C922FE99450918;
@@ -574,6 +582,11 @@ struct AndroidJavaObject_t8FFB930F335C1178405B82AC2BF512BB1EEF9EB0  : public Run
 	GlobalJavaObjectRef_t20D8E5AAFC2EB2518FCABBF40465855E797FF0D8* ___m_jobject_1;
 	// UnityEngine.GlobalJavaObjectRef UnityEngine.AndroidJavaObject::m_jclass
 	GlobalJavaObjectRef_t20D8E5AAFC2EB2518FCABBF40465855E797FF0D8* ___m_jclass_2;
+};
+
+// UnityEngine.CustomYieldInstruction
+struct CustomYieldInstruction_t6B81A50D5D210C1ACAAE247FB53B65CDFFEB7617  : public RuntimeObject
+{
 };
 
 // System.MarshalByRefObject
@@ -788,6 +801,13 @@ struct Boolean_t09A6377A54BE2F9E6985A8149F19234FD7DDFE22
 	bool ___m_value_0;
 };
 
+// System.Byte
+struct Byte_t94D9231AC217BE4D2E004C4CD32DF6D099EA41A3 
+{
+	// System.Byte System.Byte::m_value
+	uint8_t ___m_value_0;
+};
+
 // System.Char
 struct Char_t521A6F19B456D956AF452D926C32709DC03D6B17 
 {
@@ -975,6 +995,13 @@ struct Void_t4861ACF8F4594C3437BB48B6E56783494B843915
 		};
 		uint8_t Void_t4861ACF8F4594C3437BB48B6E56783494B843915__padding[1];
 	};
+};
+
+// UnityEngine.WWW
+struct WWW_tEADA9A43B98FC277E498F8E3206A3B8C4E5AF3FB  : public CustomYieldInstruction_t6B81A50D5D210C1ACAAE247FB53B65CDFFEB7617
+{
+	// UnityEngine.Networking.UnityWebRequest UnityEngine.WWW::_uwr
+	UnityWebRequest_t6233B8E22992FC2364A831C1ACB033EF3260C39F* ____uwr_0;
 };
 
 // UnityEngine.WaitForSeconds
@@ -1970,6 +1997,10 @@ struct Boolean_t09A6377A54BE2F9E6985A8149F19234FD7DDFE22_StaticFields
 
 // System.Boolean
 
+// System.Byte
+
+// System.Byte
+
 // System.Char
 struct Char_t521A6F19B456D956AF452D926C32709DC03D6B17_StaticFields
 {
@@ -2024,6 +2055,10 @@ struct IntPtr_t_StaticFields
 // System.Void
 
 // System.Void
+
+// UnityEngine.WWW
+
+// UnityEngine.WWW
 
 // UnityEngine.WaitForSeconds
 
@@ -2321,6 +2356,39 @@ struct Int32U5BU5DU5BU5D_t179D865D5B30EFCBC50F82C9774329C15943466E  : public Run
 	{
 		m_Items[index] = value;
 		Il2CppCodeGenWriteBarrier((void**)m_Items + index, (void*)value);
+	}
+};
+// System.Byte[]
+struct ByteU5BU5D_tA6237BF417AE52AD70CFB4EF24A7A82613DF9031  : public RuntimeArray
+{
+	ALIGN_FIELD (8) uint8_t m_Items[1];
+
+	inline uint8_t GetAt(il2cpp_array_size_t index) const
+	{
+		IL2CPP_ARRAY_BOUNDS_CHECK(index, (uint32_t)(this)->max_length);
+		return m_Items[index];
+	}
+	inline uint8_t* GetAddressAt(il2cpp_array_size_t index)
+	{
+		IL2CPP_ARRAY_BOUNDS_CHECK(index, (uint32_t)(this)->max_length);
+		return m_Items + index;
+	}
+	inline void SetAt(il2cpp_array_size_t index, uint8_t value)
+	{
+		IL2CPP_ARRAY_BOUNDS_CHECK(index, (uint32_t)(this)->max_length);
+		m_Items[index] = value;
+	}
+	inline uint8_t GetAtUnchecked(il2cpp_array_size_t index) const
+	{
+		return m_Items[index];
+	}
+	inline uint8_t* GetAddressAtUnchecked(il2cpp_array_size_t index)
+	{
+		return m_Items + index;
+	}
+	inline void SetAtUnchecked(il2cpp_array_size_t index, uint8_t value)
+	{
+		m_Items[index] = value;
 	}
 };
 // System.String[]
@@ -2645,18 +2713,30 @@ IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR bool String_op_Equality_m030E1B219352228970A0
 IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void MonoBehaviour__ctor_m592DB0105CA0BC97AA1C5F4AD27B12D68A3B7C1E (MonoBehaviour_t532A11E69716D348D8AA7F854AFCBFCB8AD17F71* __this, const RuntimeMethod* method) ;
 // System.Void UnityEngine.AudioSource::PlayDelayed(System.Single)
 IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void AudioSource_PlayDelayed_m6A4992F1A010DC12906C6002B22F19082967770E (AudioSource_t871AC2272F896738252F04EE949AEF5B241D3299* __this, float ___0_delay, const RuntimeMethod* method) ;
-// System.String Database::StreamingAssetPathForReal()
-IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR String_t* Database_StreamingAssetPathForReal_mAAECCA5E89F6712EFA7607EB2E3EC41A44DEE915 (const RuntimeMethod* method) ;
+// System.String UnityEngine.Application::get_persistentDataPath()
+IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR String_t* Application_get_persistentDataPath_mC58BD3E1A20732E0A536491DBCAE6505B1624399 (const RuntimeMethod* method) ;
+// System.Void UnityEngine.Debug::Log(System.Object)
+IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void Debug_Log_m87A9A3C761FF5C43ED8A53B16190A53D08F818BB (RuntimeObject* ___0_message, const RuntimeMethod* method) ;
+// System.Boolean System.IO.File::Exists(System.String)
+IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR bool File_Exists_m95E329ABBE3EAD6750FE1989BBA6884457136D4A (String_t* ___0_path, const RuntimeMethod* method) ;
+// System.String UnityEngine.Application::get_dataPath()
+IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR String_t* Application_get_dataPath_m4C8412CBEE4EAAAB6711CC9BEFFA73CEE5BDBEF7 (const RuntimeMethod* method) ;
+// System.String System.String::Concat(System.String,System.String,System.String)
+IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR String_t* String_Concat_m8855A6DE10F84DA7F4EC113CADDB59873A25573B (String_t* ___0_str0, String_t* ___1_str1, String_t* ___2_str2, const RuntimeMethod* method) ;
+// System.Void UnityEngine.WWW::.ctor(System.String)
+IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void WWW__ctor_m5D29D83E9EE0925ED8252347CE24EC236401503D (WWW_tEADA9A43B98FC277E498F8E3206A3B8C4E5AF3FB* __this, String_t* ___0_url, const RuntimeMethod* method) ;
+// System.Boolean UnityEngine.WWW::get_isDone()
+IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR bool WWW_get_isDone_m7E88B666AD0E3903757043813B2811BBFCCCA52E (WWW_tEADA9A43B98FC277E498F8E3206A3B8C4E5AF3FB* __this, const RuntimeMethod* method) ;
+// System.Byte[] UnityEngine.WWW::get_bytes()
+IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR ByteU5BU5D_tA6237BF417AE52AD70CFB4EF24A7A82613DF9031* WWW_get_bytes_m83F5C24FC5AC80C5F3B9AF1E290E08F8B96C0642 (WWW_tEADA9A43B98FC277E498F8E3206A3B8C4E5AF3FB* __this, const RuntimeMethod* method) ;
+// System.Void System.IO.File::WriteAllBytes(System.String,System.Byte[])
+IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void File_WriteAllBytes_mC491031DA14AA9B591F62D6AD0181D090E081077 (String_t* ___0_path, ByteU5BU5D_tA6237BF417AE52AD70CFB4EF24A7A82613DF9031* ___1_bytes, const RuntimeMethod* method) ;
 // System.Void Mono.Data.Sqlite.SqliteConnection::.ctor(System.String)
 IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void SqliteConnection__ctor_mBA0776F60057686C3DF109947113F5697EB7C58E (SqliteConnection_t75D476DE59F24FF675BFA632CE9DFE9CFFF9AA64* __this, String_t* ___0_connectionString, const RuntimeMethod* method) ;
 // System.String System.String::Concat(System.String[])
 IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR String_t* String_Concat_m647EBF831F54B6DF7D5AFA5FD012CF4EE7571B6A (StringU5BU5D_t7674CD946EC0CE7B3AE0BE70E6EE85F2ECD9F248* ___0_values, const RuntimeMethod* method) ;
 // System.String System.String::Format(System.String,System.Object,System.Object)
 IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR String_t* String_Format_mFB7DA489BD99F4670881FF50EC017BFB0A5C0987 (String_t* ___0_format, RuntimeObject* ___1_arg0, RuntimeObject* ___2_arg1, const RuntimeMethod* method) ;
-// System.String System.String::Concat(System.String,System.String,System.String)
-IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR String_t* String_Concat_m8855A6DE10F84DA7F4EC113CADDB59873A25573B (String_t* ___0_str0, String_t* ___1_str1, String_t* ___2_str2, const RuntimeMethod* method) ;
-// System.String UnityEngine.Application::get_dataPath()
-IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR String_t* Application_get_dataPath_m4C8412CBEE4EAAAB6711CC9BEFFA73CEE5BDBEF7 (const RuntimeMethod* method) ;
 // UnityEngine.GameObject UnityEngine.Component::get_gameObject()
 IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR GameObject_t76FEDD663AB33C991A9C9A23129337651094216F* Component_get_gameObject_m57AEFBB14DB39EC476F740BA000E170355DE691B (Component_t39FBE53E5EFCF4409111FB22C15FF73717632EC3* __this, const RuntimeMethod* method) ;
 // T UnityEngine.GameObject::AddComponent<Database>()
@@ -2799,8 +2879,6 @@ IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void Permission_RequestUserPermission_mF9CF3A
 IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR bool AndroidSpeechRecognizer_IsRecording_m38E5EC03A926666FB09F89A7326239E555EF2DF4 (const RuntimeMethod* method) ;
 // System.Int32 KKSpeech.SpeechRecognizer/AndroidSpeechRecognizer::AuthorizationStatus()
 IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR int32_t AndroidSpeechRecognizer_AuthorizationStatus_m3139934E80E0C4980C1C9B4DFC41686D6AE1C144 (const RuntimeMethod* method) ;
-// System.Void UnityEngine.Debug::Log(System.Object)
-IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void Debug_Log_m87A9A3C761FF5C43ED8A53B16190A53D08F818BB (RuntimeObject* ___0_message, const RuntimeMethod* method) ;
 // System.Void KKSpeech.SpeechRecognizer/AndroidSpeechRecognizer::StopIfRecording()
 IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void AndroidSpeechRecognizer_StopIfRecording_m63D463CEDAB4A157CF33F32C9FE6A74DF02F7BF6 (const RuntimeMethod* method) ;
 // System.Void KKSpeech.SpeechRecognizer/AndroidSpeechRecognizer::StartRecording(KKSpeech.SpeechRecognitionOptions)
@@ -4056,42 +4134,103 @@ IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR RuntimeObject* Database_CreateAndOpenDatabase
 	static bool s_Il2CppMethodInitialized;
 	if (!s_Il2CppMethodInitialized)
 	{
+		il2cpp_codegen_initialize_runtime_metadata((uintptr_t*)&Debug_t8394C7EEAECA3689C2C9B9DE9C7166D73596276F_il2cpp_TypeInfo_var);
 		il2cpp_codegen_initialize_runtime_metadata((uintptr_t*)&IDbCommand_t6D4BC36E2AE02526D757A5829FE829FB2A33063F_il2cpp_TypeInfo_var);
 		il2cpp_codegen_initialize_runtime_metadata((uintptr_t*)&IDbConnection_tA113C643378B5E26416948A00354AD0D73C12A5F_il2cpp_TypeInfo_var);
 		il2cpp_codegen_initialize_runtime_metadata((uintptr_t*)&SqliteConnection_t75D476DE59F24FF675BFA632CE9DFE9CFFF9AA64_il2cpp_TypeInfo_var);
+		il2cpp_codegen_initialize_runtime_metadata((uintptr_t*)&WWW_tEADA9A43B98FC277E498F8E3206A3B8C4E5AF3FB_il2cpp_TypeInfo_var);
+		il2cpp_codegen_initialize_runtime_metadata((uintptr_t*)&_stringLiteral2746B283A9377664FAC642B633C6E630FD0DA207);
+		il2cpp_codegen_initialize_runtime_metadata((uintptr_t*)&_stringLiteral60A22A92E080D2FCFAC7182CE45AA3F4D634776D);
+		il2cpp_codegen_initialize_runtime_metadata((uintptr_t*)&_stringLiteral69DC163231A2E6267989B33F5481663598E4C2F9);
+		il2cpp_codegen_initialize_runtime_metadata((uintptr_t*)&_stringLiteral7B82EC8A7422ACC8303A9FF668634405244DADA5);
 		il2cpp_codegen_initialize_runtime_metadata((uintptr_t*)&_stringLiteral9806CF2A0A42B52358BBE424305BEB962BA9284C);
-		il2cpp_codegen_initialize_runtime_metadata((uintptr_t*)&_stringLiteralFB37B1502B77CD954AB74EEA47360366881E5956);
 		s_Il2CppMethodInitialized = true;
 	}
+	String_t* V_0 = NULL;
+	WWW_tEADA9A43B98FC277E498F8E3206A3B8C4E5AF3FB* V_1 = NULL;
 	{
-		// string dbUri = StreamingAssetPathForReal() + "MyDatabase.sqlite";
+		// var filepath = $"{Application.persistentDataPath}/MyDatabase.sqlite";
 		String_t* L_0;
-		L_0 = Database_StreamingAssetPathForReal_mAAECCA5E89F6712EFA7607EB2E3EC41A44DEE915(NULL);
+		L_0 = Application_get_persistentDataPath_mC58BD3E1A20732E0A536491DBCAE6505B1624399(NULL);
 		String_t* L_1;
-		L_1 = String_Concat_m9E3155FB84015C823606188F53B47CB44C444991(L_0, _stringLiteralFB37B1502B77CD954AB74EEA47360366881E5956, NULL);
-		// IDbConnection dbConnection = new SqliteConnection(dbUri); // 5
-		SqliteConnection_t75D476DE59F24FF675BFA632CE9DFE9CFFF9AA64* L_2 = (SqliteConnection_t75D476DE59F24FF675BFA632CE9DFE9CFFF9AA64*)il2cpp_codegen_object_new(SqliteConnection_t75D476DE59F24FF675BFA632CE9DFE9CFFF9AA64_il2cpp_TypeInfo_var);
-		NullCheck(L_2);
-		SqliteConnection__ctor_mBA0776F60057686C3DF109947113F5697EB7C58E(L_2, L_1, NULL);
+		L_1 = String_Concat_m9E3155FB84015C823606188F53B47CB44C444991(L_0, _stringLiteral69DC163231A2E6267989B33F5481663598E4C2F9, NULL);
+		V_0 = L_1;
+		// Debug.Log(filepath);
+		String_t* L_2 = V_0;
+		il2cpp_codegen_runtime_class_init_inline(Debug_t8394C7EEAECA3689C2C9B9DE9C7166D73596276F_il2cpp_TypeInfo_var);
+		Debug_Log_m87A9A3C761FF5C43ED8A53B16190A53D08F818BB(L_2, NULL);
+		// if (!File.Exists(filepath))
+		String_t* L_3 = V_0;
+		bool L_4;
+		L_4 = File_Exists_m95E329ABBE3EAD6750FE1989BBA6884457136D4A(L_3, NULL);
+		if (L_4)
+		{
+			goto IL_0056;
+		}
+	}
+	{
+		// Debug.Log("Database not in Persistent path");
+		il2cpp_codegen_runtime_class_init_inline(Debug_t8394C7EEAECA3689C2C9B9DE9C7166D73596276F_il2cpp_TypeInfo_var);
+		Debug_Log_m87A9A3C761FF5C43ED8A53B16190A53D08F818BB(_stringLiteral60A22A92E080D2FCFAC7182CE45AA3F4D634776D, NULL);
+		// var loadDb = new WWW("jar:file://" + Application.dataPath + "!/assets/" + "MyDatabase.sqlite");  // this is the path to your StreamingAssets in android
+		String_t* L_5;
+		L_5 = Application_get_dataPath_m4C8412CBEE4EAAAB6711CC9BEFFA73CEE5BDBEF7(NULL);
+		String_t* L_6;
+		L_6 = String_Concat_m8855A6DE10F84DA7F4EC113CADDB59873A25573B(_stringLiteral2746B283A9377664FAC642B633C6E630FD0DA207, L_5, _stringLiteral7B82EC8A7422ACC8303A9FF668634405244DADA5, NULL);
+		WWW_tEADA9A43B98FC277E498F8E3206A3B8C4E5AF3FB* L_7 = (WWW_tEADA9A43B98FC277E498F8E3206A3B8C4E5AF3FB*)il2cpp_codegen_object_new(WWW_tEADA9A43B98FC277E498F8E3206A3B8C4E5AF3FB_il2cpp_TypeInfo_var);
+		NullCheck(L_7);
+		WWW__ctor_m5D29D83E9EE0925ED8252347CE24EC236401503D(L_7, L_6, NULL);
+		V_1 = L_7;
+	}
+
+IL_0042:
+	{
+		// while (!loadDb.isDone) { }  // CAREFUL here, for safety reasons you shouldn't let this while loop unattended, place a timer and error check
+		WWW_tEADA9A43B98FC277E498F8E3206A3B8C4E5AF3FB* L_8 = V_1;
+		NullCheck(L_8);
+		bool L_9;
+		L_9 = WWW_get_isDone_m7E88B666AD0E3903757043813B2811BBFCCCA52E(L_8, NULL);
+		if (!L_9)
+		{
+			goto IL_0042;
+		}
+	}
+	{
+		// File.WriteAllBytes(filepath, loadDb.bytes);
+		String_t* L_10 = V_0;
+		WWW_tEADA9A43B98FC277E498F8E3206A3B8C4E5AF3FB* L_11 = V_1;
+		NullCheck(L_11);
+		ByteU5BU5D_tA6237BF417AE52AD70CFB4EF24A7A82613DF9031* L_12;
+		L_12 = WWW_get_bytes_m83F5C24FC5AC80C5F3B9AF1E290E08F8B96C0642(L_11, NULL);
+		File_WriteAllBytes_mC491031DA14AA9B591F62D6AD0181D090E081077(L_10, L_12, NULL);
+	}
+
+IL_0056:
+	{
+		// IDbConnection dbConnection = new SqliteConnection(filepath); // 5
+		String_t* L_13 = V_0;
+		SqliteConnection_t75D476DE59F24FF675BFA632CE9DFE9CFFF9AA64* L_14 = (SqliteConnection_t75D476DE59F24FF675BFA632CE9DFE9CFFF9AA64*)il2cpp_codegen_object_new(SqliteConnection_t75D476DE59F24FF675BFA632CE9DFE9CFFF9AA64_il2cpp_TypeInfo_var);
+		NullCheck(L_14);
+		SqliteConnection__ctor_mBA0776F60057686C3DF109947113F5697EB7C58E(L_14, L_13, NULL);
 		// dbConnection.Open(); // 6
-		SqliteConnection_t75D476DE59F24FF675BFA632CE9DFE9CFFF9AA64* L_3 = L_2;
-		NullCheck(L_3);
-		InterfaceActionInvoker0::Invoke(2 /* System.Void System.Data.IDbConnection::Open() */, IDbConnection_tA113C643378B5E26416948A00354AD0D73C12A5F_il2cpp_TypeInfo_var, L_3);
+		SqliteConnection_t75D476DE59F24FF675BFA632CE9DFE9CFFF9AA64* L_15 = L_14;
+		NullCheck(L_15);
+		InterfaceActionInvoker0::Invoke(2 /* System.Void System.Data.IDbConnection::Open() */, IDbConnection_tA113C643378B5E26416948A00354AD0D73C12A5F_il2cpp_TypeInfo_var, L_15);
 		// IDbCommand dbCommandCreateTable = dbConnection.CreateCommand(); // 6
-		SqliteConnection_t75D476DE59F24FF675BFA632CE9DFE9CFFF9AA64* L_4 = L_3;
-		NullCheck(L_4);
-		RuntimeObject* L_5;
-		L_5 = InterfaceFuncInvoker0< RuntimeObject* >::Invoke(1 /* System.Data.IDbCommand System.Data.IDbConnection::CreateCommand() */, IDbConnection_tA113C643378B5E26416948A00354AD0D73C12A5F_il2cpp_TypeInfo_var, L_4);
+		SqliteConnection_t75D476DE59F24FF675BFA632CE9DFE9CFFF9AA64* L_16 = L_15;
+		NullCheck(L_16);
+		RuntimeObject* L_17;
+		L_17 = InterfaceFuncInvoker0< RuntimeObject* >::Invoke(1 /* System.Data.IDbCommand System.Data.IDbConnection::CreateCommand() */, IDbConnection_tA113C643378B5E26416948A00354AD0D73C12A5F_il2cpp_TypeInfo_var, L_16);
 		// dbCommandCreateTable.CommandText = "CREATE TABLE IF NOT EXISTS HitCountTableSimple (id INTEGER PRIMARY KEY, hits INTEGER )"; // 7
-		RuntimeObject* L_6 = L_5;
-		NullCheck(L_6);
-		InterfaceActionInvoker1< String_t* >::Invoke(0 /* System.Void System.Data.IDbCommand::set_CommandText(System.String) */, IDbCommand_t6D4BC36E2AE02526D757A5829FE829FB2A33063F_il2cpp_TypeInfo_var, L_6, _stringLiteral9806CF2A0A42B52358BBE424305BEB962BA9284C);
+		RuntimeObject* L_18 = L_17;
+		NullCheck(L_18);
+		InterfaceActionInvoker1< String_t* >::Invoke(0 /* System.Void System.Data.IDbCommand::set_CommandText(System.String) */, IDbCommand_t6D4BC36E2AE02526D757A5829FE829FB2A33063F_il2cpp_TypeInfo_var, L_18, _stringLiteral9806CF2A0A42B52358BBE424305BEB962BA9284C);
 		// dbCommandCreateTable.ExecuteReader(); // 8
-		NullCheck(L_6);
-		RuntimeObject* L_7;
-		L_7 = InterfaceFuncInvoker0< RuntimeObject* >::Invoke(1 /* System.Data.IDataReader System.Data.IDbCommand::ExecuteReader() */, IDbCommand_t6D4BC36E2AE02526D757A5829FE829FB2A33063F_il2cpp_TypeInfo_var, L_6);
+		NullCheck(L_18);
+		RuntimeObject* L_19;
+		L_19 = InterfaceFuncInvoker0< RuntimeObject* >::Invoke(1 /* System.Data.IDataReader System.Data.IDbCommand::ExecuteReader() */, IDbCommand_t6D4BC36E2AE02526D757A5829FE829FB2A33063F_il2cpp_TypeInfo_var, L_18);
 		// return dbConnection;
-		return L_4;
+		return L_16;
 	}
 }
 // System.Void Database::createUserDatabase()
@@ -4100,39 +4239,100 @@ IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void Database_createUserDatabase_m5B9AD17C727
 	static bool s_Il2CppMethodInitialized;
 	if (!s_Il2CppMethodInitialized)
 	{
+		il2cpp_codegen_initialize_runtime_metadata((uintptr_t*)&Debug_t8394C7EEAECA3689C2C9B9DE9C7166D73596276F_il2cpp_TypeInfo_var);
 		il2cpp_codegen_initialize_runtime_metadata((uintptr_t*)&IDbCommand_t6D4BC36E2AE02526D757A5829FE829FB2A33063F_il2cpp_TypeInfo_var);
 		il2cpp_codegen_initialize_runtime_metadata((uintptr_t*)&IDbConnection_tA113C643378B5E26416948A00354AD0D73C12A5F_il2cpp_TypeInfo_var);
 		il2cpp_codegen_initialize_runtime_metadata((uintptr_t*)&SqliteConnection_t75D476DE59F24FF675BFA632CE9DFE9CFFF9AA64_il2cpp_TypeInfo_var);
+		il2cpp_codegen_initialize_runtime_metadata((uintptr_t*)&WWW_tEADA9A43B98FC277E498F8E3206A3B8C4E5AF3FB_il2cpp_TypeInfo_var);
 		il2cpp_codegen_initialize_runtime_metadata((uintptr_t*)&_stringLiteral092D70D9FC2DA1B4B68C49B29DE6BB9BB8A2162C);
-		il2cpp_codegen_initialize_runtime_metadata((uintptr_t*)&_stringLiteral466B0FFB222805453A57FCFAC754EEFFC2A13136);
+		il2cpp_codegen_initialize_runtime_metadata((uintptr_t*)&_stringLiteral2746B283A9377664FAC642B633C6E630FD0DA207);
+		il2cpp_codegen_initialize_runtime_metadata((uintptr_t*)&_stringLiteral60A22A92E080D2FCFAC7182CE45AA3F4D634776D);
+		il2cpp_codegen_initialize_runtime_metadata((uintptr_t*)&_stringLiteral69DC163231A2E6267989B33F5481663598E4C2F9);
+		il2cpp_codegen_initialize_runtime_metadata((uintptr_t*)&_stringLiteral7B82EC8A7422ACC8303A9FF668634405244DADA5);
 		s_Il2CppMethodInitialized = true;
 	}
+	String_t* V_0 = NULL;
+	WWW_tEADA9A43B98FC277E498F8E3206A3B8C4E5AF3FB* V_1 = NULL;
 	{
-		// string dbUri = "URI=file:MyDatabase.sqlite"; // 4
-		// IDbConnection dbConnection = new SqliteConnection(dbUri); // 5
-		SqliteConnection_t75D476DE59F24FF675BFA632CE9DFE9CFFF9AA64* L_0 = (SqliteConnection_t75D476DE59F24FF675BFA632CE9DFE9CFFF9AA64*)il2cpp_codegen_object_new(SqliteConnection_t75D476DE59F24FF675BFA632CE9DFE9CFFF9AA64_il2cpp_TypeInfo_var);
-		NullCheck(L_0);
-		SqliteConnection__ctor_mBA0776F60057686C3DF109947113F5697EB7C58E(L_0, _stringLiteral466B0FFB222805453A57FCFAC754EEFFC2A13136, NULL);
+		// var filepath = $"{Application.persistentDataPath}/MyDatabase.sqlite";
+		String_t* L_0;
+		L_0 = Application_get_persistentDataPath_mC58BD3E1A20732E0A536491DBCAE6505B1624399(NULL);
+		String_t* L_1;
+		L_1 = String_Concat_m9E3155FB84015C823606188F53B47CB44C444991(L_0, _stringLiteral69DC163231A2E6267989B33F5481663598E4C2F9, NULL);
+		V_0 = L_1;
+		// if (!File.Exists(filepath))
+		String_t* L_2 = V_0;
+		bool L_3;
+		L_3 = File_Exists_m95E329ABBE3EAD6750FE1989BBA6884457136D4A(L_2, NULL);
+		if (L_3)
+		{
+			goto IL_0050;
+		}
+	}
+	{
+		// Debug.Log("Database not in Persistent path");
+		il2cpp_codegen_runtime_class_init_inline(Debug_t8394C7EEAECA3689C2C9B9DE9C7166D73596276F_il2cpp_TypeInfo_var);
+		Debug_Log_m87A9A3C761FF5C43ED8A53B16190A53D08F818BB(_stringLiteral60A22A92E080D2FCFAC7182CE45AA3F4D634776D, NULL);
+		// var loadDb = new WWW("jar:file://" + Application.dataPath + "!/assets/" + "MyDatabase.sqlite");  // this is the path to your StreamingAssets in android
+		String_t* L_4;
+		L_4 = Application_get_dataPath_m4C8412CBEE4EAAAB6711CC9BEFFA73CEE5BDBEF7(NULL);
+		String_t* L_5;
+		L_5 = String_Concat_m8855A6DE10F84DA7F4EC113CADDB59873A25573B(_stringLiteral2746B283A9377664FAC642B633C6E630FD0DA207, L_4, _stringLiteral7B82EC8A7422ACC8303A9FF668634405244DADA5, NULL);
+		WWW_tEADA9A43B98FC277E498F8E3206A3B8C4E5AF3FB* L_6 = (WWW_tEADA9A43B98FC277E498F8E3206A3B8C4E5AF3FB*)il2cpp_codegen_object_new(WWW_tEADA9A43B98FC277E498F8E3206A3B8C4E5AF3FB_il2cpp_TypeInfo_var);
+		NullCheck(L_6);
+		WWW__ctor_m5D29D83E9EE0925ED8252347CE24EC236401503D(L_6, L_5, NULL);
+		V_1 = L_6;
+	}
+
+IL_003c:
+	{
+		// while (!loadDb.isDone) { }  // CAREFUL here, for safety reasons you shouldn't let this while loop unattended, place a timer and error check
+		WWW_tEADA9A43B98FC277E498F8E3206A3B8C4E5AF3FB* L_7 = V_1;
+		NullCheck(L_7);
+		bool L_8;
+		L_8 = WWW_get_isDone_m7E88B666AD0E3903757043813B2811BBFCCCA52E(L_7, NULL);
+		if (!L_8)
+		{
+			goto IL_003c;
+		}
+	}
+	{
+		// File.WriteAllBytes(filepath, loadDb.bytes);
+		String_t* L_9 = V_0;
+		WWW_tEADA9A43B98FC277E498F8E3206A3B8C4E5AF3FB* L_10 = V_1;
+		NullCheck(L_10);
+		ByteU5BU5D_tA6237BF417AE52AD70CFB4EF24A7A82613DF9031* L_11;
+		L_11 = WWW_get_bytes_m83F5C24FC5AC80C5F3B9AF1E290E08F8B96C0642(L_10, NULL);
+		File_WriteAllBytes_mC491031DA14AA9B591F62D6AD0181D090E081077(L_9, L_11, NULL);
+	}
+
+IL_0050:
+	{
+		// IDbConnection dbConnection = new SqliteConnection(filepath); // 5
+		String_t* L_12 = V_0;
+		SqliteConnection_t75D476DE59F24FF675BFA632CE9DFE9CFFF9AA64* L_13 = (SqliteConnection_t75D476DE59F24FF675BFA632CE9DFE9CFFF9AA64*)il2cpp_codegen_object_new(SqliteConnection_t75D476DE59F24FF675BFA632CE9DFE9CFFF9AA64_il2cpp_TypeInfo_var);
+		NullCheck(L_13);
+		SqliteConnection__ctor_mBA0776F60057686C3DF109947113F5697EB7C58E(L_13, L_12, NULL);
 		// dbConnection.Open(); // 6
-		SqliteConnection_t75D476DE59F24FF675BFA632CE9DFE9CFFF9AA64* L_1 = L_0;
-		NullCheck(L_1);
-		InterfaceActionInvoker0::Invoke(2 /* System.Void System.Data.IDbConnection::Open() */, IDbConnection_tA113C643378B5E26416948A00354AD0D73C12A5F_il2cpp_TypeInfo_var, L_1);
+		SqliteConnection_t75D476DE59F24FF675BFA632CE9DFE9CFFF9AA64* L_14 = L_13;
+		NullCheck(L_14);
+		InterfaceActionInvoker0::Invoke(2 /* System.Void System.Data.IDbConnection::Open() */, IDbConnection_tA113C643378B5E26416948A00354AD0D73C12A5F_il2cpp_TypeInfo_var, L_14);
 		// IDbCommand dbCommandCreateTable = dbConnection.CreateCommand(); // 6
-		SqliteConnection_t75D476DE59F24FF675BFA632CE9DFE9CFFF9AA64* L_2 = L_1;
-		NullCheck(L_2);
-		RuntimeObject* L_3;
-		L_3 = InterfaceFuncInvoker0< RuntimeObject* >::Invoke(1 /* System.Data.IDbCommand System.Data.IDbConnection::CreateCommand() */, IDbConnection_tA113C643378B5E26416948A00354AD0D73C12A5F_il2cpp_TypeInfo_var, L_2);
+		SqliteConnection_t75D476DE59F24FF675BFA632CE9DFE9CFFF9AA64* L_15 = L_14;
+		NullCheck(L_15);
+		RuntimeObject* L_16;
+		L_16 = InterfaceFuncInvoker0< RuntimeObject* >::Invoke(1 /* System.Data.IDbCommand System.Data.IDbConnection::CreateCommand() */, IDbConnection_tA113C643378B5E26416948A00354AD0D73C12A5F_il2cpp_TypeInfo_var, L_15);
 		// dbCommandCreateTable.CommandText = "CREATE TABLE IF NOT EXISTS SituationsTracker (id_email VARCHAR(100) PRIMARY KEY, name VARCHAR(100), restaurante_situation INTEGER)"; // 7
-		RuntimeObject* L_4 = L_3;
-		NullCheck(L_4);
-		InterfaceActionInvoker1< String_t* >::Invoke(0 /* System.Void System.Data.IDbCommand::set_CommandText(System.String) */, IDbCommand_t6D4BC36E2AE02526D757A5829FE829FB2A33063F_il2cpp_TypeInfo_var, L_4, _stringLiteral092D70D9FC2DA1B4B68C49B29DE6BB9BB8A2162C);
+		RuntimeObject* L_17 = L_16;
+		NullCheck(L_17);
+		InterfaceActionInvoker1< String_t* >::Invoke(0 /* System.Void System.Data.IDbCommand::set_CommandText(System.String) */, IDbCommand_t6D4BC36E2AE02526D757A5829FE829FB2A33063F_il2cpp_TypeInfo_var, L_17, _stringLiteral092D70D9FC2DA1B4B68C49B29DE6BB9BB8A2162C);
 		// dbCommandCreateTable.ExecuteReader(); // 8
-		NullCheck(L_4);
-		RuntimeObject* L_5;
-		L_5 = InterfaceFuncInvoker0< RuntimeObject* >::Invoke(1 /* System.Data.IDataReader System.Data.IDbCommand::ExecuteReader() */, IDbCommand_t6D4BC36E2AE02526D757A5829FE829FB2A33063F_il2cpp_TypeInfo_var, L_4);
+		NullCheck(L_17);
+		RuntimeObject* L_18;
+		L_18 = InterfaceFuncInvoker0< RuntimeObject* >::Invoke(1 /* System.Data.IDataReader System.Data.IDbCommand::ExecuteReader() */, IDbCommand_t6D4BC36E2AE02526D757A5829FE829FB2A33063F_il2cpp_TypeInfo_var, L_17);
 		// dbConnection.Close();
-		NullCheck(L_2);
-		InterfaceActionInvoker0::Invoke(0 /* System.Void System.Data.IDbConnection::Close() */, IDbConnection_tA113C643378B5E26416948A00354AD0D73C12A5F_il2cpp_TypeInfo_var, L_2);
+		NullCheck(L_15);
+		InterfaceActionInvoker0::Invoke(0 /* System.Void System.Data.IDbConnection::Close() */, IDbConnection_tA113C643378B5E26416948A00354AD0D73C12A5F_il2cpp_TypeInfo_var, L_15);
 		// }
 		return;
 	}
@@ -4186,39 +4386,100 @@ IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void Database_testInsertValues_mE0492A86009F8
 	static bool s_Il2CppMethodInitialized;
 	if (!s_Il2CppMethodInitialized)
 	{
+		il2cpp_codegen_initialize_runtime_metadata((uintptr_t*)&Debug_t8394C7EEAECA3689C2C9B9DE9C7166D73596276F_il2cpp_TypeInfo_var);
 		il2cpp_codegen_initialize_runtime_metadata((uintptr_t*)&IDbCommand_t6D4BC36E2AE02526D757A5829FE829FB2A33063F_il2cpp_TypeInfo_var);
 		il2cpp_codegen_initialize_runtime_metadata((uintptr_t*)&IDbConnection_tA113C643378B5E26416948A00354AD0D73C12A5F_il2cpp_TypeInfo_var);
 		il2cpp_codegen_initialize_runtime_metadata((uintptr_t*)&SqliteConnection_t75D476DE59F24FF675BFA632CE9DFE9CFFF9AA64_il2cpp_TypeInfo_var);
-		il2cpp_codegen_initialize_runtime_metadata((uintptr_t*)&_stringLiteral466B0FFB222805453A57FCFAC754EEFFC2A13136);
+		il2cpp_codegen_initialize_runtime_metadata((uintptr_t*)&WWW_tEADA9A43B98FC277E498F8E3206A3B8C4E5AF3FB_il2cpp_TypeInfo_var);
+		il2cpp_codegen_initialize_runtime_metadata((uintptr_t*)&_stringLiteral2746B283A9377664FAC642B633C6E630FD0DA207);
+		il2cpp_codegen_initialize_runtime_metadata((uintptr_t*)&_stringLiteral60A22A92E080D2FCFAC7182CE45AA3F4D634776D);
+		il2cpp_codegen_initialize_runtime_metadata((uintptr_t*)&_stringLiteral69DC163231A2E6267989B33F5481663598E4C2F9);
+		il2cpp_codegen_initialize_runtime_metadata((uintptr_t*)&_stringLiteral7B82EC8A7422ACC8303A9FF668634405244DADA5);
 		il2cpp_codegen_initialize_runtime_metadata((uintptr_t*)&_stringLiteral7B856708E464FABB4156F8C5B4A2A4AFAAA18328);
 		s_Il2CppMethodInitialized = true;
 	}
+	String_t* V_0 = NULL;
+	WWW_tEADA9A43B98FC277E498F8E3206A3B8C4E5AF3FB* V_1 = NULL;
 	{
-		// string dbUri = "URI=file:MyDatabase.sqlite"; // 4
-		// IDbConnection dbConnection = new SqliteConnection(dbUri); // 5
-		SqliteConnection_t75D476DE59F24FF675BFA632CE9DFE9CFFF9AA64* L_0 = (SqliteConnection_t75D476DE59F24FF675BFA632CE9DFE9CFFF9AA64*)il2cpp_codegen_object_new(SqliteConnection_t75D476DE59F24FF675BFA632CE9DFE9CFFF9AA64_il2cpp_TypeInfo_var);
-		NullCheck(L_0);
-		SqliteConnection__ctor_mBA0776F60057686C3DF109947113F5697EB7C58E(L_0, _stringLiteral466B0FFB222805453A57FCFAC754EEFFC2A13136, NULL);
+		// var filepath = $"{Application.persistentDataPath}/MyDatabase.sqlite";
+		String_t* L_0;
+		L_0 = Application_get_persistentDataPath_mC58BD3E1A20732E0A536491DBCAE6505B1624399(NULL);
+		String_t* L_1;
+		L_1 = String_Concat_m9E3155FB84015C823606188F53B47CB44C444991(L_0, _stringLiteral69DC163231A2E6267989B33F5481663598E4C2F9, NULL);
+		V_0 = L_1;
+		// if (!File.Exists(filepath))
+		String_t* L_2 = V_0;
+		bool L_3;
+		L_3 = File_Exists_m95E329ABBE3EAD6750FE1989BBA6884457136D4A(L_2, NULL);
+		if (L_3)
+		{
+			goto IL_0050;
+		}
+	}
+	{
+		// Debug.Log("Database not in Persistent path");
+		il2cpp_codegen_runtime_class_init_inline(Debug_t8394C7EEAECA3689C2C9B9DE9C7166D73596276F_il2cpp_TypeInfo_var);
+		Debug_Log_m87A9A3C761FF5C43ED8A53B16190A53D08F818BB(_stringLiteral60A22A92E080D2FCFAC7182CE45AA3F4D634776D, NULL);
+		// var loadDb = new WWW("jar:file://" + Application.dataPath + "!/assets/" + "MyDatabase.sqlite");  // this is the path to your StreamingAssets in android
+		String_t* L_4;
+		L_4 = Application_get_dataPath_m4C8412CBEE4EAAAB6711CC9BEFFA73CEE5BDBEF7(NULL);
+		String_t* L_5;
+		L_5 = String_Concat_m8855A6DE10F84DA7F4EC113CADDB59873A25573B(_stringLiteral2746B283A9377664FAC642B633C6E630FD0DA207, L_4, _stringLiteral7B82EC8A7422ACC8303A9FF668634405244DADA5, NULL);
+		WWW_tEADA9A43B98FC277E498F8E3206A3B8C4E5AF3FB* L_6 = (WWW_tEADA9A43B98FC277E498F8E3206A3B8C4E5AF3FB*)il2cpp_codegen_object_new(WWW_tEADA9A43B98FC277E498F8E3206A3B8C4E5AF3FB_il2cpp_TypeInfo_var);
+		NullCheck(L_6);
+		WWW__ctor_m5D29D83E9EE0925ED8252347CE24EC236401503D(L_6, L_5, NULL);
+		V_1 = L_6;
+	}
+
+IL_003c:
+	{
+		// while (!loadDb.isDone) { }  // CAREFUL here, for safety reasons you shouldn't let this while loop unattended, place a timer and error check
+		WWW_tEADA9A43B98FC277E498F8E3206A3B8C4E5AF3FB* L_7 = V_1;
+		NullCheck(L_7);
+		bool L_8;
+		L_8 = WWW_get_isDone_m7E88B666AD0E3903757043813B2811BBFCCCA52E(L_7, NULL);
+		if (!L_8)
+		{
+			goto IL_003c;
+		}
+	}
+	{
+		// File.WriteAllBytes(filepath, loadDb.bytes);
+		String_t* L_9 = V_0;
+		WWW_tEADA9A43B98FC277E498F8E3206A3B8C4E5AF3FB* L_10 = V_1;
+		NullCheck(L_10);
+		ByteU5BU5D_tA6237BF417AE52AD70CFB4EF24A7A82613DF9031* L_11;
+		L_11 = WWW_get_bytes_m83F5C24FC5AC80C5F3B9AF1E290E08F8B96C0642(L_10, NULL);
+		File_WriteAllBytes_mC491031DA14AA9B591F62D6AD0181D090E081077(L_9, L_11, NULL);
+	}
+
+IL_0050:
+	{
+		// IDbConnection dbConnection = new SqliteConnection(filepath); // 5
+		String_t* L_12 = V_0;
+		SqliteConnection_t75D476DE59F24FF675BFA632CE9DFE9CFFF9AA64* L_13 = (SqliteConnection_t75D476DE59F24FF675BFA632CE9DFE9CFFF9AA64*)il2cpp_codegen_object_new(SqliteConnection_t75D476DE59F24FF675BFA632CE9DFE9CFFF9AA64_il2cpp_TypeInfo_var);
+		NullCheck(L_13);
+		SqliteConnection__ctor_mBA0776F60057686C3DF109947113F5697EB7C58E(L_13, L_12, NULL);
 		// dbConnection.Open(); // 6
-		SqliteConnection_t75D476DE59F24FF675BFA632CE9DFE9CFFF9AA64* L_1 = L_0;
-		NullCheck(L_1);
-		InterfaceActionInvoker0::Invoke(2 /* System.Void System.Data.IDbConnection::Open() */, IDbConnection_tA113C643378B5E26416948A00354AD0D73C12A5F_il2cpp_TypeInfo_var, L_1);
+		SqliteConnection_t75D476DE59F24FF675BFA632CE9DFE9CFFF9AA64* L_14 = L_13;
+		NullCheck(L_14);
+		InterfaceActionInvoker0::Invoke(2 /* System.Void System.Data.IDbConnection::Open() */, IDbConnection_tA113C643378B5E26416948A00354AD0D73C12A5F_il2cpp_TypeInfo_var, L_14);
 		// IDbCommand dbCommandCreateTable = dbConnection.CreateCommand(); // 6
-		SqliteConnection_t75D476DE59F24FF675BFA632CE9DFE9CFFF9AA64* L_2 = L_1;
-		NullCheck(L_2);
-		RuntimeObject* L_3;
-		L_3 = InterfaceFuncInvoker0< RuntimeObject* >::Invoke(1 /* System.Data.IDbCommand System.Data.IDbConnection::CreateCommand() */, IDbConnection_tA113C643378B5E26416948A00354AD0D73C12A5F_il2cpp_TypeInfo_var, L_2);
+		SqliteConnection_t75D476DE59F24FF675BFA632CE9DFE9CFFF9AA64* L_15 = L_14;
+		NullCheck(L_15);
+		RuntimeObject* L_16;
+		L_16 = InterfaceFuncInvoker0< RuntimeObject* >::Invoke(1 /* System.Data.IDbCommand System.Data.IDbConnection::CreateCommand() */, IDbConnection_tA113C643378B5E26416948A00354AD0D73C12A5F_il2cpp_TypeInfo_var, L_15);
 		// dbCommandCreateTable.CommandText = "INSERT INTO SituationsTracker (id_email, name, restaurante_situation) VALUES ('teste@email.com', 'Andr?', 0)"; // 7
-		RuntimeObject* L_4 = L_3;
-		NullCheck(L_4);
-		InterfaceActionInvoker1< String_t* >::Invoke(0 /* System.Void System.Data.IDbCommand::set_CommandText(System.String) */, IDbCommand_t6D4BC36E2AE02526D757A5829FE829FB2A33063F_il2cpp_TypeInfo_var, L_4, _stringLiteral7B856708E464FABB4156F8C5B4A2A4AFAAA18328);
+		RuntimeObject* L_17 = L_16;
+		NullCheck(L_17);
+		InterfaceActionInvoker1< String_t* >::Invoke(0 /* System.Void System.Data.IDbCommand::set_CommandText(System.String) */, IDbCommand_t6D4BC36E2AE02526D757A5829FE829FB2A33063F_il2cpp_TypeInfo_var, L_17, _stringLiteral7B856708E464FABB4156F8C5B4A2A4AFAAA18328);
 		// dbCommandCreateTable.ExecuteReader(); // 8
-		NullCheck(L_4);
-		RuntimeObject* L_5;
-		L_5 = InterfaceFuncInvoker0< RuntimeObject* >::Invoke(1 /* System.Data.IDataReader System.Data.IDbCommand::ExecuteReader() */, IDbCommand_t6D4BC36E2AE02526D757A5829FE829FB2A33063F_il2cpp_TypeInfo_var, L_4);
+		NullCheck(L_17);
+		RuntimeObject* L_18;
+		L_18 = InterfaceFuncInvoker0< RuntimeObject* >::Invoke(1 /* System.Data.IDataReader System.Data.IDbCommand::ExecuteReader() */, IDbCommand_t6D4BC36E2AE02526D757A5829FE829FB2A33063F_il2cpp_TypeInfo_var, L_17);
 		// dbConnection.Close();
-		NullCheck(L_2);
-		InterfaceActionInvoker0::Invoke(0 /* System.Void System.Data.IDbConnection::Close() */, IDbConnection_tA113C643378B5E26416948A00354AD0D73C12A5F_il2cpp_TypeInfo_var, L_2);
+		NullCheck(L_15);
+		InterfaceActionInvoker0::Invoke(0 /* System.Void System.Data.IDbConnection::Close() */, IDbConnection_tA113C643378B5E26416948A00354AD0D73C12A5F_il2cpp_TypeInfo_var, L_15);
 		// }
 		return;
 	}
@@ -4229,73 +4490,134 @@ IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void Database_UpdateSituation_m3F921594AC8CD9
 	static bool s_Il2CppMethodInitialized;
 	if (!s_Il2CppMethodInitialized)
 	{
+		il2cpp_codegen_initialize_runtime_metadata((uintptr_t*)&Debug_t8394C7EEAECA3689C2C9B9DE9C7166D73596276F_il2cpp_TypeInfo_var);
 		il2cpp_codegen_initialize_runtime_metadata((uintptr_t*)&IDbCommand_t6D4BC36E2AE02526D757A5829FE829FB2A33063F_il2cpp_TypeInfo_var);
 		il2cpp_codegen_initialize_runtime_metadata((uintptr_t*)&IDbConnection_tA113C643378B5E26416948A00354AD0D73C12A5F_il2cpp_TypeInfo_var);
 		il2cpp_codegen_initialize_runtime_metadata((uintptr_t*)&SqliteConnection_t75D476DE59F24FF675BFA632CE9DFE9CFFF9AA64_il2cpp_TypeInfo_var);
 		il2cpp_codegen_initialize_runtime_metadata((uintptr_t*)&StringU5BU5D_t7674CD946EC0CE7B3AE0BE70E6EE85F2ECD9F248_il2cpp_TypeInfo_var);
+		il2cpp_codegen_initialize_runtime_metadata((uintptr_t*)&WWW_tEADA9A43B98FC277E498F8E3206A3B8C4E5AF3FB_il2cpp_TypeInfo_var);
+		il2cpp_codegen_initialize_runtime_metadata((uintptr_t*)&_stringLiteral2746B283A9377664FAC642B633C6E630FD0DA207);
 		il2cpp_codegen_initialize_runtime_metadata((uintptr_t*)&_stringLiteral3A34EF53C0C94D3E24C6E69CADB583809A9C3376);
-		il2cpp_codegen_initialize_runtime_metadata((uintptr_t*)&_stringLiteral466B0FFB222805453A57FCFAC754EEFFC2A13136);
 		il2cpp_codegen_initialize_runtime_metadata((uintptr_t*)&_stringLiteral4F895899CECC4FC6BA36B7B2E86EA7584D1D0725);
+		il2cpp_codegen_initialize_runtime_metadata((uintptr_t*)&_stringLiteral60A22A92E080D2FCFAC7182CE45AA3F4D634776D);
+		il2cpp_codegen_initialize_runtime_metadata((uintptr_t*)&_stringLiteral69DC163231A2E6267989B33F5481663598E4C2F9);
+		il2cpp_codegen_initialize_runtime_metadata((uintptr_t*)&_stringLiteral7B82EC8A7422ACC8303A9FF668634405244DADA5);
 		il2cpp_codegen_initialize_runtime_metadata((uintptr_t*)&_stringLiteralA39C0344D02BFC2B57A60F262EFCE3643C2EFD93);
 		s_Il2CppMethodInitialized = true;
 	}
-	RuntimeObject* V_0 = NULL;
+	String_t* V_0 = NULL;
 	RuntimeObject* V_1 = NULL;
+	RuntimeObject* V_2 = NULL;
+	WWW_tEADA9A43B98FC277E498F8E3206A3B8C4E5AF3FB* V_3 = NULL;
 	{
-		// string dbUri = "URI=file:MyDatabase.sqlite"; // 4
-		// IDbConnection dbConnection = new SqliteConnection(dbUri); // 5
-		SqliteConnection_t75D476DE59F24FF675BFA632CE9DFE9CFFF9AA64* L_0 = (SqliteConnection_t75D476DE59F24FF675BFA632CE9DFE9CFFF9AA64*)il2cpp_codegen_object_new(SqliteConnection_t75D476DE59F24FF675BFA632CE9DFE9CFFF9AA64_il2cpp_TypeInfo_var);
-		NullCheck(L_0);
-		SqliteConnection__ctor_mBA0776F60057686C3DF109947113F5697EB7C58E(L_0, _stringLiteral466B0FFB222805453A57FCFAC754EEFFC2A13136, NULL);
-		V_0 = L_0;
-		// dbConnection.Open(); // 6
-		RuntimeObject* L_1 = V_0;
-		NullCheck(L_1);
-		InterfaceActionInvoker0::Invoke(2 /* System.Void System.Data.IDbConnection::Open() */, IDbConnection_tA113C643378B5E26416948A00354AD0D73C12A5F_il2cpp_TypeInfo_var, L_1);
-		// IDbCommand dbCommandCreateTable = dbConnection.CreateCommand(); // 6
-		RuntimeObject* L_2 = V_0;
-		NullCheck(L_2);
-		RuntimeObject* L_3;
-		L_3 = InterfaceFuncInvoker0< RuntimeObject* >::Invoke(1 /* System.Data.IDbCommand System.Data.IDbConnection::CreateCommand() */, IDbConnection_tA113C643378B5E26416948A00354AD0D73C12A5F_il2cpp_TypeInfo_var, L_2);
-		V_1 = L_3;
-		// dbCommandCreateTable.CommandText = $"UPDATE SituationsTracker SET {situationName}_situation = {situationName}_situation + 1"; // 7
-		RuntimeObject* L_4 = V_1;
-		StringU5BU5D_t7674CD946EC0CE7B3AE0BE70E6EE85F2ECD9F248* L_5 = (StringU5BU5D_t7674CD946EC0CE7B3AE0BE70E6EE85F2ECD9F248*)(StringU5BU5D_t7674CD946EC0CE7B3AE0BE70E6EE85F2ECD9F248*)SZArrayNew(StringU5BU5D_t7674CD946EC0CE7B3AE0BE70E6EE85F2ECD9F248_il2cpp_TypeInfo_var, (uint32_t)5);
-		StringU5BU5D_t7674CD946EC0CE7B3AE0BE70E6EE85F2ECD9F248* L_6 = L_5;
+		// var filepath = $"{Application.persistentDataPath}/MyDatabase.sqlite";
+		String_t* L_0;
+		L_0 = Application_get_persistentDataPath_mC58BD3E1A20732E0A536491DBCAE6505B1624399(NULL);
+		String_t* L_1;
+		L_1 = String_Concat_m9E3155FB84015C823606188F53B47CB44C444991(L_0, _stringLiteral69DC163231A2E6267989B33F5481663598E4C2F9, NULL);
+		V_0 = L_1;
+		// if (!File.Exists(filepath))
+		String_t* L_2 = V_0;
+		bool L_3;
+		L_3 = File_Exists_m95E329ABBE3EAD6750FE1989BBA6884457136D4A(L_2, NULL);
+		if (L_3)
+		{
+			goto IL_0050;
+		}
+	}
+	{
+		// Debug.Log("Database not in Persistent path");
+		il2cpp_codegen_runtime_class_init_inline(Debug_t8394C7EEAECA3689C2C9B9DE9C7166D73596276F_il2cpp_TypeInfo_var);
+		Debug_Log_m87A9A3C761FF5C43ED8A53B16190A53D08F818BB(_stringLiteral60A22A92E080D2FCFAC7182CE45AA3F4D634776D, NULL);
+		// var loadDb = new WWW("jar:file://" + Application.dataPath + "!/assets/" + "MyDatabase.sqlite");  // this is the path to your StreamingAssets in android
+		String_t* L_4;
+		L_4 = Application_get_dataPath_m4C8412CBEE4EAAAB6711CC9BEFFA73CEE5BDBEF7(NULL);
+		String_t* L_5;
+		L_5 = String_Concat_m8855A6DE10F84DA7F4EC113CADDB59873A25573B(_stringLiteral2746B283A9377664FAC642B633C6E630FD0DA207, L_4, _stringLiteral7B82EC8A7422ACC8303A9FF668634405244DADA5, NULL);
+		WWW_tEADA9A43B98FC277E498F8E3206A3B8C4E5AF3FB* L_6 = (WWW_tEADA9A43B98FC277E498F8E3206A3B8C4E5AF3FB*)il2cpp_codegen_object_new(WWW_tEADA9A43B98FC277E498F8E3206A3B8C4E5AF3FB_il2cpp_TypeInfo_var);
 		NullCheck(L_6);
-		ArrayElementTypeCheck (L_6, _stringLiteral4F895899CECC4FC6BA36B7B2E86EA7584D1D0725);
-		(L_6)->SetAt(static_cast<il2cpp_array_size_t>(0), (String_t*)_stringLiteral4F895899CECC4FC6BA36B7B2E86EA7584D1D0725);
-		StringU5BU5D_t7674CD946EC0CE7B3AE0BE70E6EE85F2ECD9F248* L_7 = L_6;
-		String_t* L_8 = ___0_situationName;
+		WWW__ctor_m5D29D83E9EE0925ED8252347CE24EC236401503D(L_6, L_5, NULL);
+		V_3 = L_6;
+	}
+
+IL_003c:
+	{
+		// while (!loadDb.isDone) { }  // CAREFUL here, for safety reasons you shouldn't let this while loop unattended, place a timer and error check
+		WWW_tEADA9A43B98FC277E498F8E3206A3B8C4E5AF3FB* L_7 = V_3;
 		NullCheck(L_7);
-		ArrayElementTypeCheck (L_7, L_8);
-		(L_7)->SetAt(static_cast<il2cpp_array_size_t>(1), (String_t*)L_8);
-		StringU5BU5D_t7674CD946EC0CE7B3AE0BE70E6EE85F2ECD9F248* L_9 = L_7;
-		NullCheck(L_9);
-		ArrayElementTypeCheck (L_9, _stringLiteralA39C0344D02BFC2B57A60F262EFCE3643C2EFD93);
-		(L_9)->SetAt(static_cast<il2cpp_array_size_t>(2), (String_t*)_stringLiteralA39C0344D02BFC2B57A60F262EFCE3643C2EFD93);
-		StringU5BU5D_t7674CD946EC0CE7B3AE0BE70E6EE85F2ECD9F248* L_10 = L_9;
-		String_t* L_11 = ___0_situationName;
+		bool L_8;
+		L_8 = WWW_get_isDone_m7E88B666AD0E3903757043813B2811BBFCCCA52E(L_7, NULL);
+		if (!L_8)
+		{
+			goto IL_003c;
+		}
+	}
+	{
+		// File.WriteAllBytes(filepath, loadDb.bytes);
+		String_t* L_9 = V_0;
+		WWW_tEADA9A43B98FC277E498F8E3206A3B8C4E5AF3FB* L_10 = V_3;
 		NullCheck(L_10);
-		ArrayElementTypeCheck (L_10, L_11);
-		(L_10)->SetAt(static_cast<il2cpp_array_size_t>(3), (String_t*)L_11);
-		StringU5BU5D_t7674CD946EC0CE7B3AE0BE70E6EE85F2ECD9F248* L_12 = L_10;
-		NullCheck(L_12);
-		ArrayElementTypeCheck (L_12, _stringLiteral3A34EF53C0C94D3E24C6E69CADB583809A9C3376);
-		(L_12)->SetAt(static_cast<il2cpp_array_size_t>(4), (String_t*)_stringLiteral3A34EF53C0C94D3E24C6E69CADB583809A9C3376);
-		String_t* L_13;
-		L_13 = String_Concat_m647EBF831F54B6DF7D5AFA5FD012CF4EE7571B6A(L_12, NULL);
-		NullCheck(L_4);
-		InterfaceActionInvoker1< String_t* >::Invoke(0 /* System.Void System.Data.IDbCommand::set_CommandText(System.String) */, IDbCommand_t6D4BC36E2AE02526D757A5829FE829FB2A33063F_il2cpp_TypeInfo_var, L_4, L_13);
-		// dbCommandCreateTable.ExecuteReader(); // 8
+		ByteU5BU5D_tA6237BF417AE52AD70CFB4EF24A7A82613DF9031* L_11;
+		L_11 = WWW_get_bytes_m83F5C24FC5AC80C5F3B9AF1E290E08F8B96C0642(L_10, NULL);
+		File_WriteAllBytes_mC491031DA14AA9B591F62D6AD0181D090E081077(L_9, L_11, NULL);
+	}
+
+IL_0050:
+	{
+		// IDbConnection dbConnection = new SqliteConnection(filepath); // 5
+		String_t* L_12 = V_0;
+		SqliteConnection_t75D476DE59F24FF675BFA632CE9DFE9CFFF9AA64* L_13 = (SqliteConnection_t75D476DE59F24FF675BFA632CE9DFE9CFFF9AA64*)il2cpp_codegen_object_new(SqliteConnection_t75D476DE59F24FF675BFA632CE9DFE9CFFF9AA64_il2cpp_TypeInfo_var);
+		NullCheck(L_13);
+		SqliteConnection__ctor_mBA0776F60057686C3DF109947113F5697EB7C58E(L_13, L_12, NULL);
+		V_1 = L_13;
+		// dbConnection.Open(); // 6
 		RuntimeObject* L_14 = V_1;
 		NullCheck(L_14);
-		RuntimeObject* L_15;
-		L_15 = InterfaceFuncInvoker0< RuntimeObject* >::Invoke(1 /* System.Data.IDataReader System.Data.IDbCommand::ExecuteReader() */, IDbCommand_t6D4BC36E2AE02526D757A5829FE829FB2A33063F_il2cpp_TypeInfo_var, L_14);
+		InterfaceActionInvoker0::Invoke(2 /* System.Void System.Data.IDbConnection::Open() */, IDbConnection_tA113C643378B5E26416948A00354AD0D73C12A5F_il2cpp_TypeInfo_var, L_14);
+		// IDbCommand dbCommandCreateTable = dbConnection.CreateCommand(); // 6
+		RuntimeObject* L_15 = V_1;
+		NullCheck(L_15);
+		RuntimeObject* L_16;
+		L_16 = InterfaceFuncInvoker0< RuntimeObject* >::Invoke(1 /* System.Data.IDbCommand System.Data.IDbConnection::CreateCommand() */, IDbConnection_tA113C643378B5E26416948A00354AD0D73C12A5F_il2cpp_TypeInfo_var, L_15);
+		V_2 = L_16;
+		// dbCommandCreateTable.CommandText = $"UPDATE SituationsTracker SET {situationName}_situation = {situationName}_situation + 1"; // 7
+		RuntimeObject* L_17 = V_2;
+		StringU5BU5D_t7674CD946EC0CE7B3AE0BE70E6EE85F2ECD9F248* L_18 = (StringU5BU5D_t7674CD946EC0CE7B3AE0BE70E6EE85F2ECD9F248*)(StringU5BU5D_t7674CD946EC0CE7B3AE0BE70E6EE85F2ECD9F248*)SZArrayNew(StringU5BU5D_t7674CD946EC0CE7B3AE0BE70E6EE85F2ECD9F248_il2cpp_TypeInfo_var, (uint32_t)5);
+		StringU5BU5D_t7674CD946EC0CE7B3AE0BE70E6EE85F2ECD9F248* L_19 = L_18;
+		NullCheck(L_19);
+		ArrayElementTypeCheck (L_19, _stringLiteral4F895899CECC4FC6BA36B7B2E86EA7584D1D0725);
+		(L_19)->SetAt(static_cast<il2cpp_array_size_t>(0), (String_t*)_stringLiteral4F895899CECC4FC6BA36B7B2E86EA7584D1D0725);
+		StringU5BU5D_t7674CD946EC0CE7B3AE0BE70E6EE85F2ECD9F248* L_20 = L_19;
+		String_t* L_21 = ___0_situationName;
+		NullCheck(L_20);
+		ArrayElementTypeCheck (L_20, L_21);
+		(L_20)->SetAt(static_cast<il2cpp_array_size_t>(1), (String_t*)L_21);
+		StringU5BU5D_t7674CD946EC0CE7B3AE0BE70E6EE85F2ECD9F248* L_22 = L_20;
+		NullCheck(L_22);
+		ArrayElementTypeCheck (L_22, _stringLiteralA39C0344D02BFC2B57A60F262EFCE3643C2EFD93);
+		(L_22)->SetAt(static_cast<il2cpp_array_size_t>(2), (String_t*)_stringLiteralA39C0344D02BFC2B57A60F262EFCE3643C2EFD93);
+		StringU5BU5D_t7674CD946EC0CE7B3AE0BE70E6EE85F2ECD9F248* L_23 = L_22;
+		String_t* L_24 = ___0_situationName;
+		NullCheck(L_23);
+		ArrayElementTypeCheck (L_23, L_24);
+		(L_23)->SetAt(static_cast<il2cpp_array_size_t>(3), (String_t*)L_24);
+		StringU5BU5D_t7674CD946EC0CE7B3AE0BE70E6EE85F2ECD9F248* L_25 = L_23;
+		NullCheck(L_25);
+		ArrayElementTypeCheck (L_25, _stringLiteral3A34EF53C0C94D3E24C6E69CADB583809A9C3376);
+		(L_25)->SetAt(static_cast<il2cpp_array_size_t>(4), (String_t*)_stringLiteral3A34EF53C0C94D3E24C6E69CADB583809A9C3376);
+		String_t* L_26;
+		L_26 = String_Concat_m647EBF831F54B6DF7D5AFA5FD012CF4EE7571B6A(L_25, NULL);
+		NullCheck(L_17);
+		InterfaceActionInvoker1< String_t* >::Invoke(0 /* System.Void System.Data.IDbCommand::set_CommandText(System.String) */, IDbCommand_t6D4BC36E2AE02526D757A5829FE829FB2A33063F_il2cpp_TypeInfo_var, L_17, L_26);
+		// dbCommandCreateTable.ExecuteReader(); // 8
+		RuntimeObject* L_27 = V_2;
+		NullCheck(L_27);
+		RuntimeObject* L_28;
+		L_28 = InterfaceFuncInvoker0< RuntimeObject* >::Invoke(1 /* System.Data.IDataReader System.Data.IDbCommand::ExecuteReader() */, IDbCommand_t6D4BC36E2AE02526D757A5829FE829FB2A33063F_il2cpp_TypeInfo_var, L_27);
 		// dbConnection.Close();
-		RuntimeObject* L_16 = V_0;
-		NullCheck(L_16);
-		InterfaceActionInvoker0::Invoke(0 /* System.Void System.Data.IDbConnection::Close() */, IDbConnection_tA113C643378B5E26416948A00354AD0D73C12A5F_il2cpp_TypeInfo_var, L_16);
+		RuntimeObject* L_29 = V_1;
+		NullCheck(L_29);
+		InterfaceActionInvoker0::Invoke(0 /* System.Void System.Data.IDbConnection::Close() */, IDbConnection_tA113C643378B5E26416948A00354AD0D73C12A5F_il2cpp_TypeInfo_var, L_29);
 		// }
 		return;
 	}
@@ -4306,46 +4628,107 @@ IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void Database_SetSituationNumber_mF4F4DE945E9
 	static bool s_Il2CppMethodInitialized;
 	if (!s_Il2CppMethodInitialized)
 	{
+		il2cpp_codegen_initialize_runtime_metadata((uintptr_t*)&Debug_t8394C7EEAECA3689C2C9B9DE9C7166D73596276F_il2cpp_TypeInfo_var);
 		il2cpp_codegen_initialize_runtime_metadata((uintptr_t*)&IDbCommand_t6D4BC36E2AE02526D757A5829FE829FB2A33063F_il2cpp_TypeInfo_var);
 		il2cpp_codegen_initialize_runtime_metadata((uintptr_t*)&IDbConnection_tA113C643378B5E26416948A00354AD0D73C12A5F_il2cpp_TypeInfo_var);
 		il2cpp_codegen_initialize_runtime_metadata((uintptr_t*)&Int32_t680FF22E76F6EFAD4375103CBBFFA0421349384C_il2cpp_TypeInfo_var);
 		il2cpp_codegen_initialize_runtime_metadata((uintptr_t*)&SqliteConnection_t75D476DE59F24FF675BFA632CE9DFE9CFFF9AA64_il2cpp_TypeInfo_var);
-		il2cpp_codegen_initialize_runtime_metadata((uintptr_t*)&_stringLiteral466B0FFB222805453A57FCFAC754EEFFC2A13136);
+		il2cpp_codegen_initialize_runtime_metadata((uintptr_t*)&WWW_tEADA9A43B98FC277E498F8E3206A3B8C4E5AF3FB_il2cpp_TypeInfo_var);
+		il2cpp_codegen_initialize_runtime_metadata((uintptr_t*)&_stringLiteral2746B283A9377664FAC642B633C6E630FD0DA207);
+		il2cpp_codegen_initialize_runtime_metadata((uintptr_t*)&_stringLiteral60A22A92E080D2FCFAC7182CE45AA3F4D634776D);
+		il2cpp_codegen_initialize_runtime_metadata((uintptr_t*)&_stringLiteral69DC163231A2E6267989B33F5481663598E4C2F9);
+		il2cpp_codegen_initialize_runtime_metadata((uintptr_t*)&_stringLiteral7B82EC8A7422ACC8303A9FF668634405244DADA5);
 		il2cpp_codegen_initialize_runtime_metadata((uintptr_t*)&_stringLiteralCE5F1BAAB4FCB7A6865FE7361FEFF39278A9C3FF);
 		s_Il2CppMethodInitialized = true;
 	}
+	String_t* V_0 = NULL;
+	WWW_tEADA9A43B98FC277E498F8E3206A3B8C4E5AF3FB* V_1 = NULL;
 	{
-		// string dbUri = "URI=file:MyDatabase.sqlite"; // 4
-		// IDbConnection dbConnection = new SqliteConnection(dbUri); // 5
-		SqliteConnection_t75D476DE59F24FF675BFA632CE9DFE9CFFF9AA64* L_0 = (SqliteConnection_t75D476DE59F24FF675BFA632CE9DFE9CFFF9AA64*)il2cpp_codegen_object_new(SqliteConnection_t75D476DE59F24FF675BFA632CE9DFE9CFFF9AA64_il2cpp_TypeInfo_var);
-		NullCheck(L_0);
-		SqliteConnection__ctor_mBA0776F60057686C3DF109947113F5697EB7C58E(L_0, _stringLiteral466B0FFB222805453A57FCFAC754EEFFC2A13136, NULL);
+		// var filepath = $"{Application.persistentDataPath}/MyDatabase.sqlite";
+		String_t* L_0;
+		L_0 = Application_get_persistentDataPath_mC58BD3E1A20732E0A536491DBCAE6505B1624399(NULL);
+		String_t* L_1;
+		L_1 = String_Concat_m9E3155FB84015C823606188F53B47CB44C444991(L_0, _stringLiteral69DC163231A2E6267989B33F5481663598E4C2F9, NULL);
+		V_0 = L_1;
+		// if (!File.Exists(filepath))
+		String_t* L_2 = V_0;
+		bool L_3;
+		L_3 = File_Exists_m95E329ABBE3EAD6750FE1989BBA6884457136D4A(L_2, NULL);
+		if (L_3)
+		{
+			goto IL_0050;
+		}
+	}
+	{
+		// Debug.Log("Database not in Persistent path");
+		il2cpp_codegen_runtime_class_init_inline(Debug_t8394C7EEAECA3689C2C9B9DE9C7166D73596276F_il2cpp_TypeInfo_var);
+		Debug_Log_m87A9A3C761FF5C43ED8A53B16190A53D08F818BB(_stringLiteral60A22A92E080D2FCFAC7182CE45AA3F4D634776D, NULL);
+		// var loadDb = new WWW("jar:file://" + Application.dataPath + "!/assets/" + "MyDatabase.sqlite");  // this is the path to your StreamingAssets in android
+		String_t* L_4;
+		L_4 = Application_get_dataPath_m4C8412CBEE4EAAAB6711CC9BEFFA73CEE5BDBEF7(NULL);
+		String_t* L_5;
+		L_5 = String_Concat_m8855A6DE10F84DA7F4EC113CADDB59873A25573B(_stringLiteral2746B283A9377664FAC642B633C6E630FD0DA207, L_4, _stringLiteral7B82EC8A7422ACC8303A9FF668634405244DADA5, NULL);
+		WWW_tEADA9A43B98FC277E498F8E3206A3B8C4E5AF3FB* L_6 = (WWW_tEADA9A43B98FC277E498F8E3206A3B8C4E5AF3FB*)il2cpp_codegen_object_new(WWW_tEADA9A43B98FC277E498F8E3206A3B8C4E5AF3FB_il2cpp_TypeInfo_var);
+		NullCheck(L_6);
+		WWW__ctor_m5D29D83E9EE0925ED8252347CE24EC236401503D(L_6, L_5, NULL);
+		V_1 = L_6;
+	}
+
+IL_003c:
+	{
+		// while (!loadDb.isDone) { }  // CAREFUL here, for safety reasons you shouldn't let this while loop unattended, place a timer and error check
+		WWW_tEADA9A43B98FC277E498F8E3206A3B8C4E5AF3FB* L_7 = V_1;
+		NullCheck(L_7);
+		bool L_8;
+		L_8 = WWW_get_isDone_m7E88B666AD0E3903757043813B2811BBFCCCA52E(L_7, NULL);
+		if (!L_8)
+		{
+			goto IL_003c;
+		}
+	}
+	{
+		// File.WriteAllBytes(filepath, loadDb.bytes);
+		String_t* L_9 = V_0;
+		WWW_tEADA9A43B98FC277E498F8E3206A3B8C4E5AF3FB* L_10 = V_1;
+		NullCheck(L_10);
+		ByteU5BU5D_tA6237BF417AE52AD70CFB4EF24A7A82613DF9031* L_11;
+		L_11 = WWW_get_bytes_m83F5C24FC5AC80C5F3B9AF1E290E08F8B96C0642(L_10, NULL);
+		File_WriteAllBytes_mC491031DA14AA9B591F62D6AD0181D090E081077(L_9, L_11, NULL);
+	}
+
+IL_0050:
+	{
+		// IDbConnection dbConnection = new SqliteConnection(filepath); // 5
+		String_t* L_12 = V_0;
+		SqliteConnection_t75D476DE59F24FF675BFA632CE9DFE9CFFF9AA64* L_13 = (SqliteConnection_t75D476DE59F24FF675BFA632CE9DFE9CFFF9AA64*)il2cpp_codegen_object_new(SqliteConnection_t75D476DE59F24FF675BFA632CE9DFE9CFFF9AA64_il2cpp_TypeInfo_var);
+		NullCheck(L_13);
+		SqliteConnection__ctor_mBA0776F60057686C3DF109947113F5697EB7C58E(L_13, L_12, NULL);
 		// dbConnection.Open(); // 6
-		SqliteConnection_t75D476DE59F24FF675BFA632CE9DFE9CFFF9AA64* L_1 = L_0;
-		NullCheck(L_1);
-		InterfaceActionInvoker0::Invoke(2 /* System.Void System.Data.IDbConnection::Open() */, IDbConnection_tA113C643378B5E26416948A00354AD0D73C12A5F_il2cpp_TypeInfo_var, L_1);
+		SqliteConnection_t75D476DE59F24FF675BFA632CE9DFE9CFFF9AA64* L_14 = L_13;
+		NullCheck(L_14);
+		InterfaceActionInvoker0::Invoke(2 /* System.Void System.Data.IDbConnection::Open() */, IDbConnection_tA113C643378B5E26416948A00354AD0D73C12A5F_il2cpp_TypeInfo_var, L_14);
 		// IDbCommand dbCommandCreateTable = dbConnection.CreateCommand(); // 6
-		SqliteConnection_t75D476DE59F24FF675BFA632CE9DFE9CFFF9AA64* L_2 = L_1;
-		NullCheck(L_2);
-		RuntimeObject* L_3;
-		L_3 = InterfaceFuncInvoker0< RuntimeObject* >::Invoke(1 /* System.Data.IDbCommand System.Data.IDbConnection::CreateCommand() */, IDbConnection_tA113C643378B5E26416948A00354AD0D73C12A5F_il2cpp_TypeInfo_var, L_2);
+		SqliteConnection_t75D476DE59F24FF675BFA632CE9DFE9CFFF9AA64* L_15 = L_14;
+		NullCheck(L_15);
+		RuntimeObject* L_16;
+		L_16 = InterfaceFuncInvoker0< RuntimeObject* >::Invoke(1 /* System.Data.IDbCommand System.Data.IDbConnection::CreateCommand() */, IDbConnection_tA113C643378B5E26416948A00354AD0D73C12A5F_il2cpp_TypeInfo_var, L_15);
 		// dbCommandCreateTable.CommandText = $"UPDATE SituationsTracker SET {situationName}_situation = {situationNumber}"; // 7
-		RuntimeObject* L_4 = L_3;
-		String_t* L_5 = ___0_situationName;
-		int32_t L_6 = ___1_situationNumber;
-		int32_t L_7 = L_6;
-		RuntimeObject* L_8 = Box(Int32_t680FF22E76F6EFAD4375103CBBFFA0421349384C_il2cpp_TypeInfo_var, &L_7);
-		String_t* L_9;
-		L_9 = String_Format_mFB7DA489BD99F4670881FF50EC017BFB0A5C0987(_stringLiteralCE5F1BAAB4FCB7A6865FE7361FEFF39278A9C3FF, L_5, L_8, NULL);
-		NullCheck(L_4);
-		InterfaceActionInvoker1< String_t* >::Invoke(0 /* System.Void System.Data.IDbCommand::set_CommandText(System.String) */, IDbCommand_t6D4BC36E2AE02526D757A5829FE829FB2A33063F_il2cpp_TypeInfo_var, L_4, L_9);
+		RuntimeObject* L_17 = L_16;
+		String_t* L_18 = ___0_situationName;
+		int32_t L_19 = ___1_situationNumber;
+		int32_t L_20 = L_19;
+		RuntimeObject* L_21 = Box(Int32_t680FF22E76F6EFAD4375103CBBFFA0421349384C_il2cpp_TypeInfo_var, &L_20);
+		String_t* L_22;
+		L_22 = String_Format_mFB7DA489BD99F4670881FF50EC017BFB0A5C0987(_stringLiteralCE5F1BAAB4FCB7A6865FE7361FEFF39278A9C3FF, L_18, L_21, NULL);
+		NullCheck(L_17);
+		InterfaceActionInvoker1< String_t* >::Invoke(0 /* System.Void System.Data.IDbCommand::set_CommandText(System.String) */, IDbCommand_t6D4BC36E2AE02526D757A5829FE829FB2A33063F_il2cpp_TypeInfo_var, L_17, L_22);
 		// dbCommandCreateTable.ExecuteReader(); // 8
-		NullCheck(L_4);
-		RuntimeObject* L_10;
-		L_10 = InterfaceFuncInvoker0< RuntimeObject* >::Invoke(1 /* System.Data.IDataReader System.Data.IDbCommand::ExecuteReader() */, IDbCommand_t6D4BC36E2AE02526D757A5829FE829FB2A33063F_il2cpp_TypeInfo_var, L_4);
+		NullCheck(L_17);
+		RuntimeObject* L_23;
+		L_23 = InterfaceFuncInvoker0< RuntimeObject* >::Invoke(1 /* System.Data.IDataReader System.Data.IDbCommand::ExecuteReader() */, IDbCommand_t6D4BC36E2AE02526D757A5829FE829FB2A33063F_il2cpp_TypeInfo_var, L_17);
 		// dbConnection.Close();
-		NullCheck(L_2);
-		InterfaceActionInvoker0::Invoke(0 /* System.Void System.Data.IDbConnection::Close() */, IDbConnection_tA113C643378B5E26416948A00354AD0D73C12A5F_il2cpp_TypeInfo_var, L_2);
+		NullCheck(L_15);
+		InterfaceActionInvoker0::Invoke(0 /* System.Void System.Data.IDbConnection::Close() */, IDbConnection_tA113C643378B5E26416948A00354AD0D73C12A5F_il2cpp_TypeInfo_var, L_15);
 		// }
 		return;
 	}
@@ -4356,79 +4739,140 @@ IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR int32_t Database_GetSituationNumber_m355CAE45
 	static bool s_Il2CppMethodInitialized;
 	if (!s_Il2CppMethodInitialized)
 	{
+		il2cpp_codegen_initialize_runtime_metadata((uintptr_t*)&Debug_t8394C7EEAECA3689C2C9B9DE9C7166D73596276F_il2cpp_TypeInfo_var);
 		il2cpp_codegen_initialize_runtime_metadata((uintptr_t*)&IDataReader_t109552004F52225C781EA073D5C5F67BD2DA8D11_il2cpp_TypeInfo_var);
 		il2cpp_codegen_initialize_runtime_metadata((uintptr_t*)&IDataRecord_t2A5A60ECB174EE4597471994FA9678EAD8A3C13D_il2cpp_TypeInfo_var);
 		il2cpp_codegen_initialize_runtime_metadata((uintptr_t*)&IDbCommand_t6D4BC36E2AE02526D757A5829FE829FB2A33063F_il2cpp_TypeInfo_var);
 		il2cpp_codegen_initialize_runtime_metadata((uintptr_t*)&IDbConnection_tA113C643378B5E26416948A00354AD0D73C12A5F_il2cpp_TypeInfo_var);
 		il2cpp_codegen_initialize_runtime_metadata((uintptr_t*)&SqliteConnection_t75D476DE59F24FF675BFA632CE9DFE9CFFF9AA64_il2cpp_TypeInfo_var);
-		il2cpp_codegen_initialize_runtime_metadata((uintptr_t*)&_stringLiteral466B0FFB222805453A57FCFAC754EEFFC2A13136);
+		il2cpp_codegen_initialize_runtime_metadata((uintptr_t*)&WWW_tEADA9A43B98FC277E498F8E3206A3B8C4E5AF3FB_il2cpp_TypeInfo_var);
+		il2cpp_codegen_initialize_runtime_metadata((uintptr_t*)&_stringLiteral2746B283A9377664FAC642B633C6E630FD0DA207);
+		il2cpp_codegen_initialize_runtime_metadata((uintptr_t*)&_stringLiteral60A22A92E080D2FCFAC7182CE45AA3F4D634776D);
+		il2cpp_codegen_initialize_runtime_metadata((uintptr_t*)&_stringLiteral69DC163231A2E6267989B33F5481663598E4C2F9);
+		il2cpp_codegen_initialize_runtime_metadata((uintptr_t*)&_stringLiteral7B82EC8A7422ACC8303A9FF668634405244DADA5);
 		il2cpp_codegen_initialize_runtime_metadata((uintptr_t*)&_stringLiteral8ED70AD1CBD1DDCB1AFCA0D074326B83AD653317);
 		il2cpp_codegen_initialize_runtime_metadata((uintptr_t*)&_stringLiteral9851100BF9F8C09C2A1FE0313DF0F4E00F457B92);
 		s_Il2CppMethodInitialized = true;
 	}
-	RuntimeObject* V_0 = NULL;
+	String_t* V_0 = NULL;
 	RuntimeObject* V_1 = NULL;
+	RuntimeObject* V_2 = NULL;
+	WWW_tEADA9A43B98FC277E498F8E3206A3B8C4E5AF3FB* V_3 = NULL;
 	{
-		// string dbUri = "URI=file:MyDatabase.sqlite"; // 4
-		// IDbConnection dbConnection = new SqliteConnection(dbUri); // 5
-		SqliteConnection_t75D476DE59F24FF675BFA632CE9DFE9CFFF9AA64* L_0 = (SqliteConnection_t75D476DE59F24FF675BFA632CE9DFE9CFFF9AA64*)il2cpp_codegen_object_new(SqliteConnection_t75D476DE59F24FF675BFA632CE9DFE9CFFF9AA64_il2cpp_TypeInfo_var);
-		NullCheck(L_0);
-		SqliteConnection__ctor_mBA0776F60057686C3DF109947113F5697EB7C58E(L_0, _stringLiteral466B0FFB222805453A57FCFAC754EEFFC2A13136, NULL);
-		V_0 = L_0;
-		// dbConnection.Open(); // 6
-		RuntimeObject* L_1 = V_0;
-		NullCheck(L_1);
-		InterfaceActionInvoker0::Invoke(2 /* System.Void System.Data.IDbConnection::Open() */, IDbConnection_tA113C643378B5E26416948A00354AD0D73C12A5F_il2cpp_TypeInfo_var, L_1);
-		// IDbCommand dbCommandReadValues = dbConnection.CreateCommand(); // 6
-		RuntimeObject* L_2 = V_0;
-		NullCheck(L_2);
-		RuntimeObject* L_3;
-		L_3 = InterfaceFuncInvoker0< RuntimeObject* >::Invoke(1 /* System.Data.IDbCommand System.Data.IDbConnection::CreateCommand() */, IDbConnection_tA113C643378B5E26416948A00354AD0D73C12A5F_il2cpp_TypeInfo_var, L_2);
-		// dbCommandReadValues.CommandText = $"SELECT {situationName}_situation FROM SituationsTracker WHERE (id_email = 'teste1@email.com');"; // 7
-		RuntimeObject* L_4 = L_3;
-		String_t* L_5 = ___0_situationName;
-		String_t* L_6;
-		L_6 = String_Concat_m8855A6DE10F84DA7F4EC113CADDB59873A25573B(_stringLiteral9851100BF9F8C09C2A1FE0313DF0F4E00F457B92, L_5, _stringLiteral8ED70AD1CBD1DDCB1AFCA0D074326B83AD653317, NULL);
-		NullCheck(L_4);
-		InterfaceActionInvoker1< String_t* >::Invoke(0 /* System.Void System.Data.IDbCommand::set_CommandText(System.String) */, IDbCommand_t6D4BC36E2AE02526D757A5829FE829FB2A33063F_il2cpp_TypeInfo_var, L_4, L_6);
-		// IDataReader dataReader = dbCommandReadValues.ExecuteReader();
-		NullCheck(L_4);
-		RuntimeObject* L_7;
-		L_7 = InterfaceFuncInvoker0< RuntimeObject* >::Invoke(1 /* System.Data.IDataReader System.Data.IDbCommand::ExecuteReader() */, IDbCommand_t6D4BC36E2AE02526D757A5829FE829FB2A33063F_il2cpp_TypeInfo_var, L_4);
-		V_1 = L_7;
-		goto IL_0042;
+		// var filepath = $"{Application.persistentDataPath}/MyDatabase.sqlite";
+		String_t* L_0;
+		L_0 = Application_get_persistentDataPath_mC58BD3E1A20732E0A536491DBCAE6505B1624399(NULL);
+		String_t* L_1;
+		L_1 = String_Concat_m9E3155FB84015C823606188F53B47CB44C444991(L_0, _stringLiteral69DC163231A2E6267989B33F5481663598E4C2F9, NULL);
+		V_0 = L_1;
+		// if (!File.Exists(filepath))
+		String_t* L_2 = V_0;
+		bool L_3;
+		L_3 = File_Exists_m95E329ABBE3EAD6750FE1989BBA6884457136D4A(L_2, NULL);
+		if (L_3)
+		{
+			goto IL_0050;
+		}
+	}
+	{
+		// Debug.Log("Database not in Persistent path");
+		il2cpp_codegen_runtime_class_init_inline(Debug_t8394C7EEAECA3689C2C9B9DE9C7166D73596276F_il2cpp_TypeInfo_var);
+		Debug_Log_m87A9A3C761FF5C43ED8A53B16190A53D08F818BB(_stringLiteral60A22A92E080D2FCFAC7182CE45AA3F4D634776D, NULL);
+		// var loadDb = new WWW("jar:file://" + Application.dataPath + "!/assets/" + "MyDatabase.sqlite");  // this is the path to your StreamingAssets in android
+		String_t* L_4;
+		L_4 = Application_get_dataPath_m4C8412CBEE4EAAAB6711CC9BEFFA73CEE5BDBEF7(NULL);
+		String_t* L_5;
+		L_5 = String_Concat_m8855A6DE10F84DA7F4EC113CADDB59873A25573B(_stringLiteral2746B283A9377664FAC642B633C6E630FD0DA207, L_4, _stringLiteral7B82EC8A7422ACC8303A9FF668634405244DADA5, NULL);
+		WWW_tEADA9A43B98FC277E498F8E3206A3B8C4E5AF3FB* L_6 = (WWW_tEADA9A43B98FC277E498F8E3206A3B8C4E5AF3FB*)il2cpp_codegen_object_new(WWW_tEADA9A43B98FC277E498F8E3206A3B8C4E5AF3FB_il2cpp_TypeInfo_var);
+		NullCheck(L_6);
+		WWW__ctor_m5D29D83E9EE0925ED8252347CE24EC236401503D(L_6, L_5, NULL);
+		V_3 = L_6;
 	}
 
-IL_0035:
+IL_003c:
+	{
+		// while (!loadDb.isDone) { }  // CAREFUL here, for safety reasons you shouldn't let this while loop unattended, place a timer and error check
+		WWW_tEADA9A43B98FC277E498F8E3206A3B8C4E5AF3FB* L_7 = V_3;
+		NullCheck(L_7);
+		bool L_8;
+		L_8 = WWW_get_isDone_m7E88B666AD0E3903757043813B2811BBFCCCA52E(L_7, NULL);
+		if (!L_8)
+		{
+			goto IL_003c;
+		}
+	}
+	{
+		// File.WriteAllBytes(filepath, loadDb.bytes);
+		String_t* L_9 = V_0;
+		WWW_tEADA9A43B98FC277E498F8E3206A3B8C4E5AF3FB* L_10 = V_3;
+		NullCheck(L_10);
+		ByteU5BU5D_tA6237BF417AE52AD70CFB4EF24A7A82613DF9031* L_11;
+		L_11 = WWW_get_bytes_m83F5C24FC5AC80C5F3B9AF1E290E08F8B96C0642(L_10, NULL);
+		File_WriteAllBytes_mC491031DA14AA9B591F62D6AD0181D090E081077(L_9, L_11, NULL);
+	}
+
+IL_0050:
+	{
+		// IDbConnection dbConnection = new SqliteConnection(filepath); // 5
+		String_t* L_12 = V_0;
+		SqliteConnection_t75D476DE59F24FF675BFA632CE9DFE9CFFF9AA64* L_13 = (SqliteConnection_t75D476DE59F24FF675BFA632CE9DFE9CFFF9AA64*)il2cpp_codegen_object_new(SqliteConnection_t75D476DE59F24FF675BFA632CE9DFE9CFFF9AA64_il2cpp_TypeInfo_var);
+		NullCheck(L_13);
+		SqliteConnection__ctor_mBA0776F60057686C3DF109947113F5697EB7C58E(L_13, L_12, NULL);
+		V_1 = L_13;
+		// dbConnection.Open(); // 6
+		RuntimeObject* L_14 = V_1;
+		NullCheck(L_14);
+		InterfaceActionInvoker0::Invoke(2 /* System.Void System.Data.IDbConnection::Open() */, IDbConnection_tA113C643378B5E26416948A00354AD0D73C12A5F_il2cpp_TypeInfo_var, L_14);
+		// IDbCommand dbCommandReadValues = dbConnection.CreateCommand(); // 6
+		RuntimeObject* L_15 = V_1;
+		NullCheck(L_15);
+		RuntimeObject* L_16;
+		L_16 = InterfaceFuncInvoker0< RuntimeObject* >::Invoke(1 /* System.Data.IDbCommand System.Data.IDbConnection::CreateCommand() */, IDbConnection_tA113C643378B5E26416948A00354AD0D73C12A5F_il2cpp_TypeInfo_var, L_15);
+		// dbCommandReadValues.CommandText = $"SELECT {situationName}_situation FROM SituationsTracker WHERE (id_email = 'teste1@email.com');"; // 7
+		RuntimeObject* L_17 = L_16;
+		String_t* L_18 = ___0_situationName;
+		String_t* L_19;
+		L_19 = String_Concat_m8855A6DE10F84DA7F4EC113CADDB59873A25573B(_stringLiteral9851100BF9F8C09C2A1FE0313DF0F4E00F457B92, L_18, _stringLiteral8ED70AD1CBD1DDCB1AFCA0D074326B83AD653317, NULL);
+		NullCheck(L_17);
+		InterfaceActionInvoker1< String_t* >::Invoke(0 /* System.Void System.Data.IDbCommand::set_CommandText(System.String) */, IDbCommand_t6D4BC36E2AE02526D757A5829FE829FB2A33063F_il2cpp_TypeInfo_var, L_17, L_19);
+		// IDataReader dataReader = dbCommandReadValues.ExecuteReader();
+		NullCheck(L_17);
+		RuntimeObject* L_20;
+		L_20 = InterfaceFuncInvoker0< RuntimeObject* >::Invoke(1 /* System.Data.IDataReader System.Data.IDbCommand::ExecuteReader() */, IDbCommand_t6D4BC36E2AE02526D757A5829FE829FB2A33063F_il2cpp_TypeInfo_var, L_17);
+		V_2 = L_20;
+		goto IL_008e;
+	}
+
+IL_0081:
 	{
 		// situationNumber = dataReader.GetInt32(0); // 19
-		RuntimeObject* L_8 = V_1;
-		NullCheck(L_8);
-		int32_t L_9;
-		L_9 = InterfaceFuncInvoker1< int32_t, int32_t >::Invoke(6 /* System.Int32 System.Data.IDataRecord::GetInt32(System.Int32) */, IDataRecord_t2A5A60ECB174EE4597471994FA9678EAD8A3C13D_il2cpp_TypeInfo_var, L_8, 0);
-		__this->___situationNumber_4 = L_9;
+		RuntimeObject* L_21 = V_2;
+		NullCheck(L_21);
+		int32_t L_22;
+		L_22 = InterfaceFuncInvoker1< int32_t, int32_t >::Invoke(6 /* System.Int32 System.Data.IDataRecord::GetInt32(System.Int32) */, IDataRecord_t2A5A60ECB174EE4597471994FA9678EAD8A3C13D_il2cpp_TypeInfo_var, L_21, 0);
+		__this->___situationNumber_4 = L_22;
 	}
 
-IL_0042:
+IL_008e:
 	{
 		// while (dataReader.Read()) // 18
-		RuntimeObject* L_10 = V_1;
-		NullCheck(L_10);
-		bool L_11;
-		L_11 = InterfaceFuncInvoker0< bool >::Invoke(2 /* System.Boolean System.Data.IDataReader::Read() */, IDataReader_t109552004F52225C781EA073D5C5F67BD2DA8D11_il2cpp_TypeInfo_var, L_10);
-		if (L_11)
+		RuntimeObject* L_23 = V_2;
+		NullCheck(L_23);
+		bool L_24;
+		L_24 = InterfaceFuncInvoker0< bool >::Invoke(2 /* System.Boolean System.Data.IDataReader::Read() */, IDataReader_t109552004F52225C781EA073D5C5F67BD2DA8D11_il2cpp_TypeInfo_var, L_23);
+		if (L_24)
 		{
-			goto IL_0035;
+			goto IL_0081;
 		}
 	}
 	{
 		// dbConnection.Close();
-		RuntimeObject* L_12 = V_0;
-		NullCheck(L_12);
-		InterfaceActionInvoker0::Invoke(0 /* System.Void System.Data.IDbConnection::Close() */, IDbConnection_tA113C643378B5E26416948A00354AD0D73C12A5F_il2cpp_TypeInfo_var, L_12);
+		RuntimeObject* L_25 = V_1;
+		NullCheck(L_25);
+		InterfaceActionInvoker0::Invoke(0 /* System.Void System.Data.IDbConnection::Close() */, IDbConnection_tA113C643378B5E26416948A00354AD0D73C12A5F_il2cpp_TypeInfo_var, L_25);
 		// return situationNumber;
-		int32_t L_13 = __this->___situationNumber_4;
-		return L_13;
+		int32_t L_26 = __this->___situationNumber_4;
+		return L_26;
 	}
 }
 // System.String Database::GetUserName()
@@ -4437,76 +4881,137 @@ IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR String_t* Database_GetUserName_mDE6CBB477ACF9
 	static bool s_Il2CppMethodInitialized;
 	if (!s_Il2CppMethodInitialized)
 	{
+		il2cpp_codegen_initialize_runtime_metadata((uintptr_t*)&Debug_t8394C7EEAECA3689C2C9B9DE9C7166D73596276F_il2cpp_TypeInfo_var);
 		il2cpp_codegen_initialize_runtime_metadata((uintptr_t*)&IDataReader_t109552004F52225C781EA073D5C5F67BD2DA8D11_il2cpp_TypeInfo_var);
 		il2cpp_codegen_initialize_runtime_metadata((uintptr_t*)&IDataRecord_t2A5A60ECB174EE4597471994FA9678EAD8A3C13D_il2cpp_TypeInfo_var);
 		il2cpp_codegen_initialize_runtime_metadata((uintptr_t*)&IDbCommand_t6D4BC36E2AE02526D757A5829FE829FB2A33063F_il2cpp_TypeInfo_var);
 		il2cpp_codegen_initialize_runtime_metadata((uintptr_t*)&IDbConnection_tA113C643378B5E26416948A00354AD0D73C12A5F_il2cpp_TypeInfo_var);
 		il2cpp_codegen_initialize_runtime_metadata((uintptr_t*)&SqliteConnection_t75D476DE59F24FF675BFA632CE9DFE9CFFF9AA64_il2cpp_TypeInfo_var);
-		il2cpp_codegen_initialize_runtime_metadata((uintptr_t*)&_stringLiteral466B0FFB222805453A57FCFAC754EEFFC2A13136);
+		il2cpp_codegen_initialize_runtime_metadata((uintptr_t*)&WWW_tEADA9A43B98FC277E498F8E3206A3B8C4E5AF3FB_il2cpp_TypeInfo_var);
+		il2cpp_codegen_initialize_runtime_metadata((uintptr_t*)&_stringLiteral2746B283A9377664FAC642B633C6E630FD0DA207);
+		il2cpp_codegen_initialize_runtime_metadata((uintptr_t*)&_stringLiteral60A22A92E080D2FCFAC7182CE45AA3F4D634776D);
+		il2cpp_codegen_initialize_runtime_metadata((uintptr_t*)&_stringLiteral69DC163231A2E6267989B33F5481663598E4C2F9);
+		il2cpp_codegen_initialize_runtime_metadata((uintptr_t*)&_stringLiteral7B82EC8A7422ACC8303A9FF668634405244DADA5);
 		il2cpp_codegen_initialize_runtime_metadata((uintptr_t*)&_stringLiteralED3669BB749FB37E1BC4B950EC76349184828CD2);
 		s_Il2CppMethodInitialized = true;
 	}
-	RuntimeObject* V_0 = NULL;
+	String_t* V_0 = NULL;
 	RuntimeObject* V_1 = NULL;
+	RuntimeObject* V_2 = NULL;
+	WWW_tEADA9A43B98FC277E498F8E3206A3B8C4E5AF3FB* V_3 = NULL;
 	{
-		// string dbUri = "URI=file:MyDatabase.sqlite"; // 4
-		// IDbConnection dbConnection = new SqliteConnection(dbUri); // 5
-		SqliteConnection_t75D476DE59F24FF675BFA632CE9DFE9CFFF9AA64* L_0 = (SqliteConnection_t75D476DE59F24FF675BFA632CE9DFE9CFFF9AA64*)il2cpp_codegen_object_new(SqliteConnection_t75D476DE59F24FF675BFA632CE9DFE9CFFF9AA64_il2cpp_TypeInfo_var);
-		NullCheck(L_0);
-		SqliteConnection__ctor_mBA0776F60057686C3DF109947113F5697EB7C58E(L_0, _stringLiteral466B0FFB222805453A57FCFAC754EEFFC2A13136, NULL);
-		V_0 = L_0;
-		// dbConnection.Open(); // 6
-		RuntimeObject* L_1 = V_0;
-		NullCheck(L_1);
-		InterfaceActionInvoker0::Invoke(2 /* System.Void System.Data.IDbConnection::Open() */, IDbConnection_tA113C643378B5E26416948A00354AD0D73C12A5F_il2cpp_TypeInfo_var, L_1);
-		// IDbCommand dbCommandReadValues = dbConnection.CreateCommand(); // 6
-		RuntimeObject* L_2 = V_0;
-		NullCheck(L_2);
-		RuntimeObject* L_3;
-		L_3 = InterfaceFuncInvoker0< RuntimeObject* >::Invoke(1 /* System.Data.IDbCommand System.Data.IDbConnection::CreateCommand() */, IDbConnection_tA113C643378B5E26416948A00354AD0D73C12A5F_il2cpp_TypeInfo_var, L_2);
-		// dbCommandReadValues.CommandText = $"SELECT name FROM SituationsTracker WHERE (id_email = 'teste@email.com');"; // 7
-		RuntimeObject* L_4 = L_3;
-		NullCheck(L_4);
-		InterfaceActionInvoker1< String_t* >::Invoke(0 /* System.Void System.Data.IDbCommand::set_CommandText(System.String) */, IDbCommand_t6D4BC36E2AE02526D757A5829FE829FB2A33063F_il2cpp_TypeInfo_var, L_4, _stringLiteralED3669BB749FB37E1BC4B950EC76349184828CD2);
-		// IDataReader dataReader = dbCommandReadValues.ExecuteReader();
-		NullCheck(L_4);
-		RuntimeObject* L_5;
-		L_5 = InterfaceFuncInvoker0< RuntimeObject* >::Invoke(1 /* System.Data.IDataReader System.Data.IDbCommand::ExecuteReader() */, IDbCommand_t6D4BC36E2AE02526D757A5829FE829FB2A33063F_il2cpp_TypeInfo_var, L_4);
-		V_1 = L_5;
-		goto IL_0037;
+		// var filepath = $"{Application.persistentDataPath}/MyDatabase.sqlite";
+		String_t* L_0;
+		L_0 = Application_get_persistentDataPath_mC58BD3E1A20732E0A536491DBCAE6505B1624399(NULL);
+		String_t* L_1;
+		L_1 = String_Concat_m9E3155FB84015C823606188F53B47CB44C444991(L_0, _stringLiteral69DC163231A2E6267989B33F5481663598E4C2F9, NULL);
+		V_0 = L_1;
+		// if (!File.Exists(filepath))
+		String_t* L_2 = V_0;
+		bool L_3;
+		L_3 = File_Exists_m95E329ABBE3EAD6750FE1989BBA6884457136D4A(L_2, NULL);
+		if (L_3)
+		{
+			goto IL_0050;
+		}
+	}
+	{
+		// Debug.Log("Database not in Persistent path");
+		il2cpp_codegen_runtime_class_init_inline(Debug_t8394C7EEAECA3689C2C9B9DE9C7166D73596276F_il2cpp_TypeInfo_var);
+		Debug_Log_m87A9A3C761FF5C43ED8A53B16190A53D08F818BB(_stringLiteral60A22A92E080D2FCFAC7182CE45AA3F4D634776D, NULL);
+		// var loadDb = new WWW("jar:file://" + Application.dataPath + "!/assets/" + "MyDatabase.sqlite");  // this is the path to your StreamingAssets in android
+		String_t* L_4;
+		L_4 = Application_get_dataPath_m4C8412CBEE4EAAAB6711CC9BEFFA73CEE5BDBEF7(NULL);
+		String_t* L_5;
+		L_5 = String_Concat_m8855A6DE10F84DA7F4EC113CADDB59873A25573B(_stringLiteral2746B283A9377664FAC642B633C6E630FD0DA207, L_4, _stringLiteral7B82EC8A7422ACC8303A9FF668634405244DADA5, NULL);
+		WWW_tEADA9A43B98FC277E498F8E3206A3B8C4E5AF3FB* L_6 = (WWW_tEADA9A43B98FC277E498F8E3206A3B8C4E5AF3FB*)il2cpp_codegen_object_new(WWW_tEADA9A43B98FC277E498F8E3206A3B8C4E5AF3FB_il2cpp_TypeInfo_var);
+		NullCheck(L_6);
+		WWW__ctor_m5D29D83E9EE0925ED8252347CE24EC236401503D(L_6, L_5, NULL);
+		V_3 = L_6;
 	}
 
-IL_002a:
+IL_003c:
+	{
+		// while (!loadDb.isDone) { }  // CAREFUL here, for safety reasons you shouldn't let this while loop unattended, place a timer and error check
+		WWW_tEADA9A43B98FC277E498F8E3206A3B8C4E5AF3FB* L_7 = V_3;
+		NullCheck(L_7);
+		bool L_8;
+		L_8 = WWW_get_isDone_m7E88B666AD0E3903757043813B2811BBFCCCA52E(L_7, NULL);
+		if (!L_8)
+		{
+			goto IL_003c;
+		}
+	}
+	{
+		// File.WriteAllBytes(filepath, loadDb.bytes);
+		String_t* L_9 = V_0;
+		WWW_tEADA9A43B98FC277E498F8E3206A3B8C4E5AF3FB* L_10 = V_3;
+		NullCheck(L_10);
+		ByteU5BU5D_tA6237BF417AE52AD70CFB4EF24A7A82613DF9031* L_11;
+		L_11 = WWW_get_bytes_m83F5C24FC5AC80C5F3B9AF1E290E08F8B96C0642(L_10, NULL);
+		File_WriteAllBytes_mC491031DA14AA9B591F62D6AD0181D090E081077(L_9, L_11, NULL);
+	}
+
+IL_0050:
+	{
+		// IDbConnection dbConnection = new SqliteConnection(filepath); // 5
+		String_t* L_12 = V_0;
+		SqliteConnection_t75D476DE59F24FF675BFA632CE9DFE9CFFF9AA64* L_13 = (SqliteConnection_t75D476DE59F24FF675BFA632CE9DFE9CFFF9AA64*)il2cpp_codegen_object_new(SqliteConnection_t75D476DE59F24FF675BFA632CE9DFE9CFFF9AA64_il2cpp_TypeInfo_var);
+		NullCheck(L_13);
+		SqliteConnection__ctor_mBA0776F60057686C3DF109947113F5697EB7C58E(L_13, L_12, NULL);
+		V_1 = L_13;
+		// dbConnection.Open(); // 6
+		RuntimeObject* L_14 = V_1;
+		NullCheck(L_14);
+		InterfaceActionInvoker0::Invoke(2 /* System.Void System.Data.IDbConnection::Open() */, IDbConnection_tA113C643378B5E26416948A00354AD0D73C12A5F_il2cpp_TypeInfo_var, L_14);
+		// IDbCommand dbCommandReadValues = dbConnection.CreateCommand(); // 6
+		RuntimeObject* L_15 = V_1;
+		NullCheck(L_15);
+		RuntimeObject* L_16;
+		L_16 = InterfaceFuncInvoker0< RuntimeObject* >::Invoke(1 /* System.Data.IDbCommand System.Data.IDbConnection::CreateCommand() */, IDbConnection_tA113C643378B5E26416948A00354AD0D73C12A5F_il2cpp_TypeInfo_var, L_15);
+		// dbCommandReadValues.CommandText = $"SELECT name FROM SituationsTracker WHERE (id_email = 'teste@email.com');"; // 7
+		RuntimeObject* L_17 = L_16;
+		NullCheck(L_17);
+		InterfaceActionInvoker1< String_t* >::Invoke(0 /* System.Void System.Data.IDbCommand::set_CommandText(System.String) */, IDbCommand_t6D4BC36E2AE02526D757A5829FE829FB2A33063F_il2cpp_TypeInfo_var, L_17, _stringLiteralED3669BB749FB37E1BC4B950EC76349184828CD2);
+		// IDataReader dataReader = dbCommandReadValues.ExecuteReader();
+		NullCheck(L_17);
+		RuntimeObject* L_18;
+		L_18 = InterfaceFuncInvoker0< RuntimeObject* >::Invoke(1 /* System.Data.IDataReader System.Data.IDbCommand::ExecuteReader() */, IDbCommand_t6D4BC36E2AE02526D757A5829FE829FB2A33063F_il2cpp_TypeInfo_var, L_17);
+		V_2 = L_18;
+		goto IL_0083;
+	}
+
+IL_0076:
 	{
 		// userName = dataReader.GetString(0); // 19
-		RuntimeObject* L_6 = V_1;
-		NullCheck(L_6);
-		String_t* L_7;
-		L_7 = InterfaceFuncInvoker1< String_t*, int32_t >::Invoke(7 /* System.String System.Data.IDataRecord::GetString(System.Int32) */, IDataRecord_t2A5A60ECB174EE4597471994FA9678EAD8A3C13D_il2cpp_TypeInfo_var, L_6, 0);
-		__this->___userName_5 = L_7;
-		Il2CppCodeGenWriteBarrier((void**)(&__this->___userName_5), (void*)L_7);
+		RuntimeObject* L_19 = V_2;
+		NullCheck(L_19);
+		String_t* L_20;
+		L_20 = InterfaceFuncInvoker1< String_t*, int32_t >::Invoke(7 /* System.String System.Data.IDataRecord::GetString(System.Int32) */, IDataRecord_t2A5A60ECB174EE4597471994FA9678EAD8A3C13D_il2cpp_TypeInfo_var, L_19, 0);
+		__this->___userName_5 = L_20;
+		Il2CppCodeGenWriteBarrier((void**)(&__this->___userName_5), (void*)L_20);
 	}
 
-IL_0037:
+IL_0083:
 	{
 		// while (dataReader.Read()) // 18
-		RuntimeObject* L_8 = V_1;
-		NullCheck(L_8);
-		bool L_9;
-		L_9 = InterfaceFuncInvoker0< bool >::Invoke(2 /* System.Boolean System.Data.IDataReader::Read() */, IDataReader_t109552004F52225C781EA073D5C5F67BD2DA8D11_il2cpp_TypeInfo_var, L_8);
-		if (L_9)
+		RuntimeObject* L_21 = V_2;
+		NullCheck(L_21);
+		bool L_22;
+		L_22 = InterfaceFuncInvoker0< bool >::Invoke(2 /* System.Boolean System.Data.IDataReader::Read() */, IDataReader_t109552004F52225C781EA073D5C5F67BD2DA8D11_il2cpp_TypeInfo_var, L_21);
+		if (L_22)
 		{
-			goto IL_002a;
+			goto IL_0076;
 		}
 	}
 	{
 		// dbConnection.Close();
-		RuntimeObject* L_10 = V_0;
-		NullCheck(L_10);
-		InterfaceActionInvoker0::Invoke(0 /* System.Void System.Data.IDbConnection::Close() */, IDbConnection_tA113C643378B5E26416948A00354AD0D73C12A5F_il2cpp_TypeInfo_var, L_10);
+		RuntimeObject* L_23 = V_1;
+		NullCheck(L_23);
+		InterfaceActionInvoker0::Invoke(0 /* System.Void System.Data.IDbConnection::Close() */, IDbConnection_tA113C643378B5E26416948A00354AD0D73C12A5F_il2cpp_TypeInfo_var, L_23);
 		// return userName;
-		String_t* L_11 = __this->___userName_5;
-		return L_11;
+		String_t* L_24 = __this->___userName_5;
+		return L_24;
 	}
 }
 // System.Void Database::Update()

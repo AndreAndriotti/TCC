@@ -1,6 +1,7 @@
 using Mono.Data.Sqlite; // 1
 using System.Data; // 1
 using UnityEngine;
+using System.IO;
 
 public class Database : MonoBehaviour
 {
@@ -20,14 +21,31 @@ public class Database : MonoBehaviour
         // check if file exists in Application.persistentDataPath
  
         //string filepath = Application.persistentDataPath + "/MyDatabase.sqlite"; // 4
- 
-       
+        //var filepath = string.Format("{0}/{1}", Application.persistentDataPath, "MyDatabase.sqlite");
+        var filepath = $"{Application.persistentDataPath}/MyDatabase.sqlite";
+
+
+        Debug.Log(filepath);
+
+        if (!File.Exists(filepath))
+        {
+            Debug.Log("Database not in Persistent path");
+            // if it doesn't ->
+            // open StreamingAssets directory and load the db ->
+
+        #if UNITY_ANDROID 
+                var loadDb = new WWW("jar:file://" + Application.dataPath + "!/assets/" + "MyDatabase.sqlite");  // this is the path to your StreamingAssets in android
+                while (!loadDb.isDone) { }  // CAREFUL here, for safety reasons you shouldn't let this while loop unattended, place a timer and error check
+                // then save to Application.persistentDataPath
+                File.WriteAllBytes(filepath, loadDb.bytes);
+        #endif
+        }
  
         // Open a connection to the database.
         //string dbUri = "URI=file:MyDatabase.sqlite"; // 4
-        string dbUri = StreamingAssetPathForReal() + "MyDatabase.sqlite";
+        //string dbUri = StreamingAssetPathForReal() + "MyDatabase.sqlite";
         //string dbUri = "URI=file:" + filepath; // 4
-        IDbConnection dbConnection = new SqliteConnection(dbUri); // 5
+        IDbConnection dbConnection = new SqliteConnection(filepath); // 5
         dbConnection.Open(); // 6
 
         // Create a table for the hit count in the database if it does not exist yet.
@@ -40,8 +58,31 @@ public class Database : MonoBehaviour
 
     public void createUserDatabase(){
         // Open a connection to the database.
-        string dbUri = "URI=file:MyDatabase.sqlite"; // 4
-        IDbConnection dbConnection = new SqliteConnection(dbUri); // 5
+        //string dbUri = "URI=file:MyDatabase.sqlite"; // 4
+        //IDbConnection dbConnection = new SqliteConnection(dbUri); // 5
+        //dbConnection.Open(); // 6
+
+        var filepath = $"{Application.persistentDataPath}/MyDatabase.sqlite";
+
+        if (!File.Exists(filepath))
+        {
+            Debug.Log("Database not in Persistent path");
+            // if it doesn't ->
+            // open StreamingAssets directory and load the db ->
+
+        #if UNITY_ANDROID 
+                var loadDb = new WWW("jar:file://" + Application.dataPath + "!/assets/" + "MyDatabase.sqlite");  // this is the path to your StreamingAssets in android
+                while (!loadDb.isDone) { }  // CAREFUL here, for safety reasons you shouldn't let this while loop unattended, place a timer and error check
+                // then save to Application.persistentDataPath
+                File.WriteAllBytes(filepath, loadDb.bytes);
+        #endif
+        }
+ 
+        // Open a connection to the database.
+        //string dbUri = "URI=file:MyDatabase.sqlite"; // 4
+        //string dbUri = StreamingAssetPathForReal() + "MyDatabase.sqlite";
+        //string dbUri = "URI=file:" + filepath; // 4
+        IDbConnection dbConnection = new SqliteConnection(filepath); // 5
         dbConnection.Open(); // 6
 
         // Create a table for the hit count in the database if it does not exist yet.
@@ -66,8 +107,30 @@ public class Database : MonoBehaviour
     }
 
     public void testInsertValues(){
-        string dbUri = "URI=file:MyDatabase.sqlite"; // 4
-        IDbConnection dbConnection = new SqliteConnection(dbUri); // 5
+        //string dbUri = "URI=file:MyDatabase.sqlite"; // 4
+        //IDbConnection dbConnection = new SqliteConnection(dbUri); // 5
+        //dbConnection.Open(); // 
+        var filepath = $"{Application.persistentDataPath}/MyDatabase.sqlite";
+
+        if (!File.Exists(filepath))
+        {
+            Debug.Log("Database not in Persistent path");
+            // if it doesn't ->
+            // open StreamingAssets directory and load the db ->
+
+        #if UNITY_ANDROID 
+                var loadDb = new WWW("jar:file://" + Application.dataPath + "!/assets/" + "MyDatabase.sqlite");  // this is the path to your StreamingAssets in android
+                while (!loadDb.isDone) { }  // CAREFUL here, for safety reasons you shouldn't let this while loop unattended, place a timer and error check
+                // then save to Application.persistentDataPath
+                File.WriteAllBytes(filepath, loadDb.bytes);
+        #endif
+        }
+ 
+        // Open a connection to the database.
+        //string dbUri = "URI=file:MyDatabase.sqlite"; // 4
+        //string dbUri = StreamingAssetPathForReal() + "MyDatabase.sqlite";
+        //string dbUri = "URI=file:" + filepath; // 4
+        IDbConnection dbConnection = new SqliteConnection(filepath); // 5
         dbConnection.Open(); // 6
 
         // Create a table for the hit count in the database if it does not exist yet.
@@ -79,8 +142,32 @@ public class Database : MonoBehaviour
     }
 
     public void UpdateSituation(string situationName){
-        string dbUri = "URI=file:MyDatabase.sqlite"; // 4
-        IDbConnection dbConnection = new SqliteConnection(dbUri); // 5
+        //string dbUri = "URI=file:MyDatabase.sqlite"; // 4
+        //IDbConnection dbConnection = new SqliteConnection(dbUri); // 5
+        //dbConnection.Open(); // 6
+
+        var filepath = $"{Application.persistentDataPath}/MyDatabase.sqlite";
+
+
+        if (!File.Exists(filepath))
+        {
+            Debug.Log("Database not in Persistent path");
+            // if it doesn't ->
+            // open StreamingAssets directory and load the db ->
+
+        #if UNITY_ANDROID 
+                var loadDb = new WWW("jar:file://" + Application.dataPath + "!/assets/" + "MyDatabase.sqlite");  // this is the path to your StreamingAssets in android
+                while (!loadDb.isDone) { }  // CAREFUL here, for safety reasons you shouldn't let this while loop unattended, place a timer and error check
+                // then save to Application.persistentDataPath
+                File.WriteAllBytes(filepath, loadDb.bytes);
+        #endif
+        }
+ 
+        // Open a connection to the database.
+        //string dbUri = "URI=file:MyDatabase.sqlite"; // 4
+        //string dbUri = StreamingAssetPathForReal() + "MyDatabase.sqlite";
+        //string dbUri = "URI=file:" + filepath; // 4
+        IDbConnection dbConnection = new SqliteConnection(filepath); // 5
         dbConnection.Open(); // 6
 
         // Create a table for the hit count in the database if it does not exist yet.
@@ -92,8 +179,32 @@ public class Database : MonoBehaviour
     }
 
     public void SetSituationNumber(string situationName, int situationNumber){
-        string dbUri = "URI=file:MyDatabase.sqlite"; // 4
-        IDbConnection dbConnection = new SqliteConnection(dbUri); // 5
+        //string dbUri = "URI=file:MyDatabase.sqlite"; // 4
+        //IDbConnection dbConnection = new SqliteConnection(dbUri); // 5
+        //dbConnection.Open(); // 6
+
+        var filepath = $"{Application.persistentDataPath}/MyDatabase.sqlite";
+
+
+        if (!File.Exists(filepath))
+        {
+            Debug.Log("Database not in Persistent path");
+            // if it doesn't ->
+            // open StreamingAssets directory and load the db ->
+
+        #if UNITY_ANDROID 
+                var loadDb = new WWW("jar:file://" + Application.dataPath + "!/assets/" + "MyDatabase.sqlite");  // this is the path to your StreamingAssets in android
+                while (!loadDb.isDone) { }  // CAREFUL here, for safety reasons you shouldn't let this while loop unattended, place a timer and error check
+                // then save to Application.persistentDataPath
+                File.WriteAllBytes(filepath, loadDb.bytes);
+        #endif
+        }
+ 
+        // Open a connection to the database.
+        //string dbUri = "URI=file:MyDatabase.sqlite"; // 4
+        //string dbUri = StreamingAssetPathForReal() + "MyDatabase.sqlite";
+        //string dbUri = "URI=file:" + filepath; // 4
+        IDbConnection dbConnection = new SqliteConnection(filepath); // 5
         dbConnection.Open(); // 6
 
         // Create a table for the hit count in the database if it does not exist yet.
@@ -106,8 +217,32 @@ public class Database : MonoBehaviour
 
     public int GetSituationNumber(string situationName){
 
-        string dbUri = "URI=file:MyDatabase.sqlite"; // 4
-        IDbConnection dbConnection = new SqliteConnection(dbUri); // 5
+        //string dbUri = "URI=file:MyDatabase.sqlite"; // 4
+        //IDbConnection dbConnection = new SqliteConnection(dbUri); // 5
+        //dbConnection.Open(); // 6
+
+        var filepath = $"{Application.persistentDataPath}/MyDatabase.sqlite";
+
+
+        if (!File.Exists(filepath))
+        {
+            Debug.Log("Database not in Persistent path");
+            // if it doesn't ->
+            // open StreamingAssets directory and load the db ->
+
+        #if UNITY_ANDROID 
+                var loadDb = new WWW("jar:file://" + Application.dataPath + "!/assets/" + "MyDatabase.sqlite");  // this is the path to your StreamingAssets in android
+                while (!loadDb.isDone) { }  // CAREFUL here, for safety reasons you shouldn't let this while loop unattended, place a timer and error check
+                // then save to Application.persistentDataPath
+                File.WriteAllBytes(filepath, loadDb.bytes);
+        #endif
+        }
+ 
+        // Open a connection to the database.
+        //string dbUri = "URI=file:MyDatabase.sqlite"; // 4
+        //string dbUri = StreamingAssetPathForReal() + "MyDatabase.sqlite";
+        //string dbUri = "URI=file:" + filepath; // 4
+        IDbConnection dbConnection = new SqliteConnection(filepath); // 5
         dbConnection.Open(); // 6
 
         IDbCommand dbCommandReadValues = dbConnection.CreateCommand(); // 6
@@ -126,8 +261,32 @@ public class Database : MonoBehaviour
     }
 
     public string GetUserName(){
-        string dbUri = "URI=file:MyDatabase.sqlite"; // 4
-        IDbConnection dbConnection = new SqliteConnection(dbUri); // 5
+        //string dbUri = "URI=file:MyDatabase.sqlite"; // 4
+        //IDbConnection dbConnection = new SqliteConnection(dbUri); // 5
+        //dbConnection.Open(); // 6
+
+        var filepath = $"{Application.persistentDataPath}/MyDatabase.sqlite";
+
+
+        if (!File.Exists(filepath))
+        {
+            Debug.Log("Database not in Persistent path");
+            // if it doesn't ->
+            // open StreamingAssets directory and load the db ->
+
+        #if UNITY_ANDROID 
+                var loadDb = new WWW("jar:file://" + Application.dataPath + "!/assets/" + "MyDatabase.sqlite");  // this is the path to your StreamingAssets in android
+                while (!loadDb.isDone) { }  // CAREFUL here, for safety reasons you shouldn't let this while loop unattended, place a timer and error check
+                // then save to Application.persistentDataPath
+                File.WriteAllBytes(filepath, loadDb.bytes);
+        #endif
+        }
+ 
+        // Open a connection to the database.
+        //string dbUri = "URI=file:MyDatabase.sqlite"; // 4
+        //string dbUri = StreamingAssetPathForReal() + "MyDatabase.sqlite";
+        //string dbUri = "URI=file:" + filepath; // 4
+        IDbConnection dbConnection = new SqliteConnection(filepath); // 5
         dbConnection.Open(); // 6
 
         IDbCommand dbCommandReadValues = dbConnection.CreateCommand(); // 6
