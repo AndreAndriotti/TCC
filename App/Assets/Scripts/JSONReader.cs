@@ -42,9 +42,10 @@ public class JSONReader : MonoBehaviour
         database = this.gameObject.AddComponent<Database>();
         database.createUserDatabase();
 
-        PlayerPrefs.SetInt("situationID", database.GetSituationNumber("restaurante"));
-
-        situationID = PlayerPrefs.GetInt("situationID");
+        //PlayerPrefs.SetInt("situationID", database.GetSituationNumber("restaurante"));
+        //situationID = PlayerPrefs.GetInt("situationID");
+        situationID = database.GetSituationNumber("restaurante");
+        
         mySituationList = JsonUtility.FromJson<SituationList>(textJSON.text);
 
         contextText.text = mySituationList.situation[situationID].context;

@@ -16,6 +16,7 @@ public class SituationController : MonoBehaviour
 	  public string op1;
 	  public string op2;
 	  public string op3;
+	  public int opOK;
 	  //private string fb1;
 	  //private string fb2;
 	  //private string fb3;
@@ -26,6 +27,7 @@ public class SituationController : MonoBehaviour
                           string op1, 
                           string op2, 
                           string op3,
+                          int opOK,
                           float audioDuration) 
     {
       this.context = context;
@@ -33,6 +35,7 @@ public class SituationController : MonoBehaviour
       this.op1 = op1;
       this.op2 = op2;
       this.op3 = op3;
+      this.opOK = opOK;
       this.audioDuration = audioDuration;
     }
   }
@@ -75,11 +78,12 @@ public class SituationController : MonoBehaviour
     database = this.gameObject.AddComponent<Database>();
     database.createUserDatabase();
 
-    PlayerPrefs.SetInt("situationID", database.GetSituationNumber("restaurante"));
-    situationID = PlayerPrefs.GetInt("situationID");
+    //PlayerPrefs.SetInt("situationID", database.GetSituationNumber("restaurante"));
+    //situationID = PlayerPrefs.GetInt("situationID");
+    situationID = database.GetSituationNumber("restaurante");
 
     StartCoroutine(EnableRecording());
-    EnableOptions(false);
+    //EnableOptions(false); <- tirar do comentario
 
     maxAttempts = 3;
     countAttempts = 1;
