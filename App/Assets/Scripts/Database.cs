@@ -1,6 +1,7 @@
 using Mono.Data.Sqlite; // 1
 using System.Data; // 1
 using UnityEngine;
+using System.IO;
 
 public class Database : MonoBehaviour
 {
@@ -15,11 +16,45 @@ public class Database : MonoBehaviour
         
     }
 
+    private IDbConnection openDatabaseConection()
+    {
+        string filepath = $"{Application.persistentDataPath}/MyDatabase.sqlite";
+        
+        if (!File.Exists(filepath))
+        {
+            Debug.Log("Database not in Persistent path");
+
+        #if UNITY_ANDROID 
+                var loadDb = new WWW("jar:file://" + Application.dataPath + "!/assets/" + "MyDatabase.sqlite"); 
+                while (!loadDb.isDone) {
+                    Debug.Log("Bytes Downloaded: " + loadDb.bytesDownloaded);
+                 } 
+
+                // Utilizado para Debug
+                if (loadDb.error != null)
+                {
+                    Debug.LogError("Error: " + loadDb.error);
+                }
+                else
+                { 
+                    
+                    var scriptText = loadDb.text;
+                    var filesDownloaded = true;
+                    Debug.Log(scriptText);
+                }
+                File.WriteAllBytes(filepath, loadDb.bytes);
+        #endif
+        }
+ 
+        string dbUri = "URI=file:" + filepath; // 4
+        IDbConnection dbConnection = new SqliteConnection(dbUri); // 5
+
+        return dbConnection;
+    }
+
     private IDbConnection CreateAndOpenDatabase() // 3
     {
-        // Open a connection to the database.
-        string dbUri = "URI=file:MyDatabase.sqlite"; // 4
-        IDbConnection dbConnection = new SqliteConnection(dbUri); // 5
+        IDbConnection dbConnection = openDatabaseConection();
         dbConnection.Open(); // 6
 
         // Create a table for the hit count in the database if it does not exist yet.
@@ -30,10 +65,9 @@ public class Database : MonoBehaviour
         return dbConnection;
     }
 
-    public void createUserDatabase(){
-        // Open a connection to the database.
-        string dbUri = "URI=file:MyDatabase.sqlite"; // 4
-        IDbConnection dbConnection = new SqliteConnection(dbUri); // 5
+    public void createUserDatabase()
+    {
+        IDbConnection dbConnection = openDatabaseConection();
         dbConnection.Open(); // 6
 
         // Create a table for the hit count in the database if it does not exist yet.
@@ -45,8 +79,7 @@ public class Database : MonoBehaviour
     }
 
     public void deleteTableSituation(){
-        string dbUri = "URI=file:MyDatabase.sqlite"; // 4
-        IDbConnection dbConnection = new SqliteConnection(dbUri); // 5
+        IDbConnection dbConnection = openDatabaseConection();
         dbConnection.Open(); // 6
 
         // Create a table for the hit count in the database if it does not exist yet.
@@ -58,8 +91,7 @@ public class Database : MonoBehaviour
     }
 
     public void testInsertValues(){
-        string dbUri = "URI=file:MyDatabase.sqlite"; // 4
-        IDbConnection dbConnection = new SqliteConnection(dbUri); // 5
+        IDbConnection dbConnection = openDatabaseConection();
         dbConnection.Open(); // 6
 
         // Create a table for the hit count in the database if it does not exist yet.
@@ -71,8 +103,7 @@ public class Database : MonoBehaviour
     }
 
     public void UpdateSituation(string situationName){
-        string dbUri = "URI=file:MyDatabase.sqlite"; // 4
-        IDbConnection dbConnection = new SqliteConnection(dbUri); // 5
+        IDbConnection dbConnection = openDatabaseConection();
         dbConnection.Open(); // 6
 
         // Create a table for the hit count in the database if it does not exist yet.
@@ -84,8 +115,7 @@ public class Database : MonoBehaviour
     }
 
     public void SetSituationNumber(string situationName, int situationNumber){
-        string dbUri = "URI=file:MyDatabase.sqlite"; // 4
-        IDbConnection dbConnection = new SqliteConnection(dbUri); // 5
+        IDbConnection dbConnection = openDatabaseConection();
         dbConnection.Open(); // 6
 
         // Create a table for the hit count in the database if it does not exist yet.
@@ -98,8 +128,7 @@ public class Database : MonoBehaviour
 
     public int GetSituationNumber(string situationName){
 
-        string dbUri = "URI=file:MyDatabase.sqlite"; // 4
-        IDbConnection dbConnection = new SqliteConnection(dbUri); // 5
+        IDbConnection dbConnection = openDatabaseConection();
         dbConnection.Open(); // 6
 
         IDbCommand dbCommandReadValues = dbConnection.CreateCommand(); // 6
@@ -118,8 +147,7 @@ public class Database : MonoBehaviour
     }
 
     public string GetUserName(){
-        string dbUri = "URI=file:MyDatabase.sqlite"; // 4
-        IDbConnection dbConnection = new SqliteConnection(dbUri); // 5
+        IDbConnection dbConnection = openDatabaseConection();
         dbConnection.Open(); // 6
 
         IDbCommand dbCommandReadValues = dbConnection.CreateCommand(); // 6
@@ -136,8 +164,8 @@ public class Database : MonoBehaviour
 
         return userName;
     }
-
+ 
     void Update(){
         
-    }
+    }  
 }
