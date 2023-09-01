@@ -46,26 +46,26 @@ extern void AudioController_Update_mA8EE22E6C53C6D0573753038B91CADDBA7931118 (vo
 extern void AudioController__ctor_mFA3B1A7ABCF968342450C930C49BF529630977F1 (void);
 // 0x00000011 System.Void Database::Start()
 extern void Database_Start_mD686862DC2639EE2406AF3303B04C8EEB5E29AEF (void);
-// 0x00000012 System.Data.IDbConnection Database::CreateAndOpenDatabase()
+// 0x00000012 System.Data.IDbConnection Database::openDatabaseConection()
+extern void Database_openDatabaseConection_m0DCBF91E04298BA8A5A4E6F1185C7A10C9A940D6 (void);
+// 0x00000013 System.Data.IDbConnection Database::CreateAndOpenDatabase()
 extern void Database_CreateAndOpenDatabase_mBE172CB61C4D2A5B7E8A990E39B445E55FCC367B (void);
-// 0x00000013 System.Void Database::createUserDatabase()
+// 0x00000014 System.Void Database::createUserDatabase()
 extern void Database_createUserDatabase_m5B9AD17C7273D8E1141AB5C28018E37C5575648C (void);
-// 0x00000014 System.Void Database::deleteTableSituation()
+// 0x00000015 System.Void Database::deleteTableSituation()
 extern void Database_deleteTableSituation_mDE2EA868839F628A6613C1E577E04D61B837A23E (void);
-// 0x00000015 System.Void Database::testInsertValues()
+// 0x00000016 System.Void Database::testInsertValues()
 extern void Database_testInsertValues_mE0492A86009F8CE1A302249899D16C7171D2CD6C (void);
-// 0x00000016 System.Void Database::UpdateSituation(System.String)
+// 0x00000017 System.Void Database::UpdateSituation(System.String)
 extern void Database_UpdateSituation_m3F921594AC8CD92A937934ACCB5CC438969E06C1 (void);
-// 0x00000017 System.Void Database::SetSituationNumber(System.String,System.Int32)
+// 0x00000018 System.Void Database::SetSituationNumber(System.String,System.Int32)
 extern void Database_SetSituationNumber_mF4F4DE945E905418B0E88AA4EBC83147CCCE3D2B (void);
-// 0x00000018 System.Int32 Database::GetSituationNumber(System.String)
+// 0x00000019 System.Int32 Database::GetSituationNumber(System.String)
 extern void Database_GetSituationNumber_m355CAE45B4F4C55E6E7DBD2A31DC8011E5170D57 (void);
-// 0x00000019 System.String Database::GetUserName()
+// 0x0000001A System.String Database::GetUserName()
 extern void Database_GetUserName_mDE6CBB477ACF95F1E56AF36CD909BFC38FAEF7B9 (void);
-// 0x0000001A System.Void Database::Update()
+// 0x0000001B System.Void Database::Update()
 extern void Database_Update_m872844A453B11BF9B1E5726E48FD625602274D4C (void);
-// 0x0000001B System.String Database::StreamingAssetPathForReal()
-extern void Database_StreamingAssetPathForReal_mAAECCA5E89F6712EFA7607EB2E3EC41A44DEE915 (void);
 // 0x0000001C System.Void Database::.ctor()
 extern void Database__ctor_mDF870EC2BB190F5717802EF72E808A55C4719305 (void);
 // 0x0000001D System.Void FeedbackController::Start()
@@ -269,6 +269,7 @@ static Il2CppMethodPointer s_methodPointers[119] =
 	AudioController_Update_mA8EE22E6C53C6D0573753038B91CADDBA7931118,
 	AudioController__ctor_mFA3B1A7ABCF968342450C930C49BF529630977F1,
 	Database_Start_mD686862DC2639EE2406AF3303B04C8EEB5E29AEF,
+	Database_openDatabaseConection_m0DCBF91E04298BA8A5A4E6F1185C7A10C9A940D6,
 	Database_CreateAndOpenDatabase_mBE172CB61C4D2A5B7E8A990E39B445E55FCC367B,
 	Database_createUserDatabase_m5B9AD17C7273D8E1141AB5C28018E37C5575648C,
 	Database_deleteTableSituation_mDE2EA868839F628A6613C1E577E04D61B837A23E,
@@ -278,7 +279,6 @@ static Il2CppMethodPointer s_methodPointers[119] =
 	Database_GetSituationNumber_m355CAE45B4F4C55E6E7DBD2A31DC8011E5170D57,
 	Database_GetUserName_mDE6CBB477ACF95F1E56AF36CD909BFC38FAEF7B9,
 	Database_Update_m872844A453B11BF9B1E5726E48FD625602274D4C,
-	Database_StreamingAssetPathForReal_mAAECCA5E89F6712EFA7607EB2E3EC41A44DEE915,
 	Database__ctor_mDF870EC2BB190F5717802EF72E808A55C4719305,
 	FeedbackController_Start_mDA5D3F67B7EE5ED698577730C2CAEAB7A5EBBE57,
 	FeedbackController_Update_m8CF62E05B07F9FD087953187C82CCC8756C65E36,
@@ -397,6 +397,7 @@ static const int32_t s_InvokerIndices[119] =
 	5112,
 	5112,
 	4995,
+	4995,
 	5112,
 	5112,
 	5112,
@@ -405,7 +406,6 @@ static const int32_t s_InvokerIndices[119] =
 	3505,
 	4995,
 	5112,
-	7568,
 	5112,
 	5112,
 	5112,
