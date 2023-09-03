@@ -74,7 +74,7 @@ public class SituationController : MonoBehaviour
     }
 
     // APAGAR DEPOIS -> texto de reconhecimento de voz para testes
-    resultText.enabled = false;
+    resultText.enabled = true;
 
     database = this.gameObject.AddComponent<Database>();
     database.createUserDatabase();
@@ -85,7 +85,7 @@ public class SituationController : MonoBehaviour
     situationID = database.GetSituationNumber(situationName);
 
     StartCoroutine(EnableRecording());
-    //EnableOptions(false); <- tirar do comentario
+    EnableOptions(false);
 
     maxAttempts = 3;
     countAttempts = 1;
@@ -225,16 +225,19 @@ public class SituationController : MonoBehaviour
     if(findSimilarity(result.ToUpper(), op1text.ToUpper()) > similarityPercent){
       op1Button.GetComponent<Image>().color = Color.green;
       situationOps = situationOps.Substring(0, situationID) + '1' + situationOps.Substring(situationID + 1);
+      database.SetSituationOptions(situationName, situationOps);
       StartCoroutine(GoToFeedbackScene());
     }
     else if(findSimilarity(result.ToUpper(), op2text.ToUpper()) > similarityPercent){
       op2Button.GetComponent<Image>().color = Color.green;
       situationOps = situationOps.Substring(0, situationID) + '2' + situationOps.Substring(situationID + 1);
+      database.SetSituationOptions(situationName, situationOps);
       StartCoroutine(GoToFeedbackScene());
     }
     else if(findSimilarity(result.ToUpper(), op3text.ToUpper()) > similarityPercent){
       op3Button.GetComponent<Image>().color = Color.green;
       situationOps = situationOps.Substring(0, situationID) + '3' + situationOps.Substring(situationID + 1);
+      database.SetSituationOptions(situationName, situationOps);
       StartCoroutine(GoToFeedbackScene());
     }
     else {
@@ -295,7 +298,7 @@ public class SituationController : MonoBehaviour
   IEnumerator GoToFeedbackScene()
   {
     yield return new WaitForSeconds(1.5F);
-    SceneManager.LoadScene (sceneName:"FeedbackScene");
+    SceneManager.LoadScene(sceneName:"FeedbackScene");
   }
 
   IEnumerator EnableRecording()
@@ -304,5 +307,6 @@ public class SituationController : MonoBehaviour
     yield return new WaitForSeconds(4.16F + 1.5F); // Audio Duration 4.16
     startRecordingButton.enabled = true;
     instructionText.text = "Toque aqui para gravar sua resposta";
+    //EnableOptions(true);
   }
 }
