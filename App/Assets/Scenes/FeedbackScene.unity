@@ -297,7 +297,6 @@ GameObject:
   - component: {fileID: 151497233}
   - component: {fileID: 151497236}
   - component: {fileID: 151497238}
-  - component: {fileID: 151497237}
   m_Layer: 0
   m_Name: Canvas
   m_TagString: Untagged
@@ -403,27 +402,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 82c276221d9ec93448b3596afe0384cf, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
---- !u!114 &151497237
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 151497230}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 769e858b8b213a14791eaf2a942d7a54, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  textJSON: {fileID: 0}
-  contextText: {fileID: 0}
-  questionText: {fileID: 0}
-  op1Button: {fileID: 0}
-  op2Button: {fileID: 0}
-  op3Button: {fileID: 0}
-  situationID: 0
-  mySituationList:
-    situation: []
 --- !u!114 &151497238
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -439,10 +417,12 @@ MonoBehaviour:
   textJSON: {fileID: 4900000, guid: 279175682c56d524cb11df0b1fbec58b, type: 3}
   contextText: {fileID: 1929374365}
   questionText: {fileID: 36628674}
+  opText: {fileID: 2014219948}
   op1Button: {fileID: 0}
   op2Button: {fileID: 0}
   op3Button: {fileID: 0}
   situationID: 0
+  isFeedback: 1
   mySituationList:
     situation: []
 --- !u!1 &863529771

@@ -47,6 +47,7 @@ public class SituationController : MonoBehaviour
   public Text instructionText;
   public Text resultText;
   public int situationID;
+  public string situationName;
   
   private double similarityPercent;
   private int countAttempts;
@@ -80,7 +81,8 @@ public class SituationController : MonoBehaviour
 
     //PlayerPrefs.SetInt("situationID", database.GetSituationNumber("restaurante"));
     //situationID = PlayerPrefs.GetInt("situationID");
-    situationID = database.GetSituationNumber("restaurante");
+    situationName = "restaurante";
+    situationID = database.GetSituationNumber(situationName);
 
     StartCoroutine(EnableRecording());
     //EnableOptions(false); <- tirar do comentario
@@ -218,16 +220,21 @@ public class SituationController : MonoBehaviour
     string op2text = op2Button.GetComponentInChildren<Text>().text;
     string op3text = op3Button.GetComponentInChildren<Text>().text;
 
+    string situationOps = database.GetSituationOptions(situationName);
+
     if(findSimilarity(result.ToUpper(), op1text.ToUpper()) > similarityPercent){
       op1Button.GetComponent<Image>().color = Color.green;
+      situationOps = situationOps.Substring(0, situationID) + '1' + situationOps.Substring(situationID + 1);
       StartCoroutine(GoToFeedbackScene());
     }
     else if(findSimilarity(result.ToUpper(), op2text.ToUpper()) > similarityPercent){
       op2Button.GetComponent<Image>().color = Color.green;
+      situationOps = situationOps.Substring(0, situationID) + '2' + situationOps.Substring(situationID + 1);
       StartCoroutine(GoToFeedbackScene());
     }
     else if(findSimilarity(result.ToUpper(), op3text.ToUpper()) > similarityPercent){
       op3Button.GetComponent<Image>().color = Color.green;
+      situationOps = situationOps.Substring(0, situationID) + '3' + situationOps.Substring(situationID + 1);
       StartCoroutine(GoToFeedbackScene());
     }
     else {
@@ -246,15 +253,24 @@ public class SituationController : MonoBehaviour
   public void OnClickOption()
   {
     string currentButtonName = EventSystem.current.currentSelectedGameObject.name;
+    string situationOps = database.GetSituationOptions(situationName);
+    char opChosen = '0';
+
     if(currentButtonName == "op1Button"){
       op1Button.GetComponent<Image>().color = Color.green;
+      opChosen = '1';
     }
     else if(currentButtonName == "op2Button"){
       op2Button.GetComponent<Image>().color = Color.green;
+      opChosen = '2';
     }
     else if(currentButtonName == "op3Button"){
       op3Button.GetComponent<Image>().color = Color.green;
+      opChosen = '3';
     }
+    
+    situationOps = situationOps.Substring(0, situationID) + opChosen + situationOps.Substring(situationID + 1);
+    database.SetSituationOptions(situationName, situationOps);
     StartCoroutine(GoToFeedbackScene());
   }
 
