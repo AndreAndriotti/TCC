@@ -402,6 +402,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 82c276221d9ec93448b3596afe0384cf, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  canvas: {fileID: 151497230}
 --- !u!114 &151497238
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -418,10 +419,13 @@ MonoBehaviour:
   contextText: {fileID: 1929374365}
   questionText: {fileID: 36628674}
   opText: {fileID: 2014219948}
+  feedbackText: {fileID: 863529773}
   op1Button: {fileID: 0}
   op2Button: {fileID: 0}
   op3Button: {fileID: 0}
   situationID: 0
+  opOK: 0
+  situationName: restaurante
   isFeedback: 1
   mySituationList:
     situation: []
@@ -496,7 +500,7 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: <FEEDBACK>
+  m_Text: 
 --- !u!222 &863529774
 CanvasRenderer:
   m_ObjectHideFlags: 0

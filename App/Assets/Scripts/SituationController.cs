@@ -16,7 +16,7 @@ public class SituationController : MonoBehaviour
 	  public string op1;
 	  public string op2;
 	  public string op3;
-	  public int opOK;
+	  public char opOK;
 	  //private string fb1;
 	  //private string fb2;
 	  //private string fb3;
@@ -27,7 +27,7 @@ public class SituationController : MonoBehaviour
                           string op1, 
                           string op2, 
                           string op3,
-                          int opOK,
+                          char opOK,
                           float audioDuration) 
     {
       this.context = context;
@@ -46,8 +46,9 @@ public class SituationController : MonoBehaviour
   public Button op3Button;
   public Text instructionText;
   public Text resultText;
-  public int situationID;
-  public string situationName;
+  private int situationID;
+  private string situationName;
+  private string opsAttempts;
   
   private double similarityPercent;
   private int countAttempts;
@@ -83,6 +84,7 @@ public class SituationController : MonoBehaviour
     //situationID = PlayerPrefs.GetInt("situationID");
     situationName = "restaurante";
     situationID = database.GetSituationNumber(situationName);
+    opsAttempts = database.GetSituationOpsAttempts(situationName);
 
     StartCoroutine(EnableRecording());
     EnableOptions(false);
@@ -297,6 +299,10 @@ public class SituationController : MonoBehaviour
 
   IEnumerator GoToFeedbackScene()
   {
+    int newOpAttempt = (int)opsAttempts[situationID] + 1;
+    opsAttempts = opsAttempts.Substring(0, situationID) + (char)newOpAttempt + opsAttempts.Substring(situationID + 1);
+    database.SetSituationOpsAttempts(situationName, opsAttempts);
+
     yield return new WaitForSeconds(1.5F);
     SceneManager.LoadScene(sceneName:"FeedbackScene");
   }
@@ -307,6 +313,6 @@ public class SituationController : MonoBehaviour
     yield return new WaitForSeconds(4.16F + 1.5F); // Audio Duration 4.16
     startRecordingButton.enabled = true;
     instructionText.text = "Toque aqui para gravar sua resposta";
-    //EnableOptions(true);
+    //EnableOptions(true); <- poder clicar quando a narração termina
   }
 }

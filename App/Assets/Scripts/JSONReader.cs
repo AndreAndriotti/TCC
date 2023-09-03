@@ -11,13 +11,16 @@ public class JSONReader : MonoBehaviour
     public Text contextText;
     public Text questionText;
     public Text opText;
+    public Text feedbackText;
     public Button op1Button;
     public Button op2Button;
     public Button op3Button;
     public int situationID;
+    public char opOK;
 
     public string situationName = "restaurante";
     public bool isFeedback;
+    public static bool isCorrectOp;
 
     [System.Serializable]
     public class Situation
@@ -27,7 +30,7 @@ public class JSONReader : MonoBehaviour
         public string op1;
         public string op2;
         public string op3;
-        public int opOK;
+        public string opOK;
         public string fb1;
         public string fb2;
         public string fbOK;
@@ -53,12 +56,16 @@ public class JSONReader : MonoBehaviour
         
         mySituationList = JsonUtility.FromJson<SituationList>(textJSON.text);
 
+        opOK = mySituationList.situation[situationID].opOK[0]; 
         contextText.text = mySituationList.situation[situationID].context;
         questionText.text = mySituationList.situation[situationID].question;
+        isCorrectOp = false;
 
         if(isFeedback)
         {
             char opChosen = database.GetSituationOptions(situationName)[situationID];
+            char opAttempts = database.GetSituationOpsAttempts(situationName)[situationID];
+            
             switch(opChosen)
             {
                 case '1':
@@ -70,8 +77,23 @@ public class JSONReader : MonoBehaviour
                 case '3':
                     opText.text = mySituationList.situation[situationID].op3;
                     break;
-            };  
+            };
+            
+            if (opChosen == opOK)
+            {
+                isCorrectOp = true;
+                feedbackText.text = mySituationList.situation[situationID].fbOK;
+            }
+            else if (opAttempts == '1')
+            {
+                feedbackText.text = mySituationList.situation[situationID].fb1;
+            }
+            else 
+            {
+                feedbackText.text = mySituationList.situation[situationID].fb2;
+            }
         }
+
         else
         {
             op1Button.GetComponentInChildren<Text>().text = mySituationList.situation[situationID].op1;
