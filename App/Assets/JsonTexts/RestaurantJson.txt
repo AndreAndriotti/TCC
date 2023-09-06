@@ -6,9 +6,10 @@
             "op1": "Olá! Onde eu poderia me sentar?",
             "op2": "Oi! Gostaria de fazer um pedido!",
             "op3": "Olá! Gosto desse restaurante!",
-            "fb1": "Errou uma vez, tenta denovo!",
-            "fb2": "Errou duas vezes, tenta denovo!",
-            "fbOK": "Acertou!",
+            "opOK": "1",
+            "fb1": "Errou uma vez, tenta de novo!",
+            "fb2": "Errou duas vezes, vamos seguir...",
+            "fbOK": "Acertou, vamos seguir!",
             "audioDuration": 4.16
         },
         {
@@ -17,9 +18,10 @@
             "op1": "Ah! Eu gostaria de ver as opções no cardápio.",
             "op2": "Eu quero o de sempre!",
             "op3": "Pode ser qualquer coisa",
-            "fb1": "Errou uma vez, tenta denovo!",
-            "fb2": "Errou duas vezes, tenta denovo!",
-            "fbOK": "Acertou!",
+            "opOK": "1",
+            "fb1": "Errou uma vez, tenta de novo!",
+            "fb2": "Errou duas vezes, vamos seguir...",
+            "fbOK": "Acertou, vamos seguir!",
             "audioDuration": 1.0
         },
         {
@@ -28,9 +30,10 @@
             "op1": "Também ficasse em pé e olhando diretamente em seus olhos",
             "op2": "Permanecesse sentado e depois de escolher o que quer comer, olhasse para ele e falasse sobre o pedido",
             "op3": "Continuasse olhando para o cardápio e falasse em voz baixa",
-            "fb1": "Errou uma vez, tenta denovo!",
-            "fb2": "Errou duas vezes, tenta denovo!",
-            "fbOK": "Acertou!",
+            "opOK": "1",
+            "fb1": "Errou uma vez, tenta de novo!",
+            "fb2": "Errou duas vezes, vamos seguir...",
+            "fbOK": "Acertou, vamos seguir!",
             "audioDuration": 1.0
         },
         {
@@ -39,9 +42,10 @@
             "op1": "Que você parece doente",
             "op2": "Que você está correndo risco",
             "op3": "Que você deve estar com bastante fome",
-            "fb1": "Errou uma vez, tenta denovo!",
-            "fb2": "Errou duas vezes, tenta denovo!",
-            "fbOK": "Acertou!",
+            "opOK": "1",
+            "fb1": "Errou uma vez, tenta de novo!",
+            "fb2": "Errou duas vezes, vamos seguir...",
+            "fbOK": "Acertou, vamos seguir!",
             "audioDuration": 1.0
         },
         {
@@ -50,9 +54,10 @@
             "op1": "Obrigado!",
             "op2": "Veja se não demora",
             "op3": "Não responder",
-            "fb1": "Errou uma vez, tenta denovo!",
-            "fb2": "Errou duas vezes, tenta denovo!",
-            "fbOK": "Acertou!",
+            "opOK": "1",
+            "fb1": "Errou uma vez, tenta de novo!",
+            "fb2": "Errou duas vezes, vamos seguir...",
+            "fbOK": "Acertou, vamos seguir!",
             "audioDuration": 1.0
         },
         {
@@ -61,9 +66,10 @@
             "op1": "Faz cara feia para mesa ao lado",
             "op2": "Começa a fazer muito barulho na sua mesa",
             "op3": "Chama o garçom e pede para trocar de mesa",
-            "fb1": "Errou uma vez, tenta denovo!",
-            "fb2": "Errou duas vezes, tenta denovo!",
-            "fbOK": "Acertou!",
+            "opOK": "1",
+            "fb1": "Errou uma vez, tenta de novo!",
+            "fb2": "Errou duas vezes, vamos seguir...",
+            "fbOK": "Acertou, vamos seguir!",
             "audioDuration": 1.0
         },
         {
@@ -72,9 +78,10 @@
             "op1": "Digo que estou “apertado” e quero fazer xixi",
             "op2": "Pergunto onde fica o banheiro",
             "op3": "Fico “segurando” e espero voltar para casa",
-            "fb1": "Errou uma vez, tenta denovo!",
-            "fb2": "Errou duas vezes, tenta denovo!",
-            "fbOK": "Acertou!",
+            "opOK": "1",
+            "fb1": "Errou uma vez, tenta de novo!",
+            "fb2": "Errou duas vezes, vamos seguir...",
+            "fbOK": "Acertou, vamos seguir!",
             "audioDuration": 1.0
         },
         {
@@ -83,9 +90,10 @@
             "op1": "Fico na minha mesa encarando as outras pessoas",
             "op2": "Fico na minha mesa mexendo no celular até a comida chegar",
             "op3": "Procuro fazer amizade com pessoas das outras mesas",
-            "fb1": "Errou uma vez, tenta denovo!",
-            "fb2": "Errou duas vezes, tenta denovo!",
-            "fbOK": "Acertou!",
+            "opOK": "1",
+            "fb1": "Errou uma vez, tenta de novo!",
+            "fb2": "Errou duas vezes, vamos seguir...",
+            "fbOK": "Acertou, vamos seguir!",
             "audioDuration": 1.0
         },
         {
@@ -94,9 +102,10 @@
             "op1": "Permanece sentado e levanta uma das mãos em direção ao garçom e permanece olhando para ele",
             "op2": "Fica em pé e o chama",
             "op3": "Vai até onde o garçom está",
-            "fb1": "Errou uma vez, tenta denovo!",
-            "fb2": "Errou duas vezes, tenta denovo!",
-            "fbOK": "Acertou!",
+            "opOK": "1",
+            "fb1": "Errou uma vez, tenta de novo!",
+            "fb2": "Errou duas vezes, vamos seguir...",
+            "fbOK": "Acertou, vamos seguir!",
             "audioDuration": 1.0
         },
         {
@@ -105,9 +114,10 @@
             "op1": "Pagar a conta",
             "op2": "Sim, gostaria de fazer o pagamento, por favor",
             "op3": "Tá aqui o cartão",
-            "fb1": "Errou uma vez, tenta denovo!",
-            "fb2": "Errou duas vezes, tenta denovo!",
-            "fbOK": "Acertou!",
+            "opOK": "1",
+            "fb1": "Errou uma vez, tenta de novo!",
+            "fb2": "Errou duas vezes, vamos seguir...",
+            "fbOK": "Acertou, vamos seguir!",
             "audioDuration": 1.0
         },
         {
@@ -116,9 +126,10 @@
             "op1": "Chegando à porta, dá um abraço no garçom",
             "op2": "Simplesmente sai do restaurante",
             "op3": "Caminha normalmente e chegando na saída, diz: Obrigado, boa noite!",
-            "fb1": "Errou uma vez, tenta denovo!",
-            "fb2": "Errou duas vezes, tenta denovo!",
-            "fbOK": "Acertou!",
+            "opOK": "1",
+            "fb1": "Errou uma vez, tenta de novo!",
+            "fb2": "Errou duas vezes, vamos seguir...",
+            "fbOK": "Acertou, vamos seguir!",
             "audioDuration": 1.0
         }
     ]

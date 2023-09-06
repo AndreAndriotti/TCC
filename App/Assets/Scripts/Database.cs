@@ -8,8 +8,8 @@ public class Database : MonoBehaviour
     // Resources:
     // https://www.mono-project.com/docs/database-access/providers/sqlite/
 
-     int situationNumber;
-     string userName;
+    int situationNumber;
+    string userName;
 
     void Start() // 13
     {
@@ -19,6 +19,7 @@ public class Database : MonoBehaviour
     private IDbConnection openDatabaseConection()
     {
         string filepath = $"{Application.persistentDataPath}/MyDatabase.sqlite";
+        Debug.Log(filepath);
         
         if (!File.Exists(filepath))
         {
@@ -72,7 +73,7 @@ public class Database : MonoBehaviour
 
         // Create a table for the hit count in the database if it does not exist yet.
         IDbCommand dbCommandCreateTable = dbConnection.CreateCommand(); // 6
-        dbCommandCreateTable.CommandText = "CREATE TABLE IF NOT EXISTS SituationsTracker (id_email VARCHAR(100) PRIMARY KEY, name VARCHAR(100), restaurante_situation INTEGER)"; // 7
+        dbCommandCreateTable.CommandText = "CREATE TABLE IF NOT EXISTS SituationsTracker (id_email VARCHAR(100) PRIMARY KEY, name VARCHAR(100), restaurante_situation INTEGER, restaurante_ops VARCHAR(100), restaurante_ops_attempts VARCHAR(100))"; // 7
         dbCommandCreateTable.ExecuteReader(); // 8
 
         dbConnection.Close();
@@ -96,7 +97,7 @@ public class Database : MonoBehaviour
 
         // Create a table for the hit count in the database if it does not exist yet.
         IDbCommand dbCommandCreateTable = dbConnection.CreateCommand(); // 6
-        dbCommandCreateTable.CommandText = "INSERT INTO SituationsTracker (id_email, name, restaurante_situation) VALUES ('teste@email.com', 'André', 0)"; // 7
+        dbCommandCreateTable.CommandText = "INSERT INTO SituationsTracker (id_email, name, restaurante_situation, restaurante_ops, restaurante_ops_attempts) VALUES ('teste@email.com', 'Carlos', 0, '00000000000', '00000000000')"; // 7
         dbCommandCreateTable.ExecuteReader(); // 8
 
         dbConnection.Close();
@@ -132,7 +133,7 @@ public class Database : MonoBehaviour
         dbConnection.Open(); // 6
 
         IDbCommand dbCommandReadValues = dbConnection.CreateCommand(); // 6
-        dbCommandReadValues.CommandText = $"SELECT {situationName}_situation FROM SituationsTracker WHERE (id_email = 'teste1@email.com');"; // 7
+        dbCommandReadValues.CommandText = $"SELECT {situationName}_situation FROM SituationsTracker WHERE (id_email = 'teste@email.com');"; // 7
         IDataReader dataReader = dbCommandReadValues.ExecuteReader();
 
          while (dataReader.Read()) // 18
@@ -164,7 +165,68 @@ public class Database : MonoBehaviour
 
         return userName;
     }
+
+    public void SetSituationOptions(string situationName, string situationOps){
+        IDbConnection dbConnection = openDatabaseConection();
+        dbConnection.Open(); // 6
+
+        // Create a table for the hit count in the database if it does not exist yet.
+        IDbCommand dbCommandCreateTable = dbConnection.CreateCommand(); // 6
+        dbCommandCreateTable.CommandText = $"UPDATE SituationsTracker SET {situationName}_ops = {situationOps}"; // 7
+        dbCommandCreateTable.ExecuteReader(); // 8
+
+        dbConnection.Close();
+    }
+
+    public string GetSituationOptions(string situationName){
+        IDbConnection dbConnection = openDatabaseConection();
+        dbConnection.Open(); // 6
+
+        IDbCommand dbCommandReadValues = dbConnection.CreateCommand(); // 6
+        dbCommandReadValues.CommandText = $"SELECT {situationName}_ops FROM SituationsTracker WHERE (id_email = 'teste@email.com');"; // 7
+        IDataReader dataReader = dbCommandReadValues.ExecuteReader();
+
+         while (dataReader.Read()) // 18
+        {
+            // The `id` has index 0, our `hits` have the index 1.
+            userName = dataReader.GetString(0); // 19
+        }
+
+        dbConnection.Close();
+
+        return userName;
+    }
  
+    public void SetSituationOpsAttempts(string situationName, string situationOpsAttempts){
+        IDbConnection dbConnection = openDatabaseConection();
+        dbConnection.Open(); // 6
+
+        // Create a table for the hit count in the database if it does not exist yet.
+        IDbCommand dbCommandCreateTable = dbConnection.CreateCommand(); // 6
+        dbCommandCreateTable.CommandText = $"UPDATE SituationsTracker SET {situationName}_ops_attempts = {situationOpsAttempts}"; // 7
+        dbCommandCreateTable.ExecuteReader(); // 8
+
+        dbConnection.Close();
+    }
+
+    public string GetSituationOpsAttempts(string situationName){
+        IDbConnection dbConnection = openDatabaseConection();
+        dbConnection.Open(); // 6
+
+        IDbCommand dbCommandReadValues = dbConnection.CreateCommand(); // 6
+        dbCommandReadValues.CommandText = $"SELECT {situationName}_ops_attempts FROM SituationsTracker WHERE (id_email = 'teste@email.com');"; // 7
+        IDataReader dataReader = dbCommandReadValues.ExecuteReader();
+
+         while (dataReader.Read()) // 18
+        {
+            // The `id` has index 0, our `hits` have the index 1.
+            userName = dataReader.GetString(0); // 19
+        }
+
+        dbConnection.Close();
+
+        return userName;
+    }
     void Update(){
         
     }  

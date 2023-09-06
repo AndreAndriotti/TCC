@@ -16,6 +16,7 @@ public class SituationController : MonoBehaviour
 	  public string op1;
 	  public string op2;
 	  public string op3;
+	  public char opOK;
 	  //private string fb1;
 	  //private string fb2;
 	  //private string fb3;
@@ -26,6 +27,7 @@ public class SituationController : MonoBehaviour
                           string op1, 
                           string op2, 
                           string op3,
+                          char opOK,
                           float audioDuration) 
     {
       this.context = context;
@@ -33,6 +35,7 @@ public class SituationController : MonoBehaviour
       this.op1 = op1;
       this.op2 = op2;
       this.op3 = op3;
+      this.opOK = opOK;
       this.audioDuration = audioDuration;
     }
   }
@@ -43,7 +46,9 @@ public class SituationController : MonoBehaviour
   public Button op3Button;
   public Text instructionText;
   public Text resultText;
-  public int situationID;
+  private int situationID;
+  private string situationName;
+  private string opsAttempts;
   
   private double similarityPercent;
   private int countAttempts;
@@ -70,13 +75,16 @@ public class SituationController : MonoBehaviour
     }
 
     // APAGAR DEPOIS -> texto de reconhecimento de voz para testes
-    resultText.enabled = false;
+    resultText.enabled = true;
 
     database = this.gameObject.AddComponent<Database>();
     database.createUserDatabase();
 
-    PlayerPrefs.SetInt("situationID", database.GetSituationNumber("restaurante"));
-    situationID = PlayerPrefs.GetInt("situationID");
+    //PlayerPrefs.SetInt("situationID", database.GetSituationNumber("restaurante"));
+    //situationID = PlayerPrefs.GetInt("situationID");
+    situationName = "restaurante";
+    situationID = database.GetSituationNumber(situationName);
+    opsAttempts = database.GetSituationOpsAttempts(situationName);
 
     StartCoroutine(EnableRecording());
     EnableOptions(false);
@@ -214,16 +222,24 @@ public class SituationController : MonoBehaviour
     string op2text = op2Button.GetComponentInChildren<Text>().text;
     string op3text = op3Button.GetComponentInChildren<Text>().text;
 
+    string situationOps = database.GetSituationOptions(situationName);
+
     if(findSimilarity(result.ToUpper(), op1text.ToUpper()) > similarityPercent){
       op1Button.GetComponent<Image>().color = Color.green;
+      situationOps = situationOps.Substring(0, situationID) + '1' + situationOps.Substring(situationID + 1);
+      database.SetSituationOptions(situationName, situationOps);
       StartCoroutine(GoToFeedbackScene());
     }
     else if(findSimilarity(result.ToUpper(), op2text.ToUpper()) > similarityPercent){
       op2Button.GetComponent<Image>().color = Color.green;
+      situationOps = situationOps.Substring(0, situationID) + '2' + situationOps.Substring(situationID + 1);
+      database.SetSituationOptions(situationName, situationOps);
       StartCoroutine(GoToFeedbackScene());
     }
     else if(findSimilarity(result.ToUpper(), op3text.ToUpper()) > similarityPercent){
       op3Button.GetComponent<Image>().color = Color.green;
+      situationOps = situationOps.Substring(0, situationID) + '3' + situationOps.Substring(situationID + 1);
+      database.SetSituationOptions(situationName, situationOps);
       StartCoroutine(GoToFeedbackScene());
     }
     else {
@@ -242,15 +258,24 @@ public class SituationController : MonoBehaviour
   public void OnClickOption()
   {
     string currentButtonName = EventSystem.current.currentSelectedGameObject.name;
+    string situationOps = database.GetSituationOptions(situationName);
+    char opChosen = '0';
+
     if(currentButtonName == "op1Button"){
       op1Button.GetComponent<Image>().color = Color.green;
+      opChosen = '1';
     }
     else if(currentButtonName == "op2Button"){
       op2Button.GetComponent<Image>().color = Color.green;
+      opChosen = '2';
     }
     else if(currentButtonName == "op3Button"){
       op3Button.GetComponent<Image>().color = Color.green;
+      opChosen = '3';
     }
+    
+    situationOps = situationOps.Substring(0, situationID) + opChosen + situationOps.Substring(situationID + 1);
+    database.SetSituationOptions(situationName, situationOps);
     StartCoroutine(GoToFeedbackScene());
   }
 
@@ -274,8 +299,12 @@ public class SituationController : MonoBehaviour
 
   IEnumerator GoToFeedbackScene()
   {
+    int newOpAttempt = (int)opsAttempts[situationID] + 1;
+    opsAttempts = opsAttempts.Substring(0, situationID) + (char)newOpAttempt + opsAttempts.Substring(situationID + 1);
+    database.SetSituationOpsAttempts(situationName, opsAttempts);
+
     yield return new WaitForSeconds(1.5F);
-    SceneManager.LoadScene (sceneName:"FeedbackScene");
+    SceneManager.LoadScene(sceneName:"FeedbackScene");
   }
 
   IEnumerator EnableRecording()
@@ -284,5 +313,6 @@ public class SituationController : MonoBehaviour
     yield return new WaitForSeconds(4.16F + 1.5F); // Audio Duration 4.16
     startRecordingButton.enabled = true;
     instructionText.text = "Toque aqui para gravar sua resposta";
+    //EnableOptions(true); <- poder clicar quando a narração termina
   }
 }

@@ -789,10 +789,12 @@ MonoBehaviour:
   textJSON: {fileID: 4900000, guid: 279175682c56d524cb11df0b1fbec58b, type: 3}
   contextText: {fileID: 1163605963}
   questionText: {fileID: 1737817443}
+  opText: {fileID: 0}
   op1Button: {fileID: 1786337030}
   op2Button: {fileID: 1273151840}
   op3Button: {fileID: 32946646}
   situationID: 0
+  isFeedback: 0
   mySituationList:
     situation: []
 --- !u!1 &1077589778
@@ -912,7 +914,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 1}
   m_AnchorMax: {x: 1, y: 1}
-  m_AnchoredPosition: {x: -450, y: -49.99998}
+  m_AnchoredPosition: {x: -450, y: -50}
   m_SizeDelta: {x: -900, y: 100}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1123134792
