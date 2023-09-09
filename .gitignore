@@ -60,3 +60,6 @@ crashlytics-build.properties
 
 App/.vscode/*
 
+App/TCC_BackUpThisFolder_ButDontShipItWithYourGame/*
+App/TCC_BurstDebugInformation_DoNotShip/*
+
