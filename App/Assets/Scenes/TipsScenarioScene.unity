@@ -1206,8 +1206,8 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 0}
-        m_TargetAssemblyTypeName: ScenarioController, Assembly-CSharp
+      - m_Target: {fileID: 151497236}
+        m_TargetAssemblyTypeName: TipsScenarioController, Assembly-CSharp
         m_MethodName: OnClickBackButton
         m_Mode: 1
         m_Arguments:

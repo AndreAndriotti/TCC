@@ -240,10 +240,12 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ba3d26102cb10234b8efb0b8d1f91989, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  dicaPrefab: {fileID: 5171632618320740351, guid: 2b6ad6809fa1c9148add9bb20941ce17, type: 3}
+  dicaPrefab: {fileID: 475054124147725253, guid: 2b6ad6809fa1c9148add9bb20941ce17, type: 3}
   contentPanel: {fileID: 1052963131}
-  numDicasIniciais: 11
   scrollRect: {fileID: 771905098}
+  textJSON: {fileID: 4900000, guid: 279175682c56d524cb11df0b1fbec58b, type: 3}
+  mySituationList:
+    situation: []
 --- !u!1 &248381657
 GameObject:
   m_ObjectHideFlags: 0
@@ -464,7 +466,7 @@ RectTransform:
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 1, y: 1}
   m_AnchoredPosition: {x: 0, y: -250}
-  m_SizeDelta: {x: 0, y: -500}
+  m_SizeDelta: {x: -60, y: -500}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &771905098
 MonoBehaviour:
@@ -752,8 +754,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 1, y: 1}
-  m_AnchoredPosition: {x: 0, y: 0}
-  m_SizeDelta: {x: -17, y: 0}
+  m_AnchoredPosition: {x: 0, y: -3850}
+  m_SizeDelta: {x: -17, y: 7700}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1052963132
 MonoBehaviour:
@@ -812,7 +814,7 @@ Canvas:
   m_OverrideSorting: 0
   m_OverridePixelPerfect: 0
   m_SortingBucketNormalizedSize: 0
-  m_AdditionalShaderChannelsFlag: 0
+  m_AdditionalShaderChannelsFlag: 25
   m_SortingLayerID: 0
   m_SortingOrder: 0
   m_TargetDisplay: 0
@@ -1006,8 +1008,8 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 0}
-        m_TargetAssemblyTypeName: ScenarioController, Assembly-CSharp
+      - m_Target: {fileID: 151497236}
+        m_TargetAssemblyTypeName: TipsController, Assembly-CSharp
         m_MethodName: OnClickBackButton
         m_Mode: 1
         m_Arguments:
@@ -1090,7 +1092,7 @@ RectTransform:
   m_AnchorMin: {x: 0, y: 1}
   m_AnchorMax: {x: 1, y: 1}
   m_AnchoredPosition: {x: 0, y: 0}
-  m_SizeDelta: {x: 0, y: 300}
+  m_SizeDelta: {x: 0, y: 1500}
   m_Pivot: {x: 0, y: 1}
 --- !u!1 &1885768771
 GameObject:
@@ -1270,7 +1272,7 @@ MonoBehaviour:
   m_HandleRect: {fileID: 868008971}
   m_Direction: 2
   m_Value: 1
-  m_Size: 0.2
+  m_Size: 0.16304348
   m_NumberOfSteps: 0
   m_OnValueChanged:
     m_PersistentCalls:
