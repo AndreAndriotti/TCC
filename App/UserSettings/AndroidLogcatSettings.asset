@@ -3,7 +3,7 @@
     "m_SelectedPackage": {
         "deviceId": "RX2T4001R3W",
         "name": "com.TEACOGS.TCC",
-        "processId": 16442,
+        "processId": 12790,
         "exited": false
     },
     "m_SelectedPriority": 0,
@@ -162,6 +162,18 @@
             "deviceId": "RX2T4001R3W",
             "name": "com.TEACOGS.TCC",
             "processId": 16442,
+            "exited": false
+        },
+        {
+            "deviceId": "RX2T4001R3W",
+            "name": "com.TEACOGS.TCC",
+            "processId": 11605,
+            "exited": false
+        },
+        {
+            "deviceId": "RX2T4001R3W",
+            "name": "com.TEACOGS.TCC",
+            "processId": 12790,
             "exited": false
         },
         {
