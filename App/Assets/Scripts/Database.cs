@@ -234,7 +234,7 @@ public class Database : MonoBehaviour
         dbConnection.Open(); 
 
         IDbCommand dbCommandCreateTable = dbConnection.CreateCommand(); // 6
-        dbCommandCreateTable.CommandText = $"INSERT INTO REPORTTRACKER (cenario, situacao, opcao_escolhida, tentativa) values ({cenario_name}, {situationNumber}, {opcao_escolhida}, {tentativa});"; // 7
+        dbCommandCreateTable.CommandText = $"INSERT INTO REPORTTRACKER (cenario, situacao, opcao_escolhida, tentativa) values ('{cenario_name}', {situationNumber}, '{opcao_escolhida}', {tentativa});"; // 7
         dbCommandCreateTable.ExecuteReader(); // 8
 
         dbConnection.Close();
@@ -246,7 +246,7 @@ public class Database : MonoBehaviour
         dbConnection.Open(); 
 
         IDbCommand dbCommandReadValues = dbConnection.CreateCommand(); 
-        dbCommandReadValues.CommandText = $"SELECT COUNT(*) FROM ReportTracker WHERE cenario = {scenarioName};"; // 7
+        dbCommandReadValues.CommandText = $"SELECT COUNT(*) FROM ReportTracker WHERE cenario = '{scenarioName}';"; // 7
         IDataReader dataReader = dbCommandReadValues.ExecuteReader();
 
          while (dataReader.Read()) 
@@ -257,6 +257,26 @@ public class Database : MonoBehaviour
         dbConnection.Close();
 
         return situationTotal;
+    }
+
+    public string GetOpcaoEscolhida(string scenarioName, int numSituacao) {
+        string opcaoEscolhida = "";
+        IDbConnection dbConnection = openDatabaseConection();
+        dbConnection.Open(); // 6
+
+        IDbCommand dbCommandReadValues = dbConnection.CreateCommand(); // 6
+        dbCommandReadValues.CommandText = $"SELECT opcao_escolhida FROM ReportTracker WHERE cenario = '{scenarioName}' and situacao = {numSituacao};"; // 7
+        IDataReader dataReader = dbCommandReadValues.ExecuteReader();
+
+         while (dataReader.Read()) // 18
+        {
+            // The `id` has index 0, our `hits` have the index 1.
+            opcaoEscolhida = dataReader.GetString(0); // 19
+        }
+
+        dbConnection.Close();
+
+        return opcaoEscolhida;
     }
 
     void Update(){

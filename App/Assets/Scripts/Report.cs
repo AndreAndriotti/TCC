@@ -20,11 +20,17 @@ public class Report : MonoBehaviour
 
     void Start() {
         database = this.gameObject.AddComponent<Database>();
-        body = "Teste realizado com sucesso DO CELULAR. SITUATIONTOTAL: " + database.GetSituationsTotalInScenario("restaurante");
     }
 
-    public void SendEmail()
+    public void SendEmail(string scenarioName)
     {
+        int countSituationsScenario = database.GetSituationsTotalInScenario(scenarioName);
+        int countAux = 1;
+        body = $"RELATÓRIO DO PACIENTE {database.GetUserName()} DO CENÁRIO {scenarioName}\n";
+        while(countSituationsScenario > 0 && countAux != countSituationsScenario) {
+            body = body + $"Situação {countAux}:\n";
+            //TODO: continuar montando o body: tem que ver lógica pra mostrar todas as tentativas que ele teve na msm situacao do mesmo cenário
+        }
         MailMessage mail = new MailMessage(senderEmail, recipientEmail);
         mail.Subject = subject;
         mail.Body = body;

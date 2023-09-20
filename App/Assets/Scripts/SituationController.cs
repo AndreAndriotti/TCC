@@ -231,7 +231,7 @@ public class SituationController : MonoBehaviour
       situationOps = situationOps.Substring(0, situationID) + '1' + situationOps.Substring(situationID + 1);
       database.SetSituationOptions(situationName, situationOps);
       database.InsertIntoReportTrackerTable(situationName, situationID, op1text, countAttempts);
-      report.SendEmail();     
+      report.SendEmail(situationName);     
       StartCoroutine(GoToFeedbackScene());
     }
     else if(findSimilarity(result.ToUpper(), op2text.ToUpper()) > similarityPercent){
