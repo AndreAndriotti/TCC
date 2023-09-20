@@ -7,13 +7,21 @@ using System.Security.Cryptography.X509Certificates;
 
 public class Report : MonoBehaviour
 {
+
+    private Database database;
+
     private string smtpHost = "smtp.gmail.com"; // Endereço do servidor SMTP
     private int smtpPort = 587; // Porta SMTP (587 é uma porta comum para TLS)
     private string senderEmail = "reportteacog@gmail.com";
     private string senderPassword = "nayxiyudarbxroqa";
     private string recipientEmail = "carlomanoelba@gmail.com";
     private string subject = "Assunto do E-mail";
-    private string body = "Teste realizado com sucesso DO CELULAR";
+    private string body;
+
+    void Start() {
+        database = this.gameObject.AddComponent<Database>();
+        body = "Teste realizado com sucesso DO CELULAR. SITUATIONTOTAL: " + database.GetSituationsTotalInScenario("restaurante");
+    }
 
     public void SendEmail()
     {

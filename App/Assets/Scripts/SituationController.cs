@@ -8,6 +8,7 @@ using KKSpeech;
 public class SituationController : MonoBehaviour
 {
   private Database database;
+  private Report report;
 
   public class SituationData
   {
@@ -78,6 +79,7 @@ public class SituationController : MonoBehaviour
     resultText.enabled = true;
 
     database = this.gameObject.AddComponent<Database>();
+    report = this.gameObject.AddComponent<Report>();
     database.createUserDatabase();
 
     //PlayerPrefs.SetInt("situationID", database.GetSituationNumber("restaurante"));
@@ -228,18 +230,22 @@ public class SituationController : MonoBehaviour
       op1Button.GetComponent<Image>().color = Color.green;
       situationOps = situationOps.Substring(0, situationID) + '1' + situationOps.Substring(situationID + 1);
       database.SetSituationOptions(situationName, situationOps);
+      database.InsertIntoReportTrackerTable(situationName, situationID, op1text, countAttempts);
+      report.SendEmail();     
       StartCoroutine(GoToFeedbackScene());
     }
     else if(findSimilarity(result.ToUpper(), op2text.ToUpper()) > similarityPercent){
       op2Button.GetComponent<Image>().color = Color.green;
       situationOps = situationOps.Substring(0, situationID) + '2' + situationOps.Substring(situationID + 1);
       database.SetSituationOptions(situationName, situationOps);
+      database.InsertIntoReportTrackerTable(situationName, situationID, op2text, countAttempts);
       StartCoroutine(GoToFeedbackScene());
     }
     else if(findSimilarity(result.ToUpper(), op3text.ToUpper()) > similarityPercent){
       op3Button.GetComponent<Image>().color = Color.green;
       situationOps = situationOps.Substring(0, situationID) + '3' + situationOps.Substring(situationID + 1);
       database.SetSituationOptions(situationName, situationOps);
+      database.InsertIntoReportTrackerTable(situationName, situationID, op3text, countAttempts);
       StartCoroutine(GoToFeedbackScene());
     }
     else {

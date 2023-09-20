@@ -74,6 +74,7 @@ public class Database : MonoBehaviour
         // Create a table for the hit count in the database if it does not exist yet.
         IDbCommand dbCommandCreateTable = dbConnection.CreateCommand(); // 6
         dbCommandCreateTable.CommandText = "CREATE TABLE IF NOT EXISTS SituationsTracker (id_email VARCHAR(100) PRIMARY KEY, name VARCHAR(100), restaurante_situation INTEGER, restaurante_ops VARCHAR(100), restaurante_ops_attempts VARCHAR(100))"; // 7
+        dbCommandCreateTable.CommandText = "CREATE TABLE IF NOT EXISTS ReportTracker(Cenario VARCHAR(30), Situacao INTEGER, Opcao_Escolhida VARCHAR(150), Tentativa INTEGER);";
         dbCommandCreateTable.ExecuteReader(); // 8
 
         dbConnection.Close();
@@ -227,6 +228,37 @@ public class Database : MonoBehaviour
 
         return userName;
     }
+
+    public void InsertIntoReportTrackerTable(string cenario_name, int situationNumber, string opcao_escolhida, int tentativa) {
+        IDbConnection dbConnection = openDatabaseConection();
+        dbConnection.Open(); 
+
+        IDbCommand dbCommandCreateTable = dbConnection.CreateCommand(); // 6
+        dbCommandCreateTable.CommandText = $"INSERT INTO REPORTTRACKER (cenario, situacao, opcao_escolhida, tentativa) values ({cenario_name}, {situationNumber}, {opcao_escolhida}, {tentativa});"; // 7
+        dbCommandCreateTable.ExecuteReader(); // 8
+
+        dbConnection.Close();
+    }
+
+    public int GetSituationsTotalInScenario(string scenarioName) {
+        int situationTotal = 0;
+        IDbConnection dbConnection = openDatabaseConection();
+        dbConnection.Open(); 
+
+        IDbCommand dbCommandReadValues = dbConnection.CreateCommand(); 
+        dbCommandReadValues.CommandText = $"SELECT COUNT(*) FROM ReportTracker WHERE cenario = {scenarioName};"; // 7
+        IDataReader dataReader = dbCommandReadValues.ExecuteReader();
+
+         while (dataReader.Read()) 
+        {
+            situationTotal = dataReader.GetInt32(0); 
+        }
+
+        dbConnection.Close();
+
+        return situationTotal;
+    }
+
     void Update(){
         
     }  
