@@ -32,4 +32,9 @@ public class MenuController : MonoBehaviour
     {
         SceneManager.LoadScene (sceneName:"ScenarioScene");
     }
+    
+    public void OnClickTipsButton()
+    {
+        SceneManager.LoadScene (sceneName:"TipsScenarioScene");
+    }
 }
