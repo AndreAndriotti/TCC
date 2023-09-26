@@ -97,10 +97,53 @@ public class Database : MonoBehaviour
 
         // Create a table for the hit count in the database if it does not exist yet.
         IDbCommand dbCommandCreateTable = dbConnection.CreateCommand(); // 6
-        dbCommandCreateTable.CommandText = "INSERT INTO SituationsTracker (id_email, name, restaurante_situation, restaurante_ops, restaurante_ops_attempts) VALUES ('teste@email.com', 'Carlos', 0, '00000000000', '00000000000')"; // 7
+        dbCommandCreateTable.CommandText = "INSERT INTO SituationsTracker (id_email, name, restaurante_situation, restaurante_ops, restaurante_ops_attempts) VALUES ('email', 'Jogador', 0, '00000000000', '00000000000')"; // 7
         dbCommandCreateTable.ExecuteReader(); // 8
 
         dbConnection.Close();
+    }
+
+    public void SetEmail(string email){
+        IDbConnection dbConnection = openDatabaseConection();
+        dbConnection.Open(); // 6
+
+        // Create a table for the hit count in the database if it does not exist yet.
+        IDbCommand dbCommandCreateTable = dbConnection.CreateCommand(); // 6
+        dbCommandCreateTable.CommandText = $"UPDATE SituationsTracker SET id_email = '{email}'"; // 7
+        dbCommandCreateTable.ExecuteReader(); // 8
+
+        dbConnection.Close();
+    }
+
+    public void SetUserName(string userName){
+        IDbConnection dbConnection = openDatabaseConection();
+        dbConnection.Open(); // 6
+
+        // Create a table for the hit count in the database if it does not exist yet.
+        IDbCommand dbCommandCreateTable = dbConnection.CreateCommand(); // 6
+        dbCommandCreateTable.CommandText = $"UPDATE SituationsTracker SET name = '{userName}'"; // 7
+        dbCommandCreateTable.ExecuteReader(); // 8
+
+        dbConnection.Close();
+    }
+
+    public string GetUserName(){
+        IDbConnection dbConnection = openDatabaseConection();
+        dbConnection.Open(); // 6
+
+        IDbCommand dbCommandReadValues = dbConnection.CreateCommand(); // 6
+        dbCommandReadValues.CommandText = $"SELECT name FROM SituationsTracker;"; // 7
+        IDataReader dataReader = dbCommandReadValues.ExecuteReader();
+
+         while (dataReader.Read()) // 18
+        {
+            // The `id` has index 0, our `hits` have the index 1.
+            userName = dataReader.GetString(0); // 19
+        }
+
+        dbConnection.Close();
+
+        return userName;
     }
 
     public void UpdateSituation(string situationName){
@@ -133,7 +176,7 @@ public class Database : MonoBehaviour
         dbConnection.Open(); // 6
 
         IDbCommand dbCommandReadValues = dbConnection.CreateCommand(); // 6
-        dbCommandReadValues.CommandText = $"SELECT {situationName}_situation FROM SituationsTracker WHERE (id_email = 'teste@email.com');"; // 7
+        dbCommandReadValues.CommandText = $"SELECT {situationName}_situation FROM SituationsTracker;"; // 7
         IDataReader dataReader = dbCommandReadValues.ExecuteReader();
 
          while (dataReader.Read()) // 18
@@ -145,25 +188,6 @@ public class Database : MonoBehaviour
         dbConnection.Close();
 
         return situationNumber;
-    }
-
-    public string GetUserName(){
-        IDbConnection dbConnection = openDatabaseConection();
-        dbConnection.Open(); // 6
-
-        IDbCommand dbCommandReadValues = dbConnection.CreateCommand(); // 6
-        dbCommandReadValues.CommandText = $"SELECT name FROM SituationsTracker WHERE (id_email = 'teste@email.com');"; // 7
-        IDataReader dataReader = dbCommandReadValues.ExecuteReader();
-
-         while (dataReader.Read()) // 18
-        {
-            // The `id` has index 0, our `hits` have the index 1.
-            userName = dataReader.GetString(0); // 19
-        }
-
-        dbConnection.Close();
-
-        return userName;
     }
 
     public void SetSituationOptions(string situationName, string situationOps){
@@ -183,7 +207,7 @@ public class Database : MonoBehaviour
         dbConnection.Open(); // 6
 
         IDbCommand dbCommandReadValues = dbConnection.CreateCommand(); // 6
-        dbCommandReadValues.CommandText = $"SELECT {situationName}_ops FROM SituationsTracker WHERE (id_email = 'teste@email.com');"; // 7
+        dbCommandReadValues.CommandText = $"SELECT {situationName}_ops FROM SituationsTracker;"; // 7
         IDataReader dataReader = dbCommandReadValues.ExecuteReader();
 
          while (dataReader.Read()) // 18
@@ -214,7 +238,7 @@ public class Database : MonoBehaviour
         dbConnection.Open(); // 6
 
         IDbCommand dbCommandReadValues = dbConnection.CreateCommand(); // 6
-        dbCommandReadValues.CommandText = $"SELECT {situationName}_ops_attempts FROM SituationsTracker WHERE (id_email = 'teste@email.com');"; // 7
+        dbCommandReadValues.CommandText = $"SELECT {situationName}_ops_attempts FROM SituationsTracker;"; // 7
         IDataReader dataReader = dbCommandReadValues.ExecuteReader();
 
          while (dataReader.Read()) // 18
@@ -227,7 +251,4 @@ public class Database : MonoBehaviour
 
         return userName;
     }
-    void Update(){
-        
-    }  
 }
