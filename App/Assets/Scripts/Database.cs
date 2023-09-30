@@ -259,8 +259,8 @@ public class Database : MonoBehaviour
         return situationTotal;
     }
 
-    public string GetOpcaoEscolhida(string scenarioName, int numSituacao) {
-        string opcaoEscolhida = "";
+    public string GetOptionChoosen(string scenarioName, int numSituacao) {
+        string optionChoosen = "";
         IDbConnection dbConnection = openDatabaseConection();
         dbConnection.Open(); // 6
 
@@ -271,12 +271,32 @@ public class Database : MonoBehaviour
          while (dataReader.Read()) // 18
         {
             // The `id` has index 0, our `hits` have the index 1.
-            opcaoEscolhida = dataReader.GetString(0); // 19
+            optionChoosen = dataReader.GetString(0); // 19
         }
 
         dbConnection.Close();
 
-        return opcaoEscolhida;
+        return optionChoosen;
+    }
+
+    public int GetNumberOfTriesInSituation(string scenarioName, int numSituacao) {
+        int numberOfTries = 0;
+        IDbConnection dbConnection = openDatabaseConection();
+        dbConnection.Open(); // 6
+
+        IDbCommand dbCommandReadValues = dbConnection.CreateCommand(); // 6
+        dbCommandReadValues.CommandText = $"SELECT COUNT(*) FROM ReportTracker WHERE cenario = '{scenarioName}' and situacao = {numSituacao};"; // 7
+        IDataReader dataReader = dbCommandReadValues.ExecuteReader();
+
+         while (dataReader.Read()) // 18
+        {
+            // The `id` has index 0, our `hits` have the index 1.
+            numberOfTries = dataReader.GetInt32(0); // 19
+        }
+
+        dbConnection.Close();
+
+        return numberOfTries;
     }
 
     void Update(){

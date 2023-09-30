@@ -25,11 +25,18 @@ public class Report : MonoBehaviour
     public void SendEmail(string scenarioName)
     {
         int countSituationsScenario = database.GetSituationsTotalInScenario(scenarioName);
+        int numberOfTries;
+
         int countAux = 1;
         body = $"RELATÓRIO DO PACIENTE {database.GetUserName()} DO CENÁRIO {scenarioName}\n";
         while(countSituationsScenario > 0 && countAux != countSituationsScenario) {
             body = body + $"Situação {countAux}:\n";
-            //TODO: continuar montando o body: tem que ver lógica pra mostrar todas as tentativas que ele teve na msm situacao do mesmo cenário
+            numberOfTries = database.GetNumberOfTriesInSituation(scenarioName, countAux);
+
+            for (int i = 1; i <= numberOfTries; i++){
+                body = body + $"Tentativa {i}: {database.GetOptionChoosen(scenarioName, countAux)}";
+            }
+
         }
         MailMessage mail = new MailMessage(senderEmail, recipientEmail);
         mail.Subject = subject;

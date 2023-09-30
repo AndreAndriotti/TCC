@@ -16,7 +16,7 @@ public class SituationController : MonoBehaviour
     public string question;
 	  public string op1;
 	  public string op2;
-	  public string op3;
+	  public string op3;\
 	  public char opOK;
 	  //private string fb1;
 	  //private string fb2;
