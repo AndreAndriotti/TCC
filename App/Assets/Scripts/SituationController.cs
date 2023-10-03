@@ -226,7 +226,7 @@ public class SituationController : MonoBehaviour
     string op3text = op3Button.GetComponentInChildren<Text>().text;
 
     string situationOps = database.GetSituationOptions(situationName);
-    int newOpAttempt = (int)opsAttempts[situationID] + 1;
+    int newOpAttempt = int.Parse(opsAttempts[situationID].ToString())+1;
 
     if(findSimilarity(result.ToUpper(), op1text.ToUpper()) > similarityPercent){
       op1Button.GetComponent<Image>().color = Color.green;
@@ -334,30 +334,29 @@ public class SituationController : MonoBehaviour
   }
 
   private string GetBodyText(string scenarioName) {
-        string body = "novo";
-        int newOpAttempt = (int)opsAttempts[situationID] + 1;
+        string body;
+        int newOpAttempt = int.Parse(opsAttempts[situationID].ToString())+1;
 
-        body = "Cenario | Situacao | Opcao Escolhida | Tentativa";
-        body = body + $"{scenarioName} | {situationID} | {database.GetOptionChoosen(scenarioName, situationID, newOpAttempt)} | {newOpAttempt}";
-        /*
+        //body = "Cenario | Situacao | Opcao Escolhida | Tentativa";
+        //body = body + $"{scenarioName} | {situationID} | {database.GetOptionChoosen(scenarioName, situationID, newOpAttempt)} | {newOpAttempt}\n";
+        
         int countSituationsScenario = database.GetSituationsTotalInScenario(scenarioName);
 
-        body = body + database.GetSituationNumber("restaurante");
+        //body = body + database.GetSituationNumber("restaurante");
         
         int numberOfTries;
 
-        int countAux = 1;
         body = $"RELATÓRIO DO PACIENTE {database.GetUserName()} DO CENÁRIO {scenarioName}\n";
-        for(countAux = 1; countAux != countSituationsScenario; countAux++) {
-            body = body + $"\nSituação {countAux}:\n";
+        for(int countAux = 0; countAux != countSituationsScenario; countAux++) {
+            body = body + $"\nSituação {countAux+1}:\n";
             numberOfTries = database.GetNumberOfTriesInSituation(scenarioName, countAux);
             
-            for (int i = 1; i != numberOfTries; i++){
+            for (int i = 1; i != numberOfTries+1; i++){
                 body = body + $"Tentativa {i}: {database.GetOptionChoosen(scenarioName, countAux, i)}\n";
             }
 
 
-        }*/
+        }
 
         return body;
     }

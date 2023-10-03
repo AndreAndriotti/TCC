@@ -15,14 +15,16 @@ public class Report : MonoBehaviour
     private int smtpPort = 587; // Porta SMTP (587 é uma porta comum para TLS)
     private string senderEmail = "reportteacog@gmail.com";
     private string senderPassword = "nayxiyudarbxroqa";
-    private string recipientEmail = "carlomanoelba@gmail.com";
-    private string subject = "Relatório Paciente - TEACOG - TESTE 1";
+    private string recipientEmail;
+    private string subject = "Relatório Paciente - TEACOG - TESTE 2";
     //private string body = "teste";
 
     void Start() {
         database = this.gameObject.AddComponent<Database>();
         database.createUserDatabase();
         database.createReportTable();
+
+        recipientEmail = database.GetUserEmail();
     }
 
     public void SendEmail(string bodyText)
