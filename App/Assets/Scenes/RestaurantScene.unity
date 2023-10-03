@@ -773,7 +773,6 @@ MonoBehaviour:
   op3Button: {fileID: 32946646}
   instructionText: {fileID: 456255072}
   resultText: {fileID: 2077337297}
-  situationID: 0
 --- !u!114 &686776719
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -790,13 +789,60 @@ MonoBehaviour:
   contextText: {fileID: 1163605963}
   questionText: {fileID: 1737817443}
   opText: {fileID: 0}
+  feedbackText: {fileID: 0}
   op1Button: {fileID: 1786337030}
   op2Button: {fileID: 1273151840}
   op3Button: {fileID: 32946646}
   situationID: 0
+  opOK: 0
+  situationName: restaurante
   isFeedback: 0
   mySituationList:
     situation: []
+--- !u!1 &872359497
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 872359499}
+  - component: {fileID: 872359498}
+  m_Layer: 0
+  m_Name: Report
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!114 &872359498
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 872359497}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ff3e63e7ba52c0245a116050cc66d1db, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+--- !u!4 &872359499
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 872359497}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_RootOrder: 4
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1077589778
 GameObject:
   m_ObjectHideFlags: 0

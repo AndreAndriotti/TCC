@@ -74,6 +74,18 @@ public class Database : MonoBehaviour
         // Create a table for the hit count in the database if it does not exist yet.
         IDbCommand dbCommandCreateTable = dbConnection.CreateCommand(); // 6
         dbCommandCreateTable.CommandText = "CREATE TABLE IF NOT EXISTS SituationsTracker (id_email VARCHAR(100) PRIMARY KEY, name VARCHAR(100), restaurante_situation INTEGER, restaurante_ops VARCHAR(100), restaurante_ops_attempts VARCHAR(100))"; // 7
+        dbCommandCreateTable.ExecuteReader(); // 8
+
+        dbConnection.Close();
+    }
+
+    public void createReportTable()
+    {
+        IDbConnection dbConnection = openDatabaseConection();
+        dbConnection.Open(); // 6
+
+        // Create a table for the hit count in the database if it does not exist yet.
+        IDbCommand dbCommandCreateTable = dbConnection.CreateCommand(); // 6
         dbCommandCreateTable.CommandText = "CREATE TABLE IF NOT EXISTS ReportTracker(Cenario VARCHAR(30), Situacao INTEGER, Opcao_Escolhida VARCHAR(150), Tentativa INTEGER);";
         dbCommandCreateTable.ExecuteReader(); // 8
 
@@ -87,6 +99,18 @@ public class Database : MonoBehaviour
         // Create a table for the hit count in the database if it does not exist yet.
         IDbCommand dbCommandCreateTable = dbConnection.CreateCommand(); // 6
         dbCommandCreateTable.CommandText = "DROP TABLE SituationsTracker"; // 7
+        dbCommandCreateTable.ExecuteReader(); // 8
+
+        dbConnection.Close();
+    }
+
+    public void deleteTableReport() {
+        IDbConnection dbConnection = openDatabaseConection();
+        dbConnection.Open(); // 6
+
+        // Create a table for the hit count in the database if it does not exist yet.
+        IDbCommand dbCommandCreateTable = dbConnection.CreateCommand(); // 6
+        dbCommandCreateTable.CommandText = "DROP TABLE ReportTracker"; // 7
         dbCommandCreateTable.ExecuteReader(); // 8
 
         dbConnection.Close();
@@ -246,7 +270,7 @@ public class Database : MonoBehaviour
         dbConnection.Open(); 
 
         IDbCommand dbCommandReadValues = dbConnection.CreateCommand(); 
-        dbCommandReadValues.CommandText = $"SELECT COUNT(*) FROM ReportTracker WHERE cenario = '{scenarioName}';"; // 7
+        dbCommandReadValues.CommandText = $"SELECT COUNT(DISTINCT Situacao) FROM ReportTracker WHERE cenario = '{scenarioName}';"; // 7
         IDataReader dataReader = dbCommandReadValues.ExecuteReader();
 
          while (dataReader.Read()) 
@@ -259,13 +283,13 @@ public class Database : MonoBehaviour
         return situationTotal;
     }
 
-    public string GetOptionChoosen(string scenarioName, int numSituacao) {
+    public string GetOptionChoosen(string scenarioName, int numSituacao, int attempt) {
         string optionChoosen = "";
         IDbConnection dbConnection = openDatabaseConection();
         dbConnection.Open(); // 6
 
         IDbCommand dbCommandReadValues = dbConnection.CreateCommand(); // 6
-        dbCommandReadValues.CommandText = $"SELECT opcao_escolhida FROM ReportTracker WHERE cenario = '{scenarioName}' and situacao = {numSituacao};"; // 7
+        dbCommandReadValues.CommandText = $"SELECT opcao_escolhida FROM ReportTracker WHERE cenario = '{scenarioName}' and situacao = {numSituacao} and tentativa = {attempt};"; // 7
         IDataReader dataReader = dbCommandReadValues.ExecuteReader();
 
          while (dataReader.Read()) // 18

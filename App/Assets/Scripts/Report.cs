@@ -4,6 +4,7 @@ using System.Net;
 using System.Net.Mail;
 using System.Net.Security;
 using System.Security.Cryptography.X509Certificates;
+using System.Collections;
 
 public class Report : MonoBehaviour
 {
@@ -15,32 +16,21 @@ public class Report : MonoBehaviour
     private string senderEmail = "reportteacog@gmail.com";
     private string senderPassword = "nayxiyudarbxroqa";
     private string recipientEmail = "carlomanoelba@gmail.com";
-    private string subject = "Assunto do E-mail";
-    private string body;
+    private string subject = "Relatório Paciente - TEACOG - TESTE 1";
+    //private string body = "teste";
 
     void Start() {
         database = this.gameObject.AddComponent<Database>();
+        database.createUserDatabase();
+        database.createReportTable();
     }
 
-    public void SendEmail(string scenarioName)
+    public void SendEmail(string bodyText)
     {
-        int countSituationsScenario = database.GetSituationsTotalInScenario(scenarioName);
-        int numberOfTries;
-
-        int countAux = 1;
-        body = $"RELATÓRIO DO PACIENTE {database.GetUserName()} DO CENÁRIO {scenarioName}\n";
-        while(countSituationsScenario > 0 && countAux != countSituationsScenario) {
-            body = body + $"Situação {countAux}:\n";
-            numberOfTries = database.GetNumberOfTriesInSituation(scenarioName, countAux);
-
-            for (int i = 1; i <= numberOfTries; i++){
-                body = body + $"Tentativa {i}: {database.GetOptionChoosen(scenarioName, countAux)}";
-            }
-
-        }
         MailMessage mail = new MailMessage(senderEmail, recipientEmail);
         mail.Subject = subject;
-        mail.Body = body;
+        mail.Body = bodyText;
+        
 
         SmtpClient smtpServer = new SmtpClient(smtpHost);
         smtpServer.Port = smtpPort;
@@ -63,5 +53,7 @@ public class Report : MonoBehaviour
         {
             Debug.LogError("Erro ao enviar o e-mail: " + e.Message);
         }
+
     }
+
 }
