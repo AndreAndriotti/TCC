@@ -9,6 +9,7 @@ public class Database : MonoBehaviour
     // https://www.mono-project.com/docs/database-access/providers/sqlite/
 
     int situationNumber;
+    string email;
     string userName;
 
     void Start() // 13
@@ -113,6 +114,25 @@ public class Database : MonoBehaviour
         dbCommandCreateTable.ExecuteReader(); // 8
 
         dbConnection.Close();
+    }
+
+    public string GetEmail(){
+        IDbConnection dbConnection = openDatabaseConection();
+        dbConnection.Open(); // 6
+
+        IDbCommand dbCommandReadValues = dbConnection.CreateCommand(); // 6
+        dbCommandReadValues.CommandText = $"SELECT id_email FROM SituationsTracker;"; // 7
+        IDataReader dataReader = dbCommandReadValues.ExecuteReader();
+
+         while (dataReader.Read()) // 18
+        {
+            // The `id` has index 0, our `hits` have the index 1.
+            email = dataReader.GetString(0); // 19
+        }
+
+        dbConnection.Close();
+
+        return email;
     }
 
     public void SetUserName(string userName){
