@@ -45,6 +45,7 @@ public class SituationController : MonoBehaviour
   public Button op1Button;
   public Button op2Button;
   public Button op3Button;
+  public Text contextText;
   public Text instructionText;
   public Text resultText;
   private int situationID;
@@ -225,6 +226,8 @@ public class SituationController : MonoBehaviour
     string op2text = op2Button.GetComponentInChildren<Text>().text;
     string op3text = op3Button.GetComponentInChildren<Text>().text;
 
+    //string context_situation = contextText.text;
+
     string situationOps = database.GetSituationOptions(situationName);
     int newOpAttempt = int.Parse(opsAttempts[situationID].ToString())+1;
 
@@ -232,24 +235,21 @@ public class SituationController : MonoBehaviour
       op1Button.GetComponent<Image>().color = Color.green;
       situationOps = situationOps.Substring(0, situationID) + '1' + situationOps.Substring(situationID + 1);
       database.SetSituationOptions(situationName, situationOps);
-      database.InsertIntoReportTrackerTable(situationName, situationID, op1text, newOpAttempt); 
-      report.SendEmail(GetBodyText(situationName));  
+      database.InsertIntoReportTrackerTable(situationName, situationID, "Olá, tudo bem?", op1text, newOpAttempt);  
       StartCoroutine(GoToFeedbackScene());
     }
     else if(findSimilarity(result.ToUpper(), op2text.ToUpper()) > similarityPercent){
       op2Button.GetComponent<Image>().color = Color.green;
       situationOps = situationOps.Substring(0, situationID) + '2' + situationOps.Substring(situationID + 1);
       database.SetSituationOptions(situationName, situationOps);
-      database.InsertIntoReportTrackerTable(situationName, situationID, op2text, newOpAttempt);
-      report.SendEmail(GetBodyText(situationName));
+      database.InsertIntoReportTrackerTable(situationName, situationID,"Olá, tudo bem?", op2text, newOpAttempt);
       StartCoroutine(GoToFeedbackScene());
     }
     else if(findSimilarity(result.ToUpper(), op3text.ToUpper()) > similarityPercent){
       op3Button.GetComponent<Image>().color = Color.green;
       situationOps = situationOps.Substring(0, situationID) + '3' + situationOps.Substring(situationID + 1);
       database.SetSituationOptions(situationName, situationOps);
-      database.InsertIntoReportTrackerTable(situationName, situationID, op3text, newOpAttempt);
-      report.SendEmail(GetBodyText(situationName));
+      database.InsertIntoReportTrackerTable(situationName, situationID, "Olá, tudo bem?", op3text, newOpAttempt);
       StartCoroutine(GoToFeedbackScene());
     }
     else {
@@ -316,9 +316,10 @@ public class SituationController : MonoBehaviour
     string situationOps = database.GetSituationOptions(situationName);
 
     if(!situationOps.EndsWith("0")) {
-      op1Button.GetComponent<Image>().color = Color.red;
       report.SendEmail(GetBodyText(situationName));  
     }
+
+    report.SendEmail(GetBodyText(situationName)); 
 
     yield return new WaitForSeconds(1.5F);
     SceneManager.LoadScene(sceneName:"FeedbackScene");
@@ -336,19 +337,15 @@ public class SituationController : MonoBehaviour
   private string GetBodyText(string scenarioName) {
         string body;
         int newOpAttempt = int.Parse(opsAttempts[situationID].ToString())+1;
-
-        //body = "Cenario | Situacao | Opcao Escolhida | Tentativa";
-        //body = body + $"{scenarioName} | {situationID} | {database.GetOptionChoosen(scenarioName, situationID, newOpAttempt)} | {newOpAttempt}\n";
         
         int countSituationsScenario = database.GetSituationsTotalInScenario(scenarioName);
-
-        //body = body + database.GetSituationNumber("restaurante");
         
         int numberOfTries;
 
         body = $"RELATÓRIO DO PACIENTE {database.GetUserName()} DO CENÁRIO {scenarioName}\n";
         for(int countAux = 0; countAux != countSituationsScenario; countAux++) {
             body = body + $"\nSituação {countAux+1}:\n";
+            body = body + $"Contexto: {database.GetSituationContext(countAux)}\n";
             numberOfTries = database.GetNumberOfTriesInSituation(scenarioName, countAux);
             
             for (int i = 1; i != numberOfTries+1; i++){

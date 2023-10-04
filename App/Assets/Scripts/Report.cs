@@ -16,13 +16,11 @@ public class Report : MonoBehaviour
     private string senderEmail = "reportteacog@gmail.com";
     private string senderPassword = "nayxiyudarbxroqa";
     private string recipientEmail;
-    private string subject = "Relatório Paciente - TEACOG - TESTE 2";
+    private string subject = "Relatório Paciente - TEACOG - TESTE 5";
     //private string body = "teste";
 
     void Start() {
         database = this.gameObject.AddComponent<Database>();
-        database.createUserDatabase();
-        database.createReportTable();
 
         recipientEmail = database.GetUserEmail();
     }
