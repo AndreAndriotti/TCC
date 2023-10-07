@@ -28,7 +28,7 @@
             "context": "Garçom: O garçom está aguardando em pé ao seu lado?",
             "question": "Para responder a ele, seria ideal que você?",
             "op1": "Também ficasse em pé e olhando diretamente em seus olhos",
-            "op2": "Permanecesse sentado e depois de escolher o que quer comer, olhasse para ele e falasse sobre o pedido",
+            "op2": "Permanecesse sentado e falasse o seu pedido para ele",
             "op3": "Continuasse olhando para o cardápio e falasse em voz baixa",
             "opOK": "1",
             "fb1": "Errou uma vez, tenta de novo!",
@@ -61,7 +61,7 @@
             "audioDuration": 1.0
         },
         {
-            "context": "Antes da sua comida chegar a mesa ao lado começa a fazer muito barulho e está te incomodando.",
+            "context": "Antes da sua comida chegar, a mesa ao lado começa a fazer muito barulho e está te incomodando.",
             "question": "Como você pode reagir?",
             "op1": "Faz cara feia para mesa ao lado",
             "op2": "Começa a fazer muito barulho na sua mesa",
@@ -99,7 +99,7 @@
         {
             "context": "Você precisa chamar o garçom, mas ele está longe e não ouvirá sua voz",
             "question": "Qual sinal você poderia dar a ele?",
-            "op1": "Permanece sentado e levanta uma das mãos em direção ao garçom e permanece olhando para ele",
+            "op1": "Permanece sentado e levanta uma das mãos em direção ao garçom",
             "op2": "Fica em pé e o chama",
             "op3": "Vai até onde o garçom está",
             "opOK": "1",
@@ -125,7 +125,7 @@
             "question": "O que você pode dizer e fazer?",
             "op1": "Chegando à porta, dá um abraço no garçom",
             "op2": "Simplesmente sai do restaurante",
-            "op3": "Caminha normalmente e chegando na saída, diz: Obrigado, boa noite!",
+            "op3": "Caminha normalmente até a saída e diz: Obrigado, boa noite!",
             "opOK": "1",
             "fb1": "Errou uma vez, tenta de novo!",
             "fb2": "Errou duas vezes, vamos seguir...",
