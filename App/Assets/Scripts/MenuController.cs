@@ -17,7 +17,7 @@ public class MenuController : MonoBehaviour
         //database.deleteTableReport();
 
         //database.createUserDatabase();
-        //database.createReportTable();
+        database.createReportTable();
         
         // CRIAR INFOS DO USER NA PRIMEIRA VEZ
         //database.testInsertValues();
