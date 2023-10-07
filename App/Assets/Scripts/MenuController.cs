@@ -31,13 +31,18 @@ public class MenuController : MonoBehaviour
         
     }
 
+    public void OnClickRegisterButton()
+    {
+        SceneManager.LoadScene(sceneName:"RegisterScene");
+    }
+
     public void OnClickPlayButton()
     {
-        SceneManager.LoadScene (sceneName:"ScenarioScene");
+        SceneManager.LoadScene(sceneName:"ScenarioScene");
     }
     
     public void OnClickTipsButton()
     {
-        SceneManager.LoadScene (sceneName:"TipsScenarioScene");
+        SceneManager.LoadScene(sceneName:"TipsScenarioScene");
     }
 }
