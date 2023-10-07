@@ -14,7 +14,10 @@ public class MenuController : MonoBehaviour
     {
         database = this.gameObject.AddComponent<Database>();
         //database.deleteTableSituation();
-        database.createUserDatabase();
+        //database.deleteTableReport();
+
+        //database.createUserDatabase();
+        database.createReportTable();
         
         // CRIAR INFOS DO USER NA PRIMEIRA VEZ
         //database.testInsertValues();

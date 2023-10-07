@@ -8,6 +8,7 @@ using KKSpeech;
 public class SituationController : MonoBehaviour
 {
   private Database database;
+  private Report report;
 
   public class SituationData
   {
@@ -44,6 +45,7 @@ public class SituationController : MonoBehaviour
   public Button op1Button;
   public Button op2Button;
   public Button op3Button;
+  public Text contextText;
   public Text instructionText;
   public Text resultText;
   private int situationID;
@@ -78,11 +80,13 @@ public class SituationController : MonoBehaviour
     resultText.enabled = true;
 
     database = this.gameObject.AddComponent<Database>();
+    report = this.gameObject.AddComponent<Report>();
     database.createUserDatabase();
 
     //PlayerPrefs.SetInt("situationID", database.GetSituationNumber("restaurante"));
     //situationID = PlayerPrefs.GetInt("situationID");
     situationName = "restaurante";
+
     situationID = database.GetSituationNumber(situationName);
     opsAttempts = database.GetSituationOpsAttempts(situationName);
 
@@ -222,24 +226,30 @@ public class SituationController : MonoBehaviour
     string op2text = op2Button.GetComponentInChildren<Text>().text;
     string op3text = op3Button.GetComponentInChildren<Text>().text;
 
+    string context_situation = contextText.text;
+
     string situationOps = database.GetSituationOptions(situationName);
+    int newOpAttempt = int.Parse(opsAttempts[situationID].ToString())+1;
 
     if(findSimilarity(result.ToUpper(), op1text.ToUpper()) > similarityPercent){
       op1Button.GetComponent<Image>().color = Color.green;
       situationOps = situationOps.Substring(0, situationID) + '1' + situationOps.Substring(situationID + 1);
       database.SetSituationOptions(situationName, situationOps);
+      database.InsertIntoReportTrackerTable(situationName, situationID, context_situation, op1text, newOpAttempt);  
       StartCoroutine(GoToFeedbackScene());
     }
     else if(findSimilarity(result.ToUpper(), op2text.ToUpper()) > similarityPercent){
       op2Button.GetComponent<Image>().color = Color.green;
       situationOps = situationOps.Substring(0, situationID) + '2' + situationOps.Substring(situationID + 1);
       database.SetSituationOptions(situationName, situationOps);
+      database.InsertIntoReportTrackerTable(situationName, situationID, context_situation, op2text, newOpAttempt);
       StartCoroutine(GoToFeedbackScene());
     }
     else if(findSimilarity(result.ToUpper(), op3text.ToUpper()) > similarityPercent){
       op3Button.GetComponent<Image>().color = Color.green;
       situationOps = situationOps.Substring(0, situationID) + '3' + situationOps.Substring(situationID + 1);
       database.SetSituationOptions(situationName, situationOps);
+      database.InsertIntoReportTrackerTable(situationName, situationID, context_situation, op3text, newOpAttempt);
       StartCoroutine(GoToFeedbackScene());
     }
     else {
@@ -303,6 +313,12 @@ public class SituationController : MonoBehaviour
     opsAttempts = opsAttempts.Substring(0, situationID) + (char)newOpAttempt + opsAttempts.Substring(situationID + 1);
     database.SetSituationOpsAttempts(situationName, opsAttempts);
 
+    string situationOps = database.GetSituationOptions(situationName);
+
+    if(!situationOps.EndsWith("0")) {
+      report.SendEmail(GetBodyText(situationName));  
+    }
+
     yield return new WaitForSeconds(1.5F);
     SceneManager.LoadScene(sceneName:"FeedbackScene");
   }
@@ -315,4 +331,28 @@ public class SituationController : MonoBehaviour
     instructionText.text = "Toque aqui para gravar sua resposta";
     //EnableOptions(true); <- poder clicar quando a narração termina
   }
+
+  private string GetBodyText(string scenarioName) {
+        string body;
+        int newOpAttempt = int.Parse(opsAttempts[situationID].ToString())+1;
+        
+        int countSituationsScenario = database.GetSituationsTotalInScenario(scenarioName);
+        
+        int numberOfTries;
+
+        body = $"RELATÓRIO DO PACIENTE {database.GetUserName()} DO CENÁRIO {scenarioName}\n";
+        for(int countAux = 0; countAux != countSituationsScenario; countAux++) {
+            body = body + $"\nSituação {countAux+1}:\n";
+            body = body + $"Contexto: {database.GetSituationContext(countAux)}\n";
+            numberOfTries = database.GetNumberOfTriesInSituation(scenarioName, countAux);
+            
+            for (int i = 1; i != numberOfTries+1; i++){
+                body = body + $"Tentativa {i}: {database.GetOptionChoosen(scenarioName, countAux, i)}\n";
+            }
+
+
+        }
+
+        return body;
+    }
 }
