@@ -771,6 +771,7 @@ MonoBehaviour:
   op1Button: {fileID: 1786337030}
   op2Button: {fileID: 1273151840}
   op3Button: {fileID: 32946646}
+  contextText: {fileID: 1163605963}
   instructionText: {fileID: 456255072}
   resultText: {fileID: 2077337297}
 --- !u!114 &686776719
@@ -960,7 +961,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 1}
   m_AnchorMax: {x: 1, y: 1}
-  m_AnchoredPosition: {x: -450, y: -50}
+  m_AnchoredPosition: {x: -450.00003, y: -50}
   m_SizeDelta: {x: -900, y: 100}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1123134792
@@ -1883,7 +1884,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 1, y: 1}
-  m_AnchoredPosition: {x: 0, y: -450}
+  m_AnchoredPosition: {x: 0, y: -449.99997}
   m_SizeDelta: {x: -10, y: -1700}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &2077337297

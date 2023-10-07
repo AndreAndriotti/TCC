@@ -226,7 +226,7 @@ public class SituationController : MonoBehaviour
     string op2text = op2Button.GetComponentInChildren<Text>().text;
     string op3text = op3Button.GetComponentInChildren<Text>().text;
 
-    //string context_situation = contextText.text;
+    string context_situation = contextText.text;
 
     string situationOps = database.GetSituationOptions(situationName);
     int newOpAttempt = int.Parse(opsAttempts[situationID].ToString())+1;
@@ -235,21 +235,21 @@ public class SituationController : MonoBehaviour
       op1Button.GetComponent<Image>().color = Color.green;
       situationOps = situationOps.Substring(0, situationID) + '1' + situationOps.Substring(situationID + 1);
       database.SetSituationOptions(situationName, situationOps);
-      database.InsertIntoReportTrackerTable(situationName, situationID, "Olá, tudo bem?", op1text, newOpAttempt);  
+      database.InsertIntoReportTrackerTable(situationName, situationID, context_situation, op1text, newOpAttempt);  
       StartCoroutine(GoToFeedbackScene());
     }
     else if(findSimilarity(result.ToUpper(), op2text.ToUpper()) > similarityPercent){
       op2Button.GetComponent<Image>().color = Color.green;
       situationOps = situationOps.Substring(0, situationID) + '2' + situationOps.Substring(situationID + 1);
       database.SetSituationOptions(situationName, situationOps);
-      database.InsertIntoReportTrackerTable(situationName, situationID,"Olá, tudo bem?", op2text, newOpAttempt);
+      database.InsertIntoReportTrackerTable(situationName, situationID, context_situation, op2text, newOpAttempt);
       StartCoroutine(GoToFeedbackScene());
     }
     else if(findSimilarity(result.ToUpper(), op3text.ToUpper()) > similarityPercent){
       op3Button.GetComponent<Image>().color = Color.green;
       situationOps = situationOps.Substring(0, situationID) + '3' + situationOps.Substring(situationID + 1);
       database.SetSituationOptions(situationName, situationOps);
-      database.InsertIntoReportTrackerTable(situationName, situationID, "Olá, tudo bem?", op3text, newOpAttempt);
+      database.InsertIntoReportTrackerTable(situationName, situationID, context_situation, op3text, newOpAttempt);
       StartCoroutine(GoToFeedbackScene());
     }
     else {
@@ -318,8 +318,6 @@ public class SituationController : MonoBehaviour
     if(!situationOps.EndsWith("0")) {
       report.SendEmail(GetBodyText(situationName));  
     }
-
-    report.SendEmail(GetBodyText(situationName)); 
 
     yield return new WaitForSeconds(1.5F);
     SceneManager.LoadScene(sceneName:"FeedbackScene");
