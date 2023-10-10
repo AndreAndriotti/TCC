@@ -8,7 +8,6 @@ using KKSpeech;
 public class SituationController : MonoBehaviour
 {
   private Database database;
-  private Report report;
 
   public class SituationData
   {
@@ -77,7 +76,6 @@ public class SituationController : MonoBehaviour
     }
 
     database = this.gameObject.AddComponent<Database>();
-    report = this.gameObject.AddComponent<Report>();
     database.createUserDatabase();
 
     situationName = "restaurante";
@@ -298,10 +296,6 @@ public class SituationController : MonoBehaviour
 
     string situationOps = database.GetSituationOptions(situationName);
 
-    if(!situationOps.EndsWith("0")) {
-      report.SendEmail(GetBodyText(situationName)); 
-    }
-
     yield return new WaitForSeconds(1.5F);
     SceneManager.LoadScene(sceneName:"FeedbackScene");
   }
@@ -314,28 +308,4 @@ public class SituationController : MonoBehaviour
     instructionText.text = "Toque aqui para gravar sua resposta";
     //EnableOptions(true); <- poder clicar quando a narração termina
   }
-
-  private string GetBodyText(string scenarioName) {
-        string body;
-        int newOpAttempt = int.Parse(opsAttempts[situationID].ToString())+1;
-        
-        int countSituationsScenario = database.GetSituationsTotalInScenario(scenarioName);
-        
-        int numberOfTries;
-
-        body = $"RELATÓRIO DO PACIENTE {database.GetUserName()} DO CENÁRIO {scenarioName}\n";
-        for(int countAux = 0; countAux != countSituationsScenario; countAux++) {
-            body = body + $"\nSituação {countAux+1}:\n";
-            body = body + $"Contexto: {database.GetSituationContext(countAux)}\n";
-            numberOfTries = database.GetNumberOfTriesInSituation(scenarioName, countAux);
-            
-            for (int i = 1; i != numberOfTries+1; i++){
-                body = body + $"Tentativa {i}: {database.GetOptionChoosen(scenarioName, countAux, i)}\n";
-            }
-
-
-        }
-
-        return body;
-    }
 }

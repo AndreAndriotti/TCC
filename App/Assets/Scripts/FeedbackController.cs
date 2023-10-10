@@ -7,6 +7,7 @@ public class FeedbackController : MonoBehaviour
 {
     public GameObject canvas;
     private Database database;
+    private Report report;
     private string situationName;
     private int situationID;
     private char opOK;
@@ -18,6 +19,7 @@ public class FeedbackController : MonoBehaviour
     void Start()
     {
         database = this.gameObject.AddComponent<Database>();
+        report = this.gameObject.AddComponent<Report>();
         database.createUserDatabase();
 
         situationName = "restaurante";
@@ -26,6 +28,14 @@ public class FeedbackController : MonoBehaviour
         opAttempts = database.GetSituationOpsAttempts(situationName)[situationID];
         allOpsChosen = database.GetSituationOptions(situationName);
         opChosen = allOpsChosen[situationID];
+
+        bool isLastSituation = situationID == (allOpsChosen.Length-1);
+
+
+        if(isLastSituation && (JSONReader.isCorrectOp || opAttempts == '2'))
+        {
+            report.SendEmail(GetBodyText(situationName)); 
+        }
     }
 
     public void OnClickContinueButton()
@@ -34,7 +44,6 @@ public class FeedbackController : MonoBehaviour
         {
             if(JSONReader.isCorrectOp || opAttempts == '2')
             {
-                // ENVIAR RELATORIO() <---- CARLOS
                 // ResetScenario();
                 SceneManager.LoadScene(sceneName:"ScenarioScene");
             }
@@ -60,5 +69,29 @@ public class FeedbackController : MonoBehaviour
         database.SetSituationNumber(situationName, 0);
         database.SetSituationOptions(situationName, emptyOps);
         database.SetSituationOpsAttempts(situationName, emptyOps);
+    }
+
+    private string GetBodyText(string scenarioName) {
+        string body;
+        int newOpAttempt = int.Parse(opAttempts.ToString());
+        
+        int countSituationsScenario = database.GetSituationsTotalInScenario(scenarioName);
+        
+        int numberOfTries;
+
+        body = $"RELATÓRIO DO PACIENTE {database.GetUserName()} DO CENÁRIO {scenarioName}\n";
+        for(int countAux = 0; countAux != countSituationsScenario; countAux++) {
+            body = body + $"\nSituação {countAux+1}:\n";
+            body = body + $"Contexto: {database.GetSituationContext(countAux)}\n";
+            numberOfTries = database.GetNumberOfTriesInSituation(scenarioName, countAux);
+            
+            for (int i = 1; i != numberOfTries+1; i++){
+                body = body + $"Tentativa {i}: {database.GetOptionChoosen(scenarioName, countAux, i)}\n";
+            }
+
+
+        }
+
+        return body;
     }
 }
