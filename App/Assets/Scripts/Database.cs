@@ -123,7 +123,7 @@ public class Database : MonoBehaviour
 
         // Create a table for the hit count in the database if it does not exist yet.
         IDbCommand dbCommandCreateTable = dbConnection.CreateCommand(); // 6
-        dbCommandCreateTable.CommandText = "INSERT INTO SituationsTracker (id_email, name, restaurante_situation, restaurante_ops, restaurante_ops_attempts) VALUES ('email', 'Jogador', 0, '00000000000', '00000000000')"; // 7
+        dbCommandCreateTable.CommandText = "INSERT INTO SituationsTracker (id_email, name, restaurante_situation, restaurante_ops, restaurante_ops_attempts) VALUES ('email', 'Jogador', 0, '0000000000', '0000000000')"; // 7
         dbCommandCreateTable.ExecuteReader(); // 8
 
         dbConnection.Close();

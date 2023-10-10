@@ -10,8 +10,9 @@ public class FeedbackController : MonoBehaviour
     private string situationName;
     private int situationID;
     private char opOK;
-    private char opChosen;
     private char opAttempts;
+    private char opChosen;
+    private string allOpsChosen;
     //private bool isCorrectOp;
     
     void Start()
@@ -22,22 +23,42 @@ public class FeedbackController : MonoBehaviour
         situationName = "restaurante";
         situationID = database.GetSituationNumber(situationName);
         //isCorrectOp = canvas.GetComponent<JSONReader>().isCorrectOp;
-        opChosen = database.GetSituationOptions(situationName)[situationID];
         opAttempts = database.GetSituationOpsAttempts(situationName)[situationID];
-    }
-
-    // Update is called once per frame
-    void Update()
-    {
-        
+        allOpsChosen = database.GetSituationOptions(situationName);
+        opChosen = allOpsChosen[situationID];
     }
 
     public void OnClickContinueButton()
     {
-        if(JSONReader.isCorrectOp || opAttempts == '2')
+        if (situationID == (allOpsChosen.Length-1))
         {
-            database.UpdateSituation(situationName);
+            if(JSONReader.isCorrectOp || opAttempts == '2')
+            {
+                // ENVIAR RELATORIO() <---- CARLOS
+                // ResetScenario();
+                SceneManager.LoadScene(sceneName:"ScenarioScene");
+            }
         }
-        SceneManager.LoadScene (sceneName:"RestaurantScene");
+        else
+        {
+            if(JSONReader.isCorrectOp || opAttempts == '2')
+            {
+                database.UpdateSituation(situationName);
+            }
+            SceneManager.LoadScene(sceneName:"RestaurantScene");
+        }
+    }
+
+    private void ResetScenario()
+    {
+        string emptyOps = "0";
+        for (int i = 1; i < allOpsChosen.Length; i++)
+        {
+            emptyOps += '0';
+        }
+
+        database.SetSituationNumber(situationName, 0);
+        database.SetSituationOptions(situationName, emptyOps);
+        database.SetSituationOpsAttempts(situationName, emptyOps);
     }
 }

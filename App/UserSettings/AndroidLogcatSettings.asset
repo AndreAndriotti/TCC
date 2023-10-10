@@ -3,7 +3,7 @@
     "m_SelectedPackage": {
         "deviceId": "RX2T4001R3W",
         "name": "com.TEACOGS.TCC",
-        "processId": 17974,
+        "processId": 25260,
         "exited": false
     },
     "m_SelectedPriority": 0,
@@ -11,187 +11,43 @@
         {
             "deviceId": "RX2T4001R3W",
             "name": "com.TEACOGS.TCC",
-            "processId": 10710,
-            "exited": true
-        },
-        {
-            "deviceId": "RX2T4001R3W",
-            "name": "com.TEACOGS.TCC",
-            "processId": 6378,
-            "exited": true
-        },
-        {
-            "deviceId": "RX2T4001R3W",
-            "name": "com.TEACOGS.TCC",
-            "processId": 28957,
-            "exited": true
-        },
-        {
-            "deviceId": "RX2T4001R3W",
-            "name": "com.TEACOGS.TCC",
-            "processId": 23894,
-            "exited": true
-        },
-        {
-            "deviceId": "RX2T4001R3W",
-            "name": "com.sec.android.app.launcher",
-            "processId": 6094,
-            "exited": false
-        },
-        {
-            "deviceId": "RX2T4001R3W",
-            "name": "com.TEACOGS.TCC",
-            "processId": 26277,
-            "exited": false
-        },
-        {
-            "deviceId": "RX2T4001R3W",
-            "name": "com.TEACOGS.TCC",
-            "processId": 28088,
-            "exited": false
-        },
-        {
-            "deviceId": "RX2T4001R3W",
-            "name": "com.TEACOGS.TCC",
-            "processId": 28633,
-            "exited": false
-        },
-        {
-            "deviceId": "RX2T4001R3W",
-            "name": "com.TEACOGS.TCC",
-            "processId": 31394,
-            "exited": false
-        },
-        {
-            "deviceId": "RX2T4001R3W",
-            "name": "com.TEACOGS.TCC",
-            "processId": 3213,
-            "exited": false
-        },
-        {
-            "deviceId": "RX2T4001R3W",
-            "name": "com.TEACOGS.TCC",
-            "processId": 6225,
-            "exited": false
-        },
-        {
-            "deviceId": "RX2T4001R3W",
-            "name": "com.TEACOGS.TCC",
-            "processId": 6840,
-            "exited": false
-        },
-        {
-            "deviceId": "RX2T4001R3W",
-            "name": "com.TEACOGS.TCC",
-            "processId": 7438,
-            "exited": false
-        },
-        {
-            "deviceId": "RX2T4001R3W",
-            "name": "com.TEACOGS.TCC",
-            "processId": 7824,
-            "exited": false
-        },
-        {
-            "deviceId": "RX2T4001R3W",
-            "name": "com.TEACOGS.TCC",
-            "processId": 4361,
-            "exited": false
-        },
-        {
-            "deviceId": "RX2T4001R3W",
-            "name": "com.TEACOGS.TCC",
-            "processId": 13132,
-            "exited": false
-        },
-        {
-            "deviceId": "RX2T4001R3W",
-            "name": "com.TEACOGS.TCC",
-            "processId": 13883,
-            "exited": false
-        },
-        {
-            "deviceId": "RX2T4001R3W",
-            "name": "com.TEACOGS.TCC",
-            "processId": 14562,
-            "exited": false
-        },
-        {
-            "deviceId": "RX2T4001R3W",
-            "name": "com.TEACOGS.TCC",
-            "processId": 15198,
-            "exited": false
-        },
-        {
-            "deviceId": "RX2T4001R3W",
-            "name": "com.TEACOGS.TCC",
-            "processId": 15656,
-            "exited": false
-        },
-        {
-            "deviceId": "RX2T4001R3W",
-            "name": "com.TEACOGS.TCC",
-            "processId": 16334,
-            "exited": false
-        },
-        {
-            "deviceId": "RX2T4001R3W",
-            "name": "com.TEACOGS.TCC",
-            "processId": 18760,
-            "exited": false
-        },
-        {
-            "deviceId": "RX2T4001R3W",
-            "name": "com.TEACOGS.TCC",
-            "processId": 31608,
-            "exited": false
-        },
-        {
-            "deviceId": "RX2T4001R3W",
-            "name": "com.TEACOGS.TCC",
-            "processId": 359,
-            "exited": false
-        },
-        {
-            "deviceId": "RX2T4001R3W",
-            "name": "com.TEACOGS.TCC",
-            "processId": 1199,
-            "exited": false
-        },
-        {
-            "deviceId": "RX2T4001R3W",
-            "name": "com.TEACOGS.TCC",
-            "processId": 16442,
-            "exited": false
-        },
-        {
-            "deviceId": "RX2T4001R3W",
-            "name": "com.TEACOGS.TCC",
-            "processId": 11605,
-            "exited": false
-        },
-        {
-            "deviceId": "RX2T4001R3W",
-            "name": "com.TEACOGS.TCC",
-            "processId": 12790,
-            "exited": false
-        },
-        {
-            "deviceId": "RX2T4001R3W",
-            "name": "com.TEACOGS.TCC",
-            "processId": 26531,
-            "exited": false
-        },
-        {
-            "deviceId": "RX2T4001R3W",
-            "name": "com.TEACOGS.TCC",
             "processId": 12132,
-            "exited": false
+            "exited": true
         },
         {
             "deviceId": "RX2T4001R3W",
             "name": "com.TEACOGS.TCC",
             "processId": 17974,
+            "exited": true
+        },
+        {
+            "deviceId": "RX2T4001R3W",
+            "name": "com.TEACOGS.TCC",
+            "processId": 4956,
+            "exited": true
+        },
+        {
+            "deviceId": "RX2T4001R3W",
+            "name": "com.TEACOGS.TCC",
+            "processId": 4698,
+            "exited": true
+        },
+        {
+            "deviceId": "RX2T4001R3W",
+            "name": "com.TEACOGS.TCC",
+            "processId": 23917,
+            "exited": false
+        },
+        {
+            "deviceId": "RX2T4001R3W",
+            "name": "com.TEACOGS.TCC",
+            "processId": 24244,
+            "exited": false
+        },
+        {
+            "deviceId": "RX2T4001R3W",
+            "name": "com.TEACOGS.TCC",
+            "processId": 25260,
             "exited": false
         },
         {

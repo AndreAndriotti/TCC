@@ -47,7 +47,6 @@ public class SituationController : MonoBehaviour
   public Button op3Button;
   public Text contextText;
   public Text instructionText;
-  public Text resultText;
   private int situationID;
   private string situationName;
   private string opsAttempts;
@@ -55,6 +54,7 @@ public class SituationController : MonoBehaviour
   private double similarityPercent;
   private int countAttempts;
   private int maxAttempts;
+  private Color lightBlue;
 
   void Start()
   {
@@ -66,25 +66,20 @@ public class SituationController : MonoBehaviour
       listener.onErrorDuringRecording.AddListener(OnError);
       listener.onErrorOnStartRecording.AddListener(OnError);
       listener.onFinalResults.AddListener(OnFinalResult);
-      listener.onPartialResults.AddListener(OnPartialResult);
+      //listener.onPartialResults.AddListener(OnPartialResult);
       listener.onEndOfSpeech.AddListener(OnEndOfSpeech);
       SpeechRecognizer.RequestAccess();
     }
     else
     {
-      resultText.text = "Sorry, but this device doesn't support speech recognition";
+      instructionText.text = "Este dispositivo não suporta reconhecimento de voz";
       startRecordingButton.enabled = false;
     }
-
-    // APAGAR DEPOIS -> texto de reconhecimento de voz para testes
-    resultText.enabled = true;
 
     database = this.gameObject.AddComponent<Database>();
     report = this.gameObject.AddComponent<Report>();
     database.createUserDatabase();
 
-    //PlayerPrefs.SetInt("situationID", database.GetSituationNumber("restaurante"));
-    //situationID = PlayerPrefs.GetInt("situationID");
     situationName = "restaurante";
 
     situationID = database.GetSituationNumber(situationName);
@@ -95,32 +90,27 @@ public class SituationController : MonoBehaviour
 
     maxAttempts = 3;
     countAttempts = 1;
+
+    lightBlue = new Color(0.553f, 0.651f, 1f);
   }
 
   public void OnFinalResult(string result)
   {
-    startRecordingButton.GetComponentInChildren<Text>().text = "Start Recording";
-    resultText.text = result;
     startRecordingButton.enabled = true;
-
     MatchOption(result);
   }
 
-  public void OnPartialResult(string result)
+  /*public void OnPartialResult(string result)
   {
     resultText.text = result;
-  }
+  }*/
 
   public void OnAvailabilityChange(bool available)
   {
     startRecordingButton.enabled = available;
     if (!available)
     {
-      resultText.text = "Speech Recognition not available";
-    }
-    else
-    {
-      resultText.text = "Say something :-)";
+      instructionText.text = "Reconhecimento de voz não disponível";
     }
   }
 
@@ -133,14 +123,13 @@ public class SituationController : MonoBehaviour
         break;
       default:
         startRecordingButton.enabled = false;
-        resultText.text = "Cannot use Speech Recognition, authorization status is " + status;
+        instructionText.text = "Autorização para reconhecimento de voz: " + status;
         break;
     }
   }
 
   public void OnEndOfSpeech()
   {
-    startRecordingButton.GetComponentInChildren<Text>().text = "Start Recording";
     instructionText.text = "Toque aqui para gravar sua resposta";
 
   }
@@ -148,7 +137,6 @@ public class SituationController : MonoBehaviour
   public void OnError(string error)
   {
     Debug.LogError(error);
-    startRecordingButton.GetComponentInChildren<Text>().text = "Start Recording";
     startRecordingButton.enabled = true;
   }
 
@@ -158,11 +146,9 @@ public class SituationController : MonoBehaviour
     {
 #if UNITY_IOS && !UNITY_EDITOR
 			SpeechRecognizer.StopIfRecording();
-			startRecordingButton.GetComponentInChildren<Text>().text = "Stopping";
 			startRecordingButton.enabled = false;
 #elif UNITY_ANDROID && !UNITY_EDITOR
 			SpeechRecognizer.StopIfRecording();
-			startRecordingButton.GetComponentInChildren<Text>().text = "Start Recording";
 #endif
     }
     else
@@ -171,8 +157,6 @@ public class SituationController : MonoBehaviour
       op2Button.GetComponent<Image>().color = Color.white;
       op3Button.GetComponent<Image>().color = Color.white;
       SpeechRecognizer.StartRecording(true);
-      startRecordingButton.GetComponentInChildren<Text>().text = "Stop Recording";
-      resultText.text = "Say something :-)";
       instructionText.text = "Ouvindo...";
     }
   }
@@ -232,21 +216,21 @@ public class SituationController : MonoBehaviour
     int newOpAttempt = int.Parse(opsAttempts[situationID].ToString())+1;
 
     if(findSimilarity(result.ToUpper(), op1text.ToUpper()) > similarityPercent){
-      op1Button.GetComponent<Image>().color = Color.green;
+      op1Button.GetComponent<Image>().color = lightBlue;
       situationOps = situationOps.Substring(0, situationID) + '1' + situationOps.Substring(situationID + 1);
       database.SetSituationOptions(situationName, situationOps);
       database.InsertIntoReportTrackerTable(situationName, situationID, context_situation, op1text, newOpAttempt);  
       StartCoroutine(GoToFeedbackScene());
     }
     else if(findSimilarity(result.ToUpper(), op2text.ToUpper()) > similarityPercent){
-      op2Button.GetComponent<Image>().color = Color.green;
+      op2Button.GetComponent<Image>().color = lightBlue;
       situationOps = situationOps.Substring(0, situationID) + '2' + situationOps.Substring(situationID + 1);
       database.SetSituationOptions(situationName, situationOps);
       database.InsertIntoReportTrackerTable(situationName, situationID, context_situation, op2text, newOpAttempt);
       StartCoroutine(GoToFeedbackScene());
     }
     else if(findSimilarity(result.ToUpper(), op3text.ToUpper()) > similarityPercent){
-      op3Button.GetComponent<Image>().color = Color.green;
+      op3Button.GetComponent<Image>().color = lightBlue;
       situationOps = situationOps.Substring(0, situationID) + '3' + situationOps.Substring(situationID + 1);
       database.SetSituationOptions(situationName, situationOps);
       database.InsertIntoReportTrackerTable(situationName, situationID, context_situation, op3text, newOpAttempt);
@@ -254,7 +238,6 @@ public class SituationController : MonoBehaviour
     }
     else {
       if(countAttempts < maxAttempts){
-        //questionText.text += countAttempts.ToString();
         instructionText.text = "Não entendi. Tente novamente!";
         countAttempts++;
       }
@@ -272,15 +255,15 @@ public class SituationController : MonoBehaviour
     char opChosen = '0';
 
     if(currentButtonName == "op1Button"){
-      op1Button.GetComponent<Image>().color = Color.green;
+      op1Button.GetComponent<Image>().color = lightBlue;
       opChosen = '1';
     }
     else if(currentButtonName == "op2Button"){
-      op2Button.GetComponent<Image>().color = Color.green;
+      op2Button.GetComponent<Image>().color = lightBlue;
       opChosen = '2';
     }
     else if(currentButtonName == "op3Button"){
-      op3Button.GetComponent<Image>().color = Color.green;
+      op3Button.GetComponent<Image>().color = lightBlue;
       opChosen = '3';
     }
     
@@ -291,7 +274,7 @@ public class SituationController : MonoBehaviour
 
   public void OnClickBackButton()
   {
-    SceneManager.LoadScene(sceneName:"MenuScene");
+    SceneManager.LoadScene(sceneName:"ScenarioScene");
   }
 
   private void EnableOptions(bool state)
@@ -316,7 +299,7 @@ public class SituationController : MonoBehaviour
     string situationOps = database.GetSituationOptions(situationName);
 
     if(!situationOps.EndsWith("0")) {
-      report.SendEmail(GetBodyText(situationName));  
+      report.SendEmail(GetBodyText(situationName)); 
     }
 
     yield return new WaitForSeconds(1.5F);
