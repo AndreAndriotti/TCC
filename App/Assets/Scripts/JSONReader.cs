@@ -10,7 +10,6 @@ public class JSONReader : MonoBehaviour
     public TextAsset textJSON;
     public Text contextText;
     public Text questionText;
-    public Text opText;
     public Text feedbackText;
     public Button op1Button;
     public Button op2Button;
@@ -50,8 +49,6 @@ public class JSONReader : MonoBehaviour
         database = this.gameObject.AddComponent<Database>();
         database.createUserDatabase();
 
-        //PlayerPrefs.SetInt("situationID", database.GetSituationNumber("restaurante"));
-        //situationID = PlayerPrefs.GetInt("situationID");
         situationID = database.GetSituationNumber(situationName);
         
         mySituationList = JsonUtility.FromJson<SituationList>(textJSON.text);
@@ -65,23 +62,26 @@ public class JSONReader : MonoBehaviour
         {
             char opChosen = database.GetSituationOptions(situationName)[situationID];
             char opAttempts = database.GetSituationOpsAttempts(situationName)[situationID];
+
+            op1Button.enabled = false;
             
             switch(opChosen)
             {
                 case '1':
-                    opText.text = mySituationList.situation[situationID].op1;
+                    op1Button.GetComponentInChildren<Text>().text = mySituationList.situation[situationID].op1;
                     break;
                 case '2':
-                    opText.text = mySituationList.situation[situationID].op2;
+                    op1Button.GetComponentInChildren<Text>().text = mySituationList.situation[situationID].op2;
                     break;
                 case '3':
-                    opText.text = mySituationList.situation[situationID].op3;
+                    op1Button.GetComponentInChildren<Text>().text = mySituationList.situation[situationID].op3;
                     break;
             };
             
             if (opChosen == opOK)
             {
                 isCorrectOp = true;
+                op1Button.GetComponent<Image>().color = Color.green;
                 feedbackText.text = mySituationList.situation[situationID].fbOK;
             }
             else if (opAttempts == '1')
