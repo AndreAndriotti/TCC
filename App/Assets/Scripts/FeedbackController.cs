@@ -29,33 +29,26 @@ public class FeedbackController : MonoBehaviour
         allOpsChosen = database.GetSituationOptions(situationName);
         opChosen = allOpsChosen[situationID];
 
-        bool isLastSituation = situationID == (allOpsChosen.Length-1);
-
-
-        if(isLastSituation && (JSONReader.isCorrectOp || opAttempts == '2'))
-        {
-            report.SendEmail(GetBodyText(situationName)); 
-        }
     }
 
     public void OnClickContinueButton()
     {
+        report.SendEmail(GetBodyText(situationName));
         if (situationID == (allOpsChosen.Length-1))
         {
             if(JSONReader.isCorrectOp || opAttempts == '2')
             {
+                report.SendEmail(GetBodyText(situationName));
                 // ResetScenario();
                 SceneManager.LoadScene(sceneName:"ScenarioScene");
             }
         }
-        else
+
+        if(JSONReader.isCorrectOp || opAttempts == '2')
         {
-            if(JSONReader.isCorrectOp || opAttempts == '2')
-            {
-                database.UpdateSituation(situationName);
-            }
-            SceneManager.LoadScene(sceneName:"RestaurantScene");
+            database.UpdateSituation(situationName);
         }
+        SceneManager.LoadScene(sceneName:"RestaurantScene");
     }
 
     private void ResetScenario()

@@ -251,18 +251,26 @@ public class SituationController : MonoBehaviour
     string currentButtonName = EventSystem.current.currentSelectedGameObject.name;
     string situationOps = database.GetSituationOptions(situationName);
     char opChosen = '0';
+    int newOpAttempt = int.Parse(opsAttempts[situationID].ToString())+1;
+    string context_situation = contextText.text;
 
     if(currentButtonName == "op1Button"){
       op1Button.GetComponent<Image>().color = lightBlue;
       opChosen = '1';
+      string op1text = op1Button.GetComponentInChildren<Text>().text;
+      database.InsertIntoReportTrackerTable(situationName, situationID, context_situation, op1text, newOpAttempt);  
     }
     else if(currentButtonName == "op2Button"){
       op2Button.GetComponent<Image>().color = lightBlue;
       opChosen = '2';
+      string op2text = op2Button.GetComponentInChildren<Text>().text;
+      database.InsertIntoReportTrackerTable(situationName, situationID, context_situation, op2text, newOpAttempt); 
     }
     else if(currentButtonName == "op3Button"){
       op3Button.GetComponent<Image>().color = lightBlue;
       opChosen = '3';
+      string op3text = op3Button.GetComponentInChildren<Text>().text;
+      database.InsertIntoReportTrackerTable(situationName, situationID, context_situation, op3text, newOpAttempt); 
     }
     
     situationOps = situationOps.Substring(0, situationID) + opChosen + situationOps.Substring(situationID + 1);
