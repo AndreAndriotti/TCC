@@ -86,7 +86,7 @@ public class SituationController : MonoBehaviour
     opsAttempts = database.GetSituationOpsAttempts(situationName);
 
     StartCoroutine(EnableRecording());
-    EnableOptions(false);
+    //EnableOptions(false);
 
     maxAttempts = 3;
     countAttempts = 1;
