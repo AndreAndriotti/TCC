@@ -52,24 +52,12 @@ public class FeedbackController : MonoBehaviour
 
         if(JSONReader.isCorrectOp || opAttempts == '2')
         {
-            if (situationID >= (allOpsChosen.Length-1))
-            {
-                // ENVIAR RELATORIO() <---- CARLOS
-                ResetScenario();
-                SceneManager.LoadScene(sceneName:"ScenarioCompletedScene");
-            }
-            else 
-            {
-                database.UpdateSituation(situationName);
-                SceneManager.LoadScene(sceneName:"RestaurantScene");
-            }
+            StartCoroutine(CheckScenarioEnd());
         }
-
-        if(JSONReader.isCorrectOp || opAttempts == '2')
+        else
         {
             SceneManager.LoadScene(sceneName:"RestaurantScene");
         }
-
     }
 
     private void ResetScenario()
@@ -85,6 +73,25 @@ public class FeedbackController : MonoBehaviour
         database.SetSituationNumber(situationName, 0);
         database.SetSituationOptions(situationName, emptyOpsStr);
         database.SetSituationOpsAttempts(situationName, emptyOpsStr);
+    }
+
+    private IEnumerator CheckScenarioEnd() {
+
+        if (situationID >= (allOpsChosen.Length-1))
+        {
+            continueButton.GetComponentInChildren<Text>().text = "Enviando relatório...";
+
+            yield return new WaitForSeconds(1.0f); 
+
+            report.SendEmail(GetBodyText(situationName));
+            ResetScenario();
+            SceneManager.LoadScene(sceneName:"ScenarioCompletedScene");
+        }
+        else 
+        {
+            database.UpdateSituation(situationName);
+            SceneManager.LoadScene(sceneName:"RestaurantScene");
+        }
     }
 
     private string GetBodyText(string scenarioName) {
