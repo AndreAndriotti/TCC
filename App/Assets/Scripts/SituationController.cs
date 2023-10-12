@@ -66,7 +66,6 @@ public class SituationController : MonoBehaviour
       listener.onErrorDuringRecording.AddListener(OnError);
       listener.onErrorOnStartRecording.AddListener(OnError);
       listener.onFinalResults.AddListener(OnFinalResult);
-      //listener.onPartialResults.AddListener(OnPartialResult);
       listener.onEndOfSpeech.AddListener(OnEndOfSpeech);
       SpeechRecognizer.RequestAccess();
     }
@@ -74,6 +73,7 @@ public class SituationController : MonoBehaviour
     {
       instructionText.text = "Este dispositivo não suporta reconhecimento de voz";
       startRecordingButton.enabled = false;
+      startRecordingButton.GetComponent<Image>().color = Color.white * 0.6f;
     }
 
     database = this.gameObject.AddComponent<Database>();
@@ -86,7 +86,7 @@ public class SituationController : MonoBehaviour
     opsAttempts = database.GetSituationOpsAttempts(situationName);
 
     StartCoroutine(EnableRecording());
-    EnableOptions(false);
+    //EnableOptions(false);
 
     maxAttempts = 3;
     countAttempts = 1;
@@ -96,14 +96,11 @@ public class SituationController : MonoBehaviour
 
   public void OnFinalResult(string result)
   {
+    instructionText.text = "Toque aqui para gravar sua resposta";
     startRecordingButton.enabled = true;
+    startRecordingButton.GetComponent<Image>().color = Color.white;
     MatchOption(result);
   }
-
-  /*public void OnPartialResult(string result)
-  {
-    resultText.text = result;
-  }*/
 
   public void OnAvailabilityChange(bool available)
   {
@@ -111,6 +108,7 @@ public class SituationController : MonoBehaviour
     if (!available)
     {
       instructionText.text = "Reconhecimento de voz não disponível";
+      startRecordingButton.GetComponent<Image>().color = Color.white * 0.6f;
     }
   }
 
@@ -120,10 +118,12 @@ public class SituationController : MonoBehaviour
     {
       case AuthorizationStatus.Authorized:
         startRecordingButton.enabled = true;
+        startRecordingButton.GetComponent<Image>().color = Color.white;
         break;
       default:
         startRecordingButton.enabled = false;
         instructionText.text = "Autorização para reconhecimento de voz: " + status;
+        startRecordingButton.GetComponent<Image>().color = Color.white * 0.6f;
         break;
     }
   }
@@ -137,7 +137,9 @@ public class SituationController : MonoBehaviour
   public void OnError(string error)
   {
     Debug.LogError(error);
+    instructionText.text = "Toque aqui para gravar sua resposta";
     startRecordingButton.enabled = true;
+    startRecordingButton.GetComponent<Image>().color = Color.white;
   }
 
   public void OnStartRecordingPressed()
@@ -157,6 +159,7 @@ public class SituationController : MonoBehaviour
       op2Button.GetComponent<Image>().color = Color.white;
       op3Button.GetComponent<Image>().color = Color.white;
       SpeechRecognizer.StartRecording(true);
+      startRecordingButton.GetComponent<Image>().color = Color.red * 0.8f;
       instructionText.text = "Ouvindo...";
     }
   }
@@ -242,7 +245,7 @@ public class SituationController : MonoBehaviour
         countAttempts++;
       }
       else{
-        instructionText.text = "Não foi possível entender\nClique na opção desejada";
+        instructionText.text = "Não foi possível entender.\nClique na opção desejada!";
         EnableOptions(true);
       }
     }
@@ -309,8 +312,10 @@ public class SituationController : MonoBehaviour
   IEnumerator EnableRecording()
   {
     startRecordingButton.enabled = false;
+    startRecordingButton.GetComponent<Image>().color = Color.white * 0.6f;
     yield return new WaitForSeconds(4.16F + 1.5F); // Audio Duration 4.16
     startRecordingButton.enabled = true;
+    startRecordingButton.GetComponent<Image>().color = Color.white;
     instructionText.text = "Toque aqui para gravar sua resposta";
     //EnableOptions(true); <- poder clicar quando a narração termina
   }

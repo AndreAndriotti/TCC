@@ -24,6 +24,9 @@ EditorBuildSettings:
     path: Assets/Scenes/FeedbackScene.unity
     guid: c09750b24a3823447a4a4786ada0ddd8
   - enabled: 1
+    path: Assets/Scenes/ScenarioCompletedScene.unity
+    guid: 4d1487842845ba449b06ed00cf15d88b
+  - enabled: 1
     path: Assets/Scenes/TipsScenarioScene.unity
     guid: f1f6d993f20bc094982b9e847f0dac66
   - enabled: 1

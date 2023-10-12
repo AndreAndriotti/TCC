@@ -241,7 +241,7 @@ public class Database : MonoBehaviour
 
         // Create a table for the hit count in the database if it does not exist yet.
         IDbCommand dbCommandCreateTable = dbConnection.CreateCommand(); // 6
-        dbCommandCreateTable.CommandText = $"UPDATE SituationsTracker SET {situationName}_ops = {situationOps}"; // 7
+        dbCommandCreateTable.CommandText = $"UPDATE SituationsTracker SET {situationName}_ops = '{situationOps}'"; // 7
         dbCommandCreateTable.ExecuteReader(); // 8
 
         dbConnection.Close();
@@ -272,7 +272,7 @@ public class Database : MonoBehaviour
 
         // Create a table for the hit count in the database if it does not exist yet.
         IDbCommand dbCommandCreateTable = dbConnection.CreateCommand(); // 6
-        dbCommandCreateTable.CommandText = $"UPDATE SituationsTracker SET {situationName}_ops_attempts = {situationOpsAttempts}"; // 7
+        dbCommandCreateTable.CommandText = $"UPDATE SituationsTracker SET {situationName}_ops_attempts = '{situationOpsAttempts}'"; // 7
         dbCommandCreateTable.ExecuteReader(); // 8
 
         dbConnection.Close();
