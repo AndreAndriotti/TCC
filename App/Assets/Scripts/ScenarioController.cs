@@ -1,11 +1,20 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
 using UnityEngine.SceneManagement;
 
 public class ScenarioController : MonoBehaviour
 {
     private Database database;
+    public Text helpText;
+    public GameObject helpBalloon;
+
+    void Start()
+    {
+        helpText.enabled = false;
+        helpBalloon.SetActive(false);
+    }
 
     public void OnClickBackButton()
     {
@@ -19,11 +28,15 @@ public class ScenarioController : MonoBehaviour
 
     public void OnClickHelpButton()
     {
-        database = this.gameObject.AddComponent<Database>();
-        database.createUserDatabase();
-        
-        // PARA ZERAR O SITUATIONID:
-        database.SetSituationNumber("restaurante", 0);
-        //
+        if(helpText.enabled)
+        {
+            helpText.enabled = false;
+            helpBalloon.SetActive(false);
+        }
+        else
+        {
+            helpText.enabled = true;
+            helpBalloon.SetActive(true);
+        }
     }
 }

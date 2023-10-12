@@ -34,36 +34,57 @@ public class FeedbackController : MonoBehaviour
 
     public void OnClickContinueButton()
     {
-        if (situationID == (allOpsChosen.Length-1))
+        /*if (situationID >= (allOpsChosen.Length-1))
         {
             if(JSONReader.isCorrectOp || opAttempts == '2')
             {
-                continueButton.GetComponentInChildren<Text>().text = "Enviando relatório...";
-                continueButton.enabled = false;
-                report.SendEmail(GetBodyText(situationName));
-                // ResetScenario();
-                SceneManager.LoadScene(sceneName:"ScenarioScene");
+                // ENVIAR RELATORIO() <---- CARLOS
+                ResetScenario();
+                SceneManager.LoadScene(sceneName:"ScenarioCompletedScene");
+            }
+        }
+        
+        if(JSONReader.isCorrectOp || opAttempts == '2')
+        {
+                database.UpdateSituation(situationName);
+        }
+        SceneManager.LoadScene(sceneName:"RestaurantScene");*/
+
+        if(JSONReader.isCorrectOp || opAttempts == '2')
+        {
+            if (situationID >= (allOpsChosen.Length-1))
+            {
+                // ENVIAR RELATORIO() <---- CARLOS
+                ResetScenario();
+                SceneManager.LoadScene(sceneName:"ScenarioCompletedScene");
+            }
+            else 
+            {
+                database.UpdateSituation(situationName);
+                SceneManager.LoadScene(sceneName:"RestaurantScene");
             }
         }
 
         if(JSONReader.isCorrectOp || opAttempts == '2')
         {
-            database.UpdateSituation(situationName);
+            SceneManager.LoadScene(sceneName:"RestaurantScene");
         }
-        SceneManager.LoadScene(sceneName:"RestaurantScene");
+
     }
 
     private void ResetScenario()
     {
-        string emptyOps = "0";
-        for (int i = 1; i < allOpsChosen.Length; i++)
+        char[] emptyOps = allOpsChosen.ToCharArray();
+
+        for (int i = 0; i < emptyOps.Length; i++)
         {
-            emptyOps += '0';
+            emptyOps[i] = '0';
         }
+        string emptyOpsStr = new string(emptyOps);
 
         database.SetSituationNumber(situationName, 0);
-        database.SetSituationOptions(situationName, emptyOps);
-        database.SetSituationOpsAttempts(situationName, emptyOps);
+        database.SetSituationOptions(situationName, emptyOpsStr);
+        database.SetSituationOpsAttempts(situationName, emptyOpsStr);
     }
 
     private string GetBodyText(string scenarioName) {
