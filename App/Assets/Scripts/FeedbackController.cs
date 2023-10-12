@@ -2,6 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.SceneManagement;
+using UnityEngine.UI;
 
 public class FeedbackController : MonoBehaviour
 {
@@ -14,6 +15,7 @@ public class FeedbackController : MonoBehaviour
     private char opAttempts;
     private char opChosen;
     private string allOpsChosen;
+    public Button continueButton;
     //private bool isCorrectOp;
     
     void Start()
@@ -28,16 +30,16 @@ public class FeedbackController : MonoBehaviour
         opAttempts = database.GetSituationOpsAttempts(situationName)[situationID];
         allOpsChosen = database.GetSituationOptions(situationName);
         opChosen = allOpsChosen[situationID];
-
     }
 
     public void OnClickContinueButton()
     {
-        report.SendEmail(GetBodyText(situationName));
         if (situationID == (allOpsChosen.Length-1))
         {
             if(JSONReader.isCorrectOp || opAttempts == '2')
             {
+                continueButton.GetComponentInChildren<Text>().text = "Enviando relatório...";
+                continueButton.enabled = false;
                 report.SendEmail(GetBodyText(situationName));
                 // ResetScenario();
                 SceneManager.LoadScene(sceneName:"ScenarioScene");

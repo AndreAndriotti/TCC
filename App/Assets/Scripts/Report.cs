@@ -16,7 +16,7 @@ public class Report : MonoBehaviour
     private string senderEmail = "reportteacog@gmail.com";
     private string senderPassword = "nayxiyudarbxroqa";
     private string recipientEmail;
-    private string subject = "Relatório Paciente - TESTE BOTAO 2 - TEACOG - ";
+    private string subject = "Relatório Paciente - TESTE BOTAO NOVO 1 - TEACOG - ";
     //private string body = "teste";
 
     void Start() {
