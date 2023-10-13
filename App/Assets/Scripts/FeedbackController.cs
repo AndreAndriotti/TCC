@@ -64,7 +64,6 @@ public class FeedbackController : MonoBehaviour
     private IEnumerator CheckForLastSituation() {
         if (situationID >= (allOpsChosen.Length-1))
         {
-            // ENVIAR RELATORIO() <---- CARLOS
             continueButton.GetComponentInChildren<Text>().text = "Enviando relatório...";
             yield return new WaitForSeconds(1.0f);
             report.SendEmail(GetBodyText(situationName));
