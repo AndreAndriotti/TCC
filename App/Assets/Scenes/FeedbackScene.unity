@@ -326,6 +326,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   canvas: {fileID: 151497230}
+  continueButton: {fileID: 1190031565}
 --- !u!114 &151497238
 MonoBehaviour:
   m_ObjectHideFlags: 0
