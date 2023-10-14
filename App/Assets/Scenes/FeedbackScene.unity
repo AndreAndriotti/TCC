@@ -350,6 +350,7 @@ MonoBehaviour:
   opOK: 0
   situationName: restaurante
   isFeedback: 1
+  isScenario: 0
   mySituationList:
     situation: []
 --- !u!1 &163459106
@@ -904,7 +905,7 @@ MonoBehaviour:
   m_FontData:
     m_Font: {fileID: 12800000, guid: 05d9ee3898a331d46825e4cb3b4e9b07, type: 3}
     m_FontSize: 75
-    m_FontStyle: 0
+    m_FontStyle: 2
     m_BestFit: 0
     m_MinSize: 2
     m_MaxSize: 85

@@ -89,7 +89,7 @@ public class SituationController : MonoBehaviour
     maxAttempts = 3;
     countAttempts = 1;
 
-    lightBlue = new Color(0.553f, 0.651f, 1f);
+    lightBlue = new Color(0.769f, 0.878f, 0.976f);
   }
 
   public void OnFinalResult(string result)
@@ -157,7 +157,7 @@ public class SituationController : MonoBehaviour
       op2Button.GetComponent<Image>().color = Color.white;
       op3Button.GetComponent<Image>().color = Color.white;
       SpeechRecognizer.StartRecording(true);
-      startRecordingButton.GetComponent<Image>().color = Color.red * 0.8f;
+      startRecordingButton.GetComponent<Image>().color = lightBlue;
       instructionText.text = "Ouvindo...";
     }
   }
