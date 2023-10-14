@@ -34,7 +34,6 @@ public class JSONReader : MonoBehaviour
         public string fb1;
         public string fb2;
         public string fbOK;
-        public float audioDuration;
     }
 
     [System.Serializable]

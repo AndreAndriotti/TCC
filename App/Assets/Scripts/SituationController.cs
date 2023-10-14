@@ -20,15 +20,14 @@ public class SituationController : MonoBehaviour
 	  //private string fb1;
 	  //private string fb2;
 	  //private string fb3;
-    public float audioDuration;
+
 
     public SituationData( string context,
                           string question, 
                           string op1, 
                           string op2, 
                           string op3,
-                          char opOK,
-                          float audioDuration) 
+                          char opOK) 
     {
       this.context = context;
       this.question = question;
@@ -36,7 +35,6 @@ public class SituationController : MonoBehaviour
       this.op2 = op2;
       this.op3 = op3;
       this.opOK = opOK;
-      this.audioDuration = audioDuration;
     }
   }
 
@@ -77,13 +75,16 @@ public class SituationController : MonoBehaviour
 
     database = this.gameObject.AddComponent<Database>();
     database.createUserDatabase();
+    database.createReportTable();
 
     situationName = "restaurante";
 
     situationID = database.GetSituationNumber(situationName);
     opsAttempts = database.GetSituationOpsAttempts(situationName);
 
-    StartCoroutine(EnableRecording());
+    startRecordingButton.enabled = false;
+    startRecordingButton.GetComponent<Image>().color = Color.white * 0.6f;
+
     //EnableOptions(false);
 
     maxAttempts = 3;
@@ -243,7 +244,7 @@ public class SituationController : MonoBehaviour
         countAttempts++;
       }
       else{
-        instructionText.text = "Não foi possível entender.\nClique na opção desejada!";
+        instructionText.text = "Não foi possível entender. Clique na opção desejada!";
         EnableOptions(true);
       }
     }
@@ -307,11 +308,24 @@ public class SituationController : MonoBehaviour
 
     string situationOps = database.GetSituationOptions(situationName);
 
-    yield return new WaitForSeconds(1.5F);
+    yield return new WaitForSeconds(0.5F);
     SceneManager.LoadScene(sceneName:"FeedbackScene");
   }
 
-  IEnumerator EnableRecording()
+  void Update()
+  {
+    if (!SituationAudioController.isAudioPlaying)
+    {
+      startRecordingButton.enabled = true;
+      startRecordingButton.GetComponent<Image>().color = Color.white;
+      instructionText.text = "Toque aqui para gravar sua resposta";
+      //EnableOptions(true); <- poder clicar quando a narração termina
+      
+      SituationAudioController.isAudioPlaying = true;
+    }
+  }
+
+  /*IEnumerator EnableRecording()
   {
     startRecordingButton.enabled = false;
     startRecordingButton.GetComponent<Image>().color = Color.white * 0.6f;
@@ -320,5 +334,5 @@ public class SituationController : MonoBehaviour
     startRecordingButton.GetComponent<Image>().color = Color.white;
     instructionText.text = "Toque aqui para gravar sua resposta";
     //EnableOptions(true); <- poder clicar quando a narração termina
-  }
+  }*/
 }
