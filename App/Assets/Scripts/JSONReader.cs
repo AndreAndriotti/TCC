@@ -20,6 +20,8 @@ public class JSONReader : MonoBehaviour
     public string situationName = "restaurante";
     public bool isFeedback;
     public bool isScenario;
+    private Color mainGreen;
+    private Color mainBlue;
     public static bool isCorrectOp;
 
     [System.Serializable]
@@ -46,6 +48,9 @@ public class JSONReader : MonoBehaviour
 
     void Start()
     {
+        mainGreen = new Color(0.357f, 0.698f, 0.239f);
+        mainBlue = new Color(0.239f, 0.337f, 0.686f);
+
         database = this.gameObject.AddComponent<Database>();
         database.createUserDatabase();
 
@@ -63,6 +68,7 @@ public class JSONReader : MonoBehaviour
 
         if(isFeedback)
         {
+            op1Button.GetComponent<Image>().color = mainBlue;
             char opChosen = database.GetSituationOptions(situationName)[situationID];
             char opAttempts = database.GetSituationOpsAttempts(situationName)[situationID];
 
@@ -87,7 +93,7 @@ public class JSONReader : MonoBehaviour
             if (opChosen == opOK)
             {
                 isCorrectOp = true;
-                op1Button.GetComponent<Image>().color = Color.green;
+                op1Button.GetComponent<Image>().color = mainGreen;
                 feedbackText.text = mySituationList.situation[situationID].fbOK;
             }
             else if (opAttempts == '1')

@@ -42,7 +42,7 @@ public class ScenarioController : MonoBehaviour
 
         if (situationID >= (allOpsChosen.Length-1))
         {
-            if(JSONReader.isCorrectOp || opAttempts == '2')
+            if(JSONReader.isCorrectOp || opAttempts >= '2')
             {
                 ResetScenario();
             }

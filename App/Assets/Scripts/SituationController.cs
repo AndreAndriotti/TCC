@@ -51,6 +51,7 @@ public class SituationController : MonoBehaviour
   private double similarityPercent;
   private int countAttempts;
   private int maxAttempts;
+  private Color mainBlue;
   private Color lightBlue;
 
   void Start()
@@ -83,14 +84,18 @@ public class SituationController : MonoBehaviour
     opsAttempts = database.GetSituationOpsAttempts(situationName);
 
     startRecordingButton.enabled = false;
-    startRecordingButton.GetComponent<Image>().color = Color.white * 0.6f;
-
-    //EnableOptions(false);
+    EnableOptions(false);
 
     maxAttempts = 3;
     countAttempts = 1;
 
-    lightBlue = new Color(0.769f, 0.878f, 0.976f);
+    mainBlue = new Color(0.239f, 0.337f, 0.686f);
+    lightBlue = new Color(0.310f, 0.741f, 0.765f);
+
+    op1Button.GetComponent<Image>().color = mainBlue;
+    op2Button.GetComponent<Image>().color = mainBlue;
+    op3Button.GetComponent<Image>().color = mainBlue;
+    startRecordingButton.GetComponent<Image>().color = Color.white * 0.6f;
   }
 
   public void OnFinalResult(string result)
@@ -154,9 +159,6 @@ public class SituationController : MonoBehaviour
     }
     else
     {
-      op1Button.GetComponent<Image>().color = Color.white;
-      op2Button.GetComponent<Image>().color = Color.white;
-      op3Button.GetComponent<Image>().color = Color.white;
       SpeechRecognizer.StartRecording(true);
       startRecordingButton.GetComponent<Image>().color = lightBlue;
       instructionText.text = "Ouvindo...";
@@ -308,7 +310,7 @@ public class SituationController : MonoBehaviour
 
     string situationOps = database.GetSituationOptions(situationName);
 
-    yield return new WaitForSeconds(0.5F);
+    yield return new WaitForSeconds(1F);
     SceneManager.LoadScene(sceneName:"FeedbackScene");
   }
 

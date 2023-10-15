@@ -33,7 +33,7 @@ public class FeedbackController : MonoBehaviour
 
     public void OnClickContinueButton()
     {
-        if(JSONReader.isCorrectOp || opAttempts == '2')
+        if(JSONReader.isCorrectOp || opAttempts >= '2')
         {
             StartCoroutine(CheckForLastSituation());
         }
