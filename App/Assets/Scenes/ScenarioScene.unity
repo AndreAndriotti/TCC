@@ -296,6 +296,7 @@ GameObject:
   - component: {fileID: 151497234}
   - component: {fileID: 151497233}
   - component: {fileID: 151497236}
+  - component: {fileID: 151497237}
   m_Layer: 0
   m_Name: Canvas
   m_TagString: Untagged
@@ -408,6 +409,32 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   helpText: {fileID: 1868167723}
   helpBalloon: {fileID: 1126991295}
+--- !u!114 &151497237
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 151497230}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 769e858b8b213a14791eaf2a942d7a54, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  textJSON: {fileID: 4900000, guid: 279175682c56d524cb11df0b1fbec58b, type: 3}
+  contextText: {fileID: 0}
+  questionText: {fileID: 0}
+  feedbackText: {fileID: 0}
+  op1Button: {fileID: 0}
+  op2Button: {fileID: 0}
+  op3Button: {fileID: 0}
+  situationID: 0
+  opOK: 0
+  situationName: restaurante
+  isFeedback: 0
+  isScenario: 1
+  mySituationList:
+    situation: []
 --- !u!1 &151674249
 GameObject:
   m_ObjectHideFlags: 0

@@ -8,8 +8,8 @@ public class TipsController : MonoBehaviour
 {
     public GameObject dicaPrefab;
     public Transform contentPanel;
-    //public int numDicasIniciais = 11;
     public ScrollRect scrollRect;
+    public Text introText;
     private float dicaSpacing = 700f;
 
     private Database database;
@@ -20,6 +20,8 @@ public class TipsController : MonoBehaviour
     private string question;
     private string op;
     private char opOK;
+    private string fbOK;
+
 
     // JSON READER
 
@@ -56,13 +58,17 @@ public class TipsController : MonoBehaviour
 
         situationID = database.GetSituationNumber(situationName);
 
+        introText.text = $"Dicas para\n{situationName}";
+
         
-        for (int i = 0; i < 11; i++)
+        for (int i = 0; i < mySituationList.situation.Length; i++)
         {
             context = mySituationList.situation[i].context;
             question = mySituationList.situation[i].question;
 
+            fbOK = mySituationList.situation[i].fbOK; 
             opOK = mySituationList.situation[i].opOK[0]; 
+
             switch(opOK)
             {
                 case '1':
@@ -94,12 +100,14 @@ public class TipsController : MonoBehaviour
         if(i < situationID)
         {
             novaDicaText[0].text = context;
-            novaDicaText[1].text = question;
-            novaDicaText[2].text = op;
+            novaDicaText[1].text = op;
+            novaDicaText[2].text = fbOK;
         }
         else
         {
+            novaDicaText[0].text = $"Situação {i+1}";
             novaDicaText[1].text = "BLOQUEADO";
+            novaDicaText[2].text = "Jogue para desbloquear!";
         }
 
         Canvas.ForceUpdateCanvases();

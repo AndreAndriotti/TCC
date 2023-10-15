@@ -9,8 +9,7 @@
             "opOK": "1",
             "fb1": "Esta resposta não foi a mais adequada, tente novamente!",
             "fb2": "Esta resposta também não foi a mais adequada, porém vamos seguir com a situação.",
-            "fbOK": "Muito bem! A resposta mais adaptativa é a alternativa em que você cumprimenta e responde ao questionamento do garçom, de modo a dar seguimento a conversação, demonstrando empatia ao também perguntar como o garçom está. Para dar continuidade a comunicação e demonstrar a sua intenção em sentar-se em uma mesa, você pergunta o local em que você pode sentar-se.",
-            "audioDuration": 4.16
+            "fbOK": "Muito bem! A resposta mais adaptativa é a alternativa em que você cumprimenta e responde ao questionamento do garçom, de modo a dar seguimento a conversação, demonstrando empatia ao também perguntar como o garçom está. Para dar continuidade a comunicação e demonstrar a sua intenção em sentar-se em uma mesa, você pergunta o local em que você pode sentar-se."
         },
         {
             "context": "Você já está sentado em uma mesa e ainda não recebeu o cardápio, ou ainda, não sabe como acessá-lo.",
@@ -21,8 +20,7 @@
             "opOK": "1",
             "fb1": "Esta resposta não foi a mais adequada, tente novamente!",
             "fb2": "Esta resposta também não foi a mais adequada, porém vamos seguir com a situação.",
-            "fbOK": "Muito bem! A resposta mais adaptativa é a alternativa em que você responde ao questionamento do garçom, demonstrando habilidade de civilidade e, em seguida, solicita o cardápio de forma assertiva.",
-            "audioDuration": 1.0
+            "fbOK": "Muito bem! A resposta mais adaptativa é a alternativa em que você responde ao questionamento do garçom, demonstrando habilidade de civilidade e, em seguida, solicita o cardápio de forma assertiva."
         },
         {
             "context": "O garçom lhe entregou o cardápio e agora aguarda em pé ao seu lado em silêncio.",
@@ -33,8 +31,7 @@
             "opOK": "2",
             "fb1": "Esta resposta não foi a mais adequada, tente novamente!",
             "fb2": "Esta resposta também não foi a mais adequada, porém vamos seguir com a situação.",
-            "fbOK": "Muito bem! A resposta que demonstra a interpretação do comportamento do garçom é a de que ele está aguardando o seu pedido, já que lhe entregou o cardápio. Esta resposta demonstra habilidade de teoria da mente, em que você consegue interpretar a intenção de uma pessoa, sem que ela necessariamente fale de forma direta o que ela quer.",
-            "audioDuration": 1.0
+            "fbOK": "Muito bem! A resposta que demonstra a interpretação do comportamento do garçom é a de que ele está aguardando o seu pedido, já que lhe entregou o cardápio. Esta resposta demonstra habilidade de teoria da mente, em que você consegue interpretar a intenção de uma pessoa, sem que ela necessariamente fale de forma direta o que ela quer."
         },
         {
             "context": "Você escolheu a refeição, e já solicitou ao garçom o que irá querer.\nGarçom: Vou anotar seu pedido, você deve estar morrendo de fome!",
@@ -45,8 +42,7 @@
             "opOK": "3",
             "fb1": "Esta resposta não foi a mais adequada, tente novamente!",
             "fb2": "Esta resposta também não foi a mais adequada, porém vamos seguir com a situação.",
-            "fbOK": "Muito bem! A resposta que demonstra que você compreendeu que o garçom utilizou uma metáfora para referir-se a sua fome é a de que “morre de fome” significa estar com muita fome. Muitas vezes as pessoas utilizam metáforas para se comunicar, frases em que o significado é outro, que não aquele do sentido literal da frase.",
-            "audioDuration": 1.0
+            "fbOK": "Muito bem! A resposta que demonstra que você compreendeu que o garçom utilizou uma metáfora para referir-se a sua fome é a de que “morre de fome” significa estar com muita fome. Muitas vezes as pessoas utilizam metáforas para se comunicar, frases em que o significado é outro, que não aquele do sentido literal da frase."
         },
         {
             "context": "O garçom anotou o seu pedido e irá solicitar a preparação pela cozinha do restaurante.\nGarçom: Pedido anotado! Agora é só aguardar!",
@@ -57,8 +53,7 @@
             "opOK": "1",
             "fb1": "Esta resposta não foi a mais adequada, tente novamente!",
             "fb2": "Esta resposta também não foi a mais adequada, porém vamos seguir com a situação.",
-            "fbOK": "Muito bem! A resposta mais adaptativa é a alternativa em que você agradece ao garçom pelo atendimento. Essa resposta demonstra habilidade de civilidade, onde em que você compreende as regras sociais e finaliza a comunicação de forma assertiva.",
-            "audioDuration": 1.0
+            "fbOK": "Muito bem! A resposta mais adaptativa é a alternativa em que você agradece ao garçom pelo atendimento. Essa resposta demonstra habilidade de civilidade, onde em que você compreende as regras sociais e finaliza a comunicação de forma assertiva."
         },
         {
             "context": "Você está aguardando a sua comida. Na mesa ao lado, há muitas pessoas que conversam e riem muito alto e isso está lhe incomodando.",
@@ -69,20 +64,18 @@
             "opOK": "3",
             "fb1": "Esta resposta não foi a mais adequada, tente novamente!",
             "fb2": "Esta resposta também não foi a mais adequada, porém vamos seguir com a situação.",
-            "fbOK": "Muito bem! A resposta mais adaptativa é a alternativa em que você comunica de forma clara o que está lhe incomodando (o barulho da mesa ao lado) e propõe uma solução assertiva, ou seja, que não irá interferir no comportamento dos clientes da mesa ao lado, mas irá melhorar a sua sensação naquele local.",
-            "audioDuration": 1.0
+            "fbOK": "Muito bem! A resposta mais adaptativa é a alternativa em que você comunica de forma clara o que está lhe incomodando (o barulho da mesa ao lado) e propõe uma solução assertiva, ou seja, que não irá interferir no comportamento dos clientes da mesa ao lado, mas irá melhorar a sua sensação naquele local."
         },
         {
             "context": "Ainda enquanto aguarda pela comida, você sente necessidade de ir ao banheiro e não sabe onde é o local.",
             "question": "Como você pode agir para encontrar o banheiro?",
             "op1": "Fala bem alto que está “apertado” e quer fazer xixi.",
             "op2": "Procura um funcionário do restaurante para perguntar onde fica o banheiro.",
-            "op3": "Fica “segurando” e espero voltar para casa",
+            "op3": "Fica “segurando” e espera voltar para casa",
             "opOK": "2",
             "fb1": "Esta resposta não foi a mais adequada, tente novamente!",
             "fb2": "Esta resposta também não foi a mais adequada, porém vamos seguir com a situação.",
-            "fbOK": "Muito bem! A resposta mais adaptativa é a alternativa em que você comunica de forma assertiva o que está precisando, ou seja, procura alguém que trabalha naquele local e, por isso, saberá onde fica o banheiro. Assim você realiza um comportamento assertivo para satisfazer uma necessidade fisiológica, o que demonstra autorregulação.",
-            "audioDuration": 1.0
+            "fbOK": "Muito bem! A resposta mais adaptativa é a alternativa em que você comunica de forma assertiva o que está precisando, ou seja, procura alguém que trabalha naquele local e, por isso, saberá onde fica o banheiro. Assim você realiza um comportamento assertivo para satisfazer uma necessidade fisiológica, o que demonstra autorregulação."
         },
         {
             "context": "A sua comida chegou, mas um dos seus pratos veio errado.",
@@ -93,8 +86,7 @@
             "opOK": "3",
             "fb1": "Esta resposta não foi a mais adequada, tente novamente!",
             "fb2": "Esta resposta também não foi a mais adequada, porém vamos seguir com a situação.",
-            "fbOK": "Muito bem! A resposta mais adaptativa é a alternativa em que você comunica a situação do engano para o garçom de forma assertiva (sem gritar ou xingar) e solicita que seja realizada a troca, afinal o prato que foi entregue não é o que você gostaria de comer. Esses comportamentos demonstram habilidades de assertividade e motivação social.",
-            "audioDuration": 1.0
+            "fbOK": "Muito bem! A resposta mais adaptativa é a alternativa em que você comunica a situação do engano para o garçom de forma assertiva (sem gritar ou xingar) e solicita que seja realizada a troca, afinal o prato que foi entregue não é o que você gostaria de comer. Esses comportamentos demonstram habilidades de assertividade e motivação social."
         },
         {
             "context": "Você terminou de comer e que pagar a sua conta para ir embora. O garçom está em uma mesa próxima, retirando os pratos.",
@@ -105,8 +97,7 @@
             "opOK": "2",
             "fb1": "Esta resposta não foi a mais adequada, tente novamente!",
             "fb2": "Esta resposta também não foi a mais adequada, porém vamos seguir com a situação.",
-            "fbOK": "Muito bem! A resposta mais adaptativa é a alternativa em que você utiliza a comunicação não verbal com o garçom, uma prática comum em pedidos de conta em restaurantes, especialmente quando o garçom encontra-se distante, em outras mesas.",
-            "audioDuration": 1.0
+            "fbOK": "Muito bem! A resposta mais adaptativa é a alternativa em que você utiliza a comunicação não verbal com o garçom, uma prática comum em pedidos de conta em restaurantes, especialmente quando o garçom encontra-se distante, em outras mesas."
         },
         {
             "context": "Pronto, você já pagou e agora deve ir embora. O garçom está te acompanhando até a porta.",
@@ -117,8 +108,7 @@
             "opOK": "3",
             "fb1": "Esta resposta não foi a mais adequada, tente novamente!",
             "fb2": "Esta resposta também não foi a mais adequada, porém vamos seguir com a situação.",
-            "fbOK": "Muito bem! A resposta mais adaptativa é a alternativa em que você agradece verbalmente o garçom e se despede. Aqui poderiam ser ditas outras palavras também, desde que indicassem civilidade (entendimento das regras sociais) – agradecer e dizer tchau, ou até breve.",
-            "audioDuration": 1.0
+            "fbOK": "Muito bem! A resposta mais adaptativa é a alternativa em que você agradece verbalmente o garçom e se despede. Aqui poderiam ser ditas outras palavras também, desde que indicassem civilidade (entendimento das regras sociais) – agradecer e dizer tchau, ou até breve."
         }
     ]
 }
