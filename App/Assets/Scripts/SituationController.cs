@@ -53,6 +53,8 @@ public class SituationController : MonoBehaviour
   private int maxAttempts;
   private Color mainBlue;
   private Color lightBlue;
+  private AudioSource audioSource;
+  public AudioClip buttonSound;
 
   void Start()
   {
@@ -96,6 +98,8 @@ public class SituationController : MonoBehaviour
     op2Button.GetComponent<Image>().color = mainBlue;
     op3Button.GetComponent<Image>().color = mainBlue;
     startRecordingButton.GetComponent<Image>().color = Color.white * 0.6f;
+
+    audioSource = GetComponent<AudioSource>();
   }
 
   public void OnFinalResult(string result)
@@ -148,6 +152,8 @@ public class SituationController : MonoBehaviour
 
   public void OnStartRecordingPressed()
   {
+    audioSource.PlayOneShot(buttonSound);
+
     if (SpeechRecognizer.IsRecording())
     {
 #if UNITY_IOS && !UNITY_EDITOR
