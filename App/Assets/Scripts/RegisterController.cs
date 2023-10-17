@@ -34,9 +34,8 @@ public class RegisterController : MonoBehaviour
         {
             database.SetUserName(NameInputField.text);
             database.SetEmail(EmailInputField.text);
+
             SceneManager.LoadScene(sceneName:"MenuScene");
         }
     }
-
-
 }

@@ -12,6 +12,8 @@ public class MenuController : MonoBehaviour
     public Text helpText;
     public GameObject helpBalloon;
     private int helpTextState;
+    private AudioSource audioSource;
+    public AudioClip buttonSound;
 
     void Start()
     {
@@ -31,6 +33,8 @@ public class MenuController : MonoBehaviour
         helpText.enabled = false;
         helpBalloon.SetActive(false);
         helpTextState = 0;
+
+        audioSource = GetComponent<AudioSource>();
     }
 
     public void OnClickPlayButton()
@@ -50,6 +54,8 @@ public class MenuController : MonoBehaviour
 
     public void OnClickHelpButton()
     {
+        audioSource.PlayOneShot(buttonSound);
+
         if(helpText.enabled)
         {
             helpTextState += 1;

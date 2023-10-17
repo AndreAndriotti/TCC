@@ -13,6 +13,8 @@ public class ScenarioController : MonoBehaviour
     private char opAttempts;
     private string allOpsChosen;
     private string situationName = "restaurante";
+    private AudioSource audioSource;
+    public AudioClip buttonSound;
 
     void Start()
     {
@@ -28,6 +30,8 @@ public class ScenarioController : MonoBehaviour
         {
             situationID -= 1;
         }
+        
+        audioSource = GetComponent<AudioSource>();
     }
 
     public void OnClickBackButton()
@@ -52,6 +56,8 @@ public class ScenarioController : MonoBehaviour
 
     public void OnClickHelpButton()
     {
+        audioSource.PlayOneShot(buttonSound);
+        
         if(helpText.enabled)
         {
             helpText.enabled = false;

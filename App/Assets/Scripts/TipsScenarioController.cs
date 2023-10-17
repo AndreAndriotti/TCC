@@ -9,11 +9,15 @@ public class TipsScenarioController : MonoBehaviour
     private Database database;
     public Text helpText;
     public GameObject helpBalloon;
+    private AudioSource audioSource;
+    public AudioClip buttonSound;
 
     void Start()
     {
         helpText.enabled = false;
         helpBalloon.SetActive(false);
+
+        audioSource = GetComponent<AudioSource>();
     }
 
     public void OnClickBackButton()
@@ -28,6 +32,8 @@ public class TipsScenarioController : MonoBehaviour
 
     public void OnClickHelpButton()
     {
+        audioSource.PlayOneShot(buttonSound);
+
         if(helpText.enabled)
         {
             helpText.enabled = false;
