@@ -21,6 +21,7 @@ public class MusicManager : MonoBehaviour
             DontDestroyOnLoad(gameObject);
 
             backgroundMusic = gameObject.AddComponent<AudioSource>();
+            backgroundMusic.loop = true; // Ativa o loop
         }
         else
         {
