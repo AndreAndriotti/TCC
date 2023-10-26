@@ -17,10 +17,6 @@ public class SituationController : MonoBehaviour
 	  public string op2;
 	  public string op3;
 	  public char opOK;
-	  //private string fb1;
-	  //private string fb2;
-	  //private string fb3;
-
 
     public SituationData( string context,
                           string question, 
@@ -145,7 +141,15 @@ public class SituationController : MonoBehaviour
   public void OnError(string error)
   {
     Debug.LogError(error);
-    instructionText.text = "Toque aqui para gravar sua resposta";
+    if(countAttempts < maxAttempts) 
+    {
+      instructionText.text = "Não entendi. Tente novamente!";
+      countAttempts++;
+    }
+    else {
+      instructionText.text = "Não foi possível entender. Clique na opção desejada!";
+      EnableOptions(true);
+    }
     startRecordingButton.enabled = true;
     startRecordingButton.GetComponent<Image>().color = Color.white;
   }
@@ -247,11 +251,11 @@ public class SituationController : MonoBehaviour
       StartCoroutine(GoToFeedbackScene());
     }
     else {
-      if(countAttempts < maxAttempts){
+      if(countAttempts < maxAttempts) {
         instructionText.text = "Não entendi. Tente novamente!";
         countAttempts++;
       }
-      else{
+      else {
         instructionText.text = "Não foi possível entender. Clique na opção desejada!";
         EnableOptions(true);
       }
@@ -302,14 +306,11 @@ public class SituationController : MonoBehaviour
     op3Button.enabled = state;
   }
 
-  /*public void ResetSituation() 
-  {
-    countAttempts = 1;
-    instructionText.text = "Toque aqui para gravar sua resposta";
-  }*/
-
   IEnumerator GoToFeedbackScene()
   {
+    startRecordingButton.enabled = false;
+    startRecordingButton.GetComponent<Image>().color = Color.white * 0.6f;
+
     int newOpAttempt = (int)opsAttempts[situationID] + 1;
     opsAttempts = opsAttempts.Substring(0, situationID) + (char)newOpAttempt + opsAttempts.Substring(situationID + 1);
     database.SetSituationOpsAttempts(situationName, opsAttempts);
@@ -322,25 +323,20 @@ public class SituationController : MonoBehaviour
 
   void Update()
   {
+    if (!SituationAudioController.audioEnded && SituationAudioController.isAudioPlaying)
+    {
+      instructionText.text = "Aguarde sua vez para falar...";
+      startRecordingButton.enabled = false;
+      startRecordingButton.GetComponent<Image>().color = Color.white * 0.6f;
+    }
+
     if (!SituationAudioController.isAudioPlaying)
     {
       startRecordingButton.enabled = true;
       startRecordingButton.GetComponent<Image>().color = Color.white;
       instructionText.text = "Toque aqui para gravar sua resposta";
-      //EnableOptions(true); <- poder clicar quando a narração termina
       
       SituationAudioController.isAudioPlaying = true;
     }
   }
-
-  /*IEnumerator EnableRecording()
-  {
-    startRecordingButton.enabled = false;
-    startRecordingButton.GetComponent<Image>().color = Color.white * 0.6f;
-    yield return new WaitForSeconds(4.16F + 1.5F); // Audio Duration 4.16
-    startRecordingButton.enabled = true;
-    startRecordingButton.GetComponent<Image>().color = Color.white;
-    instructionText.text = "Toque aqui para gravar sua resposta";
-    //EnableOptions(true); <- poder clicar quando a narração termina
-  }*/
 }

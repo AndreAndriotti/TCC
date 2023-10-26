@@ -1,4 +1,5 @@
 using UnityEngine;
+using UnityEngine.UI;
 using UnityEngine.SceneManagement;
 
 public class MusicManager : MonoBehaviour
@@ -12,6 +13,11 @@ public class MusicManager : MonoBehaviour
 
     private string currentMusicScene = "";
     private float musicVolume = 1.0f;
+    private bool isMusicAllowed = true;
+    public Button musicButton;
+    private Color blue;
+    public AudioClip buttonSound;
+    private MusicManager musicManager;
 
     private void Awake()
     {
@@ -21,7 +27,7 @@ public class MusicManager : MonoBehaviour
             DontDestroyOnLoad(gameObject);
 
             backgroundMusic = gameObject.AddComponent<AudioSource>();
-            backgroundMusic.loop = true; // Ativa o loop
+            backgroundMusic.loop = true;
         }
         else
         {
@@ -29,7 +35,13 @@ public class MusicManager : MonoBehaviour
             return;
         }
 
-        PlayBackgroundMusic();
+        if(isMusicAllowed)
+        {
+            PlayBackgroundMusic();
+        }
+
+        blue = new Color(0.565f, 0.765f, 1f);
+        musicButton.GetComponent<Image>().color = blue;
     }
 
     private void PlayBackgroundMusic()
@@ -70,6 +82,39 @@ public class MusicManager : MonoBehaviour
 
     private void OnSceneLoaded(Scene scene, LoadSceneMode mode)
     {
-        PlayBackgroundMusic();
+        if (SceneManager.GetActiveScene().name == "MenuScene")
+        {
+            musicManager = FindObjectOfType<MusicManager>();
+            musicButton = GameObject.Find("musicButton").GetComponent<Button>();
+
+            musicButton.onClick.AddListener(musicManager.OnClickMusicButton);
+
+            if(isMusicAllowed)
+                musicButton.GetComponent<Image>().color = blue;
+            else
+                musicButton.GetComponent<Image>().color = Color.white;
+        }
+
+        if(isMusicAllowed)
+            PlayBackgroundMusic();
+    }
+
+    public void OnClickMusicButton()
+    {
+        if(isMusicAllowed)
+        {
+            if(backgroundMusic.isPlaying)
+                backgroundMusic.Stop();
+            musicButton.GetComponent<Image>().color = Color.white;
+            isMusicAllowed = false;
+        }
+        else 
+        {
+            backgroundMusic.Play();
+            musicButton.GetComponent<Image>().color = blue;
+            isMusicAllowed = true;
+        }
+        
+        backgroundMusic.PlayOneShot(buttonSound);
     }
 }

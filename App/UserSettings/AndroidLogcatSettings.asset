@@ -3,7 +3,7 @@
     "m_SelectedPackage": {
         "deviceId": "RX2T4001R3W",
         "name": "com.TEACOGS.TEACOGS",
-        "processId": 792,
+        "processId": 18535,
         "exited": false
     },
     "m_SelectedPriority": 0,
@@ -42,6 +42,42 @@
             "deviceId": "RX2T4001R3W",
             "name": "com.TEACOGS.TEACOGS",
             "processId": 792,
+            "exited": false
+        },
+        {
+            "deviceId": "RX2T4001R3W",
+            "name": "com.TEACOGS.TEACOGS",
+            "processId": 27440,
+            "exited": false
+        },
+        {
+            "deviceId": "RX2T4001R3W",
+            "name": "com.TEACOGS.TEACOGS",
+            "processId": 29071,
+            "exited": false
+        },
+        {
+            "deviceId": "RX2T4001R3W",
+            "name": "com.TEACOGS.TEACOGS",
+            "processId": 5673,
+            "exited": false
+        },
+        {
+            "deviceId": "RX2T4001R3W",
+            "name": "com.TEACOGS.TEACOGS",
+            "processId": 8292,
+            "exited": false
+        },
+        {
+            "deviceId": "RX2T4001R3W",
+            "name": "com.TEACOGS.TEACOGS",
+            "processId": 16974,
+            "exited": false
+        },
+        {
+            "deviceId": "RX2T4001R3W",
+            "name": "com.TEACOGS.TEACOGS",
+            "processId": 18535,
             "exited": false
         },
         {
